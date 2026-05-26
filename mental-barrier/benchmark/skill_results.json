@@ -1,0 +1,409 @@
+{
+  "summary": {
+    "total_cases": 30,
+    "matched_results": 30,
+    "missing_results": 0,
+    "coverage_rate": 1.0,
+    "emotion_accuracy": 1.0,
+    "entity_pass_rate": 1.0,
+    "format_compliance": 1.0,
+    "passthrough_rate": 1.0
+  },
+  "emotion_confusion": {
+    "matrix": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "labels": [
+      "level_1",
+      "level_2",
+      "level_3",
+      "level_4"
+    ]
+  },
+  "errors": [],
+  "details": [
+    {
+      "id": "github_0093",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 1,
+        "preserved_count": 1,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0152",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0110",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0114",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 2,
+        "preserved_count": 2,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0018",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0053",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0061",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0036",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0043",
+      "expected_level": 3,
+      "predicted_level": 3,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 2,
+        "preserved_count": 2,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0119",
+      "expected_level": 3,
+      "predicted_level": 3,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0155",
+      "expected_level": 3,
+      "predicted_level": 3,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 2,
+        "preserved_count": 2,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0180",
+      "expected_level": 3,
+      "predicted_level": 3,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 18,
+        "preserved_count": 18,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_1795",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0128",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 4,
+        "preserved_count": 4,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_3647",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0121",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0139",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0142",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0140",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0003",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 7,
+        "preserved_count": 7,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0000",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0398",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0004",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 1,
+        "preserved_count": 1,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0003",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0421",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0008",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0023",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0606",
+      "expected_level": 4,
+      "predicted_level": 4,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "github_0010",
+      "expected_level": 1,
+      "predicted_level": 1,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 1,
+        "preserved_count": 1,
+        "lost_count": 0
+      }
+    },
+    {
+      "id": "appstore_0024",
+      "expected_level": 2,
+      "predicted_level": 2,
+      "format_valid": true,
+      "entity_passed": true,
+      "entity_detail": {
+        "original_count": 0,
+        "preserved_count": 0,
+        "lost_count": 0
+      }
+    }
+  ]
+}

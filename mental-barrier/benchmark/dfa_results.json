@@ -1,0 +1,173 @@
+{
+  "toxicn": {
+    "dataset": "ToxiCN",
+    "toxic_count": 1274,
+    "clean_count": 1137,
+    "true_positive": 167,
+    "false_positive": 20,
+    "recall": 0.1311,
+    "false_positive_rate": 0.0176
+  },
+  "cold": {
+    "dataset": "COLD",
+    "total": 25726,
+    "tp": 3306,
+    "fp": 350,
+    "tn": 12653,
+    "fn": 9417,
+    "accuracy": 0.6203,
+    "precision": 0.9043,
+    "recall": 0.2598,
+    "f1": 0.4037,
+    "false_positive_rate": 0.0269,
+    "by_topic": {
+      "race": {
+        "precision": 0.9306,
+        "recall": 0.1798,
+        "f1": 0.3014,
+        "count": 10698
+      },
+      "region": {
+        "precision": 0.8885,
+        "recall": 0.2862,
+        "f1": 0.433,
+        "count": 8449
+      },
+      "gender": {
+        "precision": 0.8976,
+        "recall": 0.366,
+        "f1": 0.52,
+        "count": 6579
+      }
+    }
+  },
+  "word_frequency": {
+    "total_reviews": 4726,
+    "texts_with_profanity": 1425,
+    "hit_rate": 0.3015,
+    "total_word_hits": 2417,
+    "unique_words_hit": 106,
+    "top_words": [
+      {
+        "word": "垃圾",
+        "count": 1252
+      },
+      {
+        "word": "恶心",
+        "count": 282
+      },
+      {
+        "word": "wtf",
+        "count": 85
+      },
+      {
+        "word": "md",
+        "count": 59
+      },
+      {
+        "word": "卧槽",
+        "count": 56
+      },
+      {
+        "word": "shit",
+        "count": 51
+      },
+      {
+        "word": "辣鸡",
+        "count": 51
+      },
+      {
+        "word": "有病",
+        "count": 37
+      },
+      {
+        "word": "sucks",
+        "count": 34
+      },
+      {
+        "word": "流氓",
+        "count": 34
+      },
+      {
+        "word": "狗屎",
+        "count": 32
+      },
+      {
+        "word": "garbage",
+        "count": 31
+      },
+      {
+        "word": "fucking",
+        "count": 28
+      },
+      {
+        "word": "piece of shit",
+        "count": 25
+      },
+      {
+        "word": "智障",
+        "count": 22
+      },
+      {
+        "word": "fuck",
+        "count": 21
+      },
+      {
+        "word": "sb",
+        "count": 21
+      },
+      {
+        "word": "恶心死",
+        "count": 17
+      },
+      {
+        "word": "坑人",
+        "count": 15
+      },
+      {
+        "word": "缺德",
+        "count": 14
+      },
+      {
+        "word": "无耻",
+        "count": 13
+      },
+      {
+        "word": "tm",
+        "count": 12
+      },
+      {
+        "word": "废物",
+        "count": 11
+      },
+      {
+        "word": "2b",
+        "count": 11
+      },
+      {
+        "word": "老子",
+        "count": 9
+      },
+      {
+        "word": "flap",
+        "count": 9
+      },
+      {
+        "word": "他妈",
+        "count": 8
+      },
+      {
+        "word": "神经病",
+        "count": 8
+      },
+      {
+        "word": "狗东西",
+        "count": 7
+      },
+      {
+        "word": "不要脸",
+        "count": 6
+      }
+    ]
+  }
+}
