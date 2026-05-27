@@ -45,7 +45,7 @@
     "subtype": "homophone",
     "input": "花了这么多钱买个傻13东西回来",
     "expected_level": 4,
-    "expected_dfa_hit": false,
+    "expected_dfa_hit": true,
     "source_word": "傻逼",
     "variant": "傻13"
   },

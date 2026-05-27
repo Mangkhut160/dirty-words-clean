@@ -1,2 +1,28 @@
+# API keys and secrets
+.env
+*.env
 mental-barrier/adversarial/.env
+mental-barrier-server/config.py
+
+# LLM outputs (large files with potential sensitive data)
 mental-barrier/adversarial/llm_real_outputs_*.json
+mental-barrier/adversarial/llm_judged.json
+mental-barrier/adversarial/llm_full_judged.json
+mental-barrier/adversarial/judge_results.json
+mental-barrier/adversarial/judge_prompts.json
+mental-barrier/adversarial/run_results.json
+mental-barrier/adversarial/batch_results.json
+mental-barrier/adversarial/e2e_results.json
+
+# Runtime files
+mental-barrier-server/history.db
+mental-barrier-server/server.log
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp

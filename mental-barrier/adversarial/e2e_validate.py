@@ -74,7 +74,8 @@ def parse_skill_output(text):
     返回 dict:
         {
             "level": int | None,      # 1-4 情绪级别
-            "sanitized": str,         # 净化后的文本（标签以下的全部内容）
+            "sanitized": str,         # 净化后的文本（不含 DFA 摘要行）
+            "sanitized_full": str,    # 完整净化区域（含 DFA 摘要行，用于格式检查）
             "valid": bool,            # 格式是否合规（含 [情绪判断] 且级别可解析）
         }
     """
@@ -89,7 +90,7 @@ def parse_skill_output(text):
             break
 
     if tag_line is None:
-        return {"level": None, "sanitized": "", "valid": False}
+        return {"level": None, "sanitized": "", "sanitized_full": "", "valid": False}
 
     # 解析情绪级别（关键词匹配，按优先级）
     level = None
@@ -106,11 +107,30 @@ def parse_skill_output(text):
     sanitized_lines = lines[tag_idx + 1:]
     while sanitized_lines and not sanitized_lines[0].strip():
         sanitized_lines.pop(0)
-    sanitized = "\n".join(sanitized_lines).strip()
+    sanitized_full = "\n".join(sanitized_lines).strip()
+
+    # 排除 DFA 摘要行（如"DFA 检测到 N 处情绪化表达（...），已过滤。"）
+    # 摘要行是给客服主管看的检测报告，不是净化后的客户原文
+    body_lines = sanitized_full.split("\n")
+    filtered_lines = []
+    for line in body_lines:
+        stripped = line.strip()
+        if not stripped:
+            filtered_lines.append(line)
+            continue
+        # 跳过 DFA 摘要行（含"检测到"+"过滤"或"DFA"+"过滤"等模式）
+        if ("检测到" in stripped or "识别到" in stripped or "DFA" in stripped) and \
+           ("过滤" in stripped or "已清除" in stripped):
+            continue
+        filtered_lines.append(line)
+    # 去掉开头空行
+    while filtered_lines and not filtered_lines[0].strip():
+        filtered_lines.pop(0)
+    sanitized = "\n".join(filtered_lines).strip()
 
     valid = level is not None
 
-    return {"level": level, "sanitized": sanitized, "valid": valid}
+    return {"level": level, "sanitized": sanitized, "sanitized_full": sanitized_full, "valid": valid}
 
 
 def check_profanity_removal(sanitized, source_words):

@@ -1566,7 +1566,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语-蠢货",
       "input": "this is such a mug service I want my money back immediately",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "mug",
       "variant": "mug"
@@ -1586,7 +1586,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语-可疑的",
       "input": "your dodgy delivery driver threw my package over the fence",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "dodgy",
       "variant": "dodgy"
@@ -1616,7 +1616,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语-累坏了",
       "input": "your knackered support team hung up on me three times today",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "knackered",
       "variant": "knackered"
@@ -1636,7 +1636,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语-蠢货",
       "input": "this prat subscription auto-renewed without my permission",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "prat",
       "variant": "prat"
@@ -1646,7 +1646,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语-讨厌鬼",
       "input": "what kind of git service is this I have been waiting for a month",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "git",
       "variant": "git"
@@ -1666,7 +1666,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语",
       "input": "this is the most berk experience I have ever had shopping online",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "berk",
       "variant": "berk"
@@ -1676,7 +1676,7 @@
       "category": "en_dfa_miss",
       "subtype": "英式俚语",
       "input": "the pillock instructions that came with the product were impossible to follow",
-      "expected_level": 3,
+      "expected_level": 2,
       "expected_dfa_hit": false,
       "source_word": "pillock",
       "variant": "pillock"

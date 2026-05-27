@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精神内耗终结者 — 生产环境模拟</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>精神内耗终结者</h1>
+        <div id="status-bar">
+            <span class="status-dot green"></span>
+            <span id="stat-calls">0 次调用</span>
+            <span class="sep">|</span>
+            <span id="stat-tokens">平均 0 tokens</span>
+            <span class="sep">|</span>
+            <span id="stat-latency">平均 0ms</span>
+            <span class="sep">|</span>
+            <span id="stat-cost">¥0.0000</span>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab active" data-tab="manual">手动测试</button>
+        <button class="tab" data-tab="batch">批量测试</button>
+        <button class="tab" data-tab="history">调用历史</button>
+    </nav>
+
+    <main>
+        <!-- 手动测试 -->
+        <section id="tab-manual" class="tab-content active">
+            <div class="input-panel">
+                <textarea id="input-text" placeholder="输入客户投诉文本..." rows="4"></textarea>
+                <div class="controls">
+                    <select id="mode-select">
+                        <option value="full">Full 模式（完整管道）</option>
+                        <option value="hybrid">Hybrid 模式（DFA 短路）</option>
+                    </select>
+                    <button id="btn-send" onclick="sendManual()">发送</button>
+                </div>
+            </div>
+            <div id="result-panel" class="result-panel hidden">
+                <div class="result-header">
+                    <span id="result-level" class="level-badge"></span>
+                    <span id="result-metrics" class="metrics-text"></span>
+                </div>
+                <div id="result-output" class="result-output"></div>
+                <div id="result-details" class="result-details"></div>
+            </div>
+        </section>
+
+        <!-- 批量测试 -->
+        <section id="tab-batch" class="tab-content">
+            <div class="batch-controls">
+                <input type="file" id="batch-file" accept=".json">
+                <select id="batch-mode">
+                    <option value="full">Full 模式</option>
+                    <option value="hybrid">Hybrid 模式</option>
+                </select>
+                <button id="btn-batch" onclick="runBatch()">执行批量测试</button>
+            </div>
+            <div id="batch-progress" class="hidden">
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div id="batch-summary" class="hidden"></div>
+            <table id="batch-table" class="hidden">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>输入</th>
+                        <th>预期</th>
+                        <th>实际</th>
+                        <th>结果</th>
+                        <th>Tokens</th>
+                        <th>延迟</th>
+                    </tr>
+                </thead>
+                <tbody id="batch-tbody"></tbody>
+            </table>
+        </section>
+
+        <!-- 调用历史 -->
+        <section id="tab-history" class="tab-content">
+            <div class="history-controls">
+                <select id="history-mode" onchange="loadHistory()">
+                    <option value="">全部模式</option>
+                    <option value="full">Full</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+                <select id="history-level" onchange="loadHistory()">
+                    <option value="">全部级别</option>
+                    <option value="1">级别 1</option>
+                    <option value="2">级别 2</option>
+                    <option value="3">级别 3</option>
+                    <option value="4">级别 4</option>
+                </select>
+                <button onclick="exportCSV()">导出 CSV</button>
+            </div>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>输入</th>
+                        <th>级别</th>
+                        <th>模式</th>
+                        <th>Tokens</th>
+                        <th>延迟</th>
+                        <th>LLM跳过</th>
+                    </tr>
+                </thead>
+                <tbody id="history-tbody"></tbody>
+            </table>
+            <div id="history-pagination" class="pagination"></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

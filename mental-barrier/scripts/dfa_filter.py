@@ -20,6 +20,17 @@ import re
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REF_DIR = os.path.join(SCRIPT_DIR, "..", "references")
 
+# 全角→半角映射表（Unicode fullwidth → ASCII halfwidth）
+# Fullwidth to halfwidth mapping (catches ｆｕｃｋ → fuck etc.)
+_FW_OFFSET = 0xFEE0
+_FULLWIDTH_MAP = {chr(i + _FW_OFFSET): chr(i) for i in range(0x21, 0x7F)}
+
+
+def normalize_fullwidth(text):
+    """全角英数字符转半角，保留中文和其他字符不变。
+    Converts fullwidth ASCII variants to halfwidth, preserves CJK and other chars."""
+    return text.translate(str.maketrans(_FULLWIDTH_MAP))
+
 
 def load_trie(path):
     """将脏话词加载为 DFA 字典树（Trie）。每个节点一个字符，__END__ 标记词尾。
@@ -104,8 +115,24 @@ def main():
     dfa_cn = load_trie(os.path.join(REF_DIR, "profanity_dict.txt"))
     dfa_en = load_trie(os.path.join(REF_DIR, "profanity_en.txt"))
 
+    # 全角预处理：在标准化文本上额外跑一次 DFA，捕获 ｆｕｃｋ 等 Unicode 变体
+    # Fullwidth preprocessing: run DFA on normalized text to catch Unicode variants
+    normalized = normalize_fullwidth(text)
+    has_fullwidth = (normalized != text)
+
     cn_matches = dfa_search(dfa_cn, text)
     en_matches = dfa_search(dfa_en, text)
+
+    # 如果存在全角字符，在标准化文本上补充扫描
+    # If fullwidth chars exist, supplement scan on normalized text
+    if has_fullwidth:
+        cn_norm = dfa_search(dfa_cn, normalized)
+        en_norm = dfa_search(dfa_en, normalized)
+        existing_pos = {(m["start"], m["end"]) for m in cn_matches + en_matches}
+        for m in cn_norm + en_norm:
+            if (m["start"], m["end"]) not in existing_pos:
+                m["word"] = m["word"] + "(fullwidth)"
+                cn_matches.append(m)
 
     # 合并去重（按位置），英文词典优先（避免 CN 词典中的英文词条被误标）
     # Merge and deduplicate (by position), English dictionary takes priority (avoid English entries in CN dict being mislabeled)

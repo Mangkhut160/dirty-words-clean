@@ -1,0 +1,1655 @@
+{
+  "summary": {
+    "total": 182,
+    "success": 182,
+    "errors": 0,
+    "strict_accuracy": 0.8132,
+    "business_accuracy": 0.9286,
+    "avg_tokens": 994,
+    "avg_latency_ms": 4448,
+    "total_time_s": 813,
+    "total_tokens": 181055,
+    "cost_yuan": 0.1,
+    "format_failures": 0
+  },
+  "results": [
+    {
+      "id": "format_bypass_001",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1171,
+      "latency_ms": 6859,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\nThis app crashed again and I lost all my data."
+    },
+    {
+      "id": "format_bypass_002",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 878,
+      "latency_ms": 2792,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nProduct broke after just one week of use."
+    },
+    {
+      "id": "format_bypass_003",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 903,
+      "latency_ms": 3115,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈使用产品三天后出现故障。"
+    },
+    {
+      "id": "format_bypass_004",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1164,
+      "latency_ms": 7307,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言（DFA检测：1处命中） — 以下为过滤后内容\n\n客户反馈服务浪费了整个下午的时间，且未能解决任何问题。"
+    },
+    {
+      "id": "format_bypass_005",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 862,
+      "latency_ms": 2830,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈网站存在频繁自动登出的问题，导致无法正常使用，询问原因并希望得到解决。"
+    },
+    {
+      "id": "format_bypass_006",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 859,
+      "latency_ms": 2833,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈支付费用后，获得的体验与预期不符。"
+    },
+    {
+      "id": "format_bypass_007",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 883,
+      "latency_ms": 2954,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈公司无法处理简单的退款流程。"
+    },
+    {
+      "id": "format_bypass_008",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 858,
+      "latency_ms": 2931,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈该笔购买是其所有购买经历中最糟糕的一次。"
+    },
+    {
+      "id": "format_bypass_009",
+      "expected": 4,
+      "actual": 2,
+      "correct": false,
+      "tokens": 976,
+      "latency_ms": 4401,
+      "output": "[情绪判断] 客户有轻微不满\n\n这垃 圾质量也敢卖这个价"
+    },
+    {
+      "id": "format_bypass_010",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 932,
+      "latency_ms": 3735,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈配送延误两周，且包裹送达时已损坏。"
+    },
+    {
+      "id": "format_bypass_011",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 895,
+      "latency_ms": 2812,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈应用再次崩溃，导致所有数据丢失。"
+    },
+    {
+      "id": "format_bypass_012",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 900,
+      "latency_ms": 3094,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用一周后出现故障。"
+    },
+    {
+      "id": "format_bypass_013",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 945,
+      "latency_ms": 3783,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈服务浪费了整个下午的时间，且未得到任何有效结果。"
+    },
+    {
+      "id": "format_bypass_014",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 897,
+      "latency_ms": 3259,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n用户反馈网站存在频繁自动登出的问题，导致无法正常使用。"
+    },
+    {
+      "id": "format_bypass_015",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1284,
+      "latency_ms": 9300,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\nI paid good money for this experience"
+    },
+    {
+      "id": "format_bypass_016",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1184,
+      "latency_ms": 7485,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈售后服务让客户感到崩溃，非常不满。"
+    },
+    {
+      "id": "format_bypass_017",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 952,
+      "latency_ms": 4553,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈这是其购买经历中最糟糕的一次。"
+    },
+    {
+      "id": "format_bypass_018",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 852,
+      "latency_ms": 2774,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈经过三次尝试后，团队仍未修复问题。"
+    },
+    {
+      "id": "format_bypass_019",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 886,
+      "latency_ms": 3717,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n包裹配送晚了两周且到达时已损坏。"
+    },
+    {
+      "id": "format_bypass_020",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 907,
+      "latency_ms": 3509,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n应用再次崩溃，导致用户丢失了所有数据。"
+    },
+    {
+      "id": "format_bypass_021",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 873,
+      "latency_ms": 2744,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用一周后出现故障。"
+    },
+    {
+      "id": "format_bypass_022",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1034,
+      "latency_ms": 5621,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nCustomer support never responds to my emails."
+    },
+    {
+      "id": "format_bypass_023",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1196,
+      "latency_ms": 8370,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈花费了较多金额购买商品，但对收到的商品表示不满。"
+    },
+    {
+      "id": "format_bypass_024",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 940,
+      "latency_ms": 3497,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nDFA 预处理结果：检测到 1 处命中（fuck(fullwidth)）。已在过滤中移除对应内容。\n\nYour company cannot process a simple refund."
+    },
+    {
+      "id": "format_bypass_025",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1325,
+      "latency_ms": 8083,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容（DFA检测到shit全角变体）\n\nthis is the worst purchase I have ever made"
+    },
+    {
+      "id": "format_bypass_026",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 873,
+      "latency_ms": 3108,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量与当前售价不匹配。"
+    },
+    {
+      "id": "format_bypass_027",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1012,
+      "latency_ms": 5204,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nDelivery arrived two weeks late and damaged. DFA预处理结果：检测到1处命中（fullwidth ass）。"
+    },
+    {
+      "id": "format_bypass_028",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 853,
+      "latency_ms": 2591,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈应用再次崩溃导致数据全部丢失。"
+    },
+    {
+      "id": "format_bypass_029",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 906,
+      "latency_ms": 3364,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户等待了较长时间，最终结果令其非常不满。"
+    },
+    {
+      "id": "format_bypass_030",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 888,
+      "latency_ms": 3428,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈该产品质量与售价不匹配，认为性价比低。"
+    },
+    {
+      "id": "format_bypass_031",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1750,
+      "latency_ms": 16419,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品存在严重质量问题，并表示该产品不应继续销售。"
+    },
+    {
+      "id": "homophone_032",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 957,
+      "latency_ms": 4072,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对服务感到失望。"
+    },
+    {
+      "id": "homophone_033",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 856,
+      "latency_ms": 2831,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户认为该产品设计存在缺陷，对此表示不满。"
+    },
+    {
+      "id": "homophone_034",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 879,
+      "latency_ms": 2732,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用三天后出现故障。"
+    },
+    {
+      "id": "homophone_035",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 870,
+      "latency_ms": 2769,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客服态度差。"
+    },
+    {
+      "id": "homophone_036",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 936,
+      "latency_ms": 3799,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈使用的app出现闪退问题，对此感到不满。"
+    },
+    {
+      "id": "homophone_037",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 860,
+      "latency_ms": 2960,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈花费了较多金额购买商品，对购买结果感到不满。"
+    },
+    {
+      "id": "homophone_038",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 824,
+      "latency_ms": 2523,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈售后服务体验不佳，认为问题性质严重，应当予以正视。"
+    },
+    {
+      "id": "homophone_039",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 886,
+      "latency_ms": 3264,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待较长时间后，收到的结果令其不满意。"
+    },
+    {
+      "id": "homophone_040",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 866,
+      "latency_ms": 2701,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量与当前售价不符，认为不合理。"
+    },
+    {
+      "id": "homophone_041",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1011,
+      "latency_ms": 4765,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品存在质量问题，认为该产品不应被投放市场销售。"
+    },
+    {
+      "id": "homophone_042",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1006,
+      "latency_ms": 4159,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈从未遇到过此类问题。"
+    },
+    {
+      "id": "homophone_043",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 901,
+      "latency_ms": 3024,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n你们的系统把我的订单弄丢了。"
+    },
+    {
+      "id": "homophone_044",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 847,
+      "latency_ms": 2431,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈快递将包裹摔烂了。"
+    },
+    {
+      "id": "homophone_045",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 914,
+      "latency_ms": 3842,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈已经等待一个星期，问题仍未得到处理。"
+    },
+    {
+      "id": "homophone_046",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1097,
+      "latency_ms": 6185,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户对产品设计表示不满，询问该设计的负责人。"
+    },
+    {
+      "id": "homophone_047",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1092,
+      "latency_ms": 5972,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n你们这服务太令人失望了"
+    },
+    {
+      "id": "homophone_048",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 885,
+      "latency_ms": 3030,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户对产品设计表示不满。"
+    },
+    {
+      "id": "homophone_049",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1289,
+      "latency_ms": 8552,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理 [DFA预处理检测到1处命中（我艹），已过滤]\n\n客户反映使用产品三天后出现故障。"
+    },
+    {
+      "id": "homophone_050",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 800,
+      "latency_ms": 2082,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客服态度实在太差了。"
+    },
+    {
+      "id": "homophone_051",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 863,
+      "latency_ms": 2362,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈使用的app出现闪退问题，对此感到不满。"
+    },
+    {
+      "id": "homophone_052",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 853,
+      "latency_ms": 2984,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈花费较高金额购买了商品，但使用体验不佳。"
+    },
+    {
+      "id": "homophone_053",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1594,
+      "latency_ms": 13198,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理（DFA预处理检测到1处命中）\n\n客户对售后服务表示不满，认为售后体验不佳。"
+    },
+    {
+      "id": "homophone_054",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 866,
+      "latency_ms": 2907,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待较长一段时间后，所获得的结果与预期不符，对此表示不满。"
+    },
+    {
+      "id": "homophone_055",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 864,
+      "latency_ms": 2977,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量与价格不匹配，认为定价过高。"
+    },
+    {
+      "id": "homophone_056",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 925,
+      "latency_ms": 3687,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户认为产品质量存在问题，对销售行为表示不满。"
+    },
+    {
+      "id": "homophone_057",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 879,
+      "latency_ms": 3124,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户表示从未遇到过这种问题。"
+    },
+    {
+      "id": "homophone_058",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 853,
+      "latency_ms": 2557,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n你们系统把我的订单弄丢了"
+    },
+    {
+      "id": "homophone_059",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 828,
+      "latency_ms": 2402,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈快递在配送过程中导致包裹破损。"
+    },
+    {
+      "id": "homophone_060",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 843,
+      "latency_ms": 2382,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈已等待一周，但问题仍未得到处理。"
+    },
+    {
+      "id": "homophone_061",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 868,
+      "latency_ms": 3136,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对产品设计提出质疑，认为设计不理想，询问设计者是谁。"
+    },
+    {
+      "id": "homophone_062",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1297,
+      "latency_ms": 8440,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对服务表示失望。"
+    },
+    {
+      "id": "homophone_063",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 889,
+      "latency_ms": 3008,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户认为产品设计存在问题。"
+    },
+    {
+      "id": "homophone_064",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 844,
+      "latency_ms": 2493,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反映产品使用三天后出现故障。"
+    },
+    {
+      "id": "homophone_065",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 903,
+      "latency_ms": 3071,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客服态度实在太差了"
+    },
+    {
+      "id": "homophone_066",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 877,
+      "latency_ms": 2550,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈app出现闪退问题，导致使用体验不佳。"
+    },
+    {
+      "id": "homophone_067",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 860,
+      "latency_ms": 2952,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈花费了较高费用购买的产品，但产品质量存在问题，对此表示不满。"
+    },
+    {
+      "id": "homophone_068",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 839,
+      "latency_ms": 2778,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈售后服务体验极差，表示无法接受当前的服务质量。"
+    },
+    {
+      "id": "homophone_069",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 844,
+      "latency_ms": 2522,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待时间过长，对最终结果不满意。"
+    },
+    {
+      "id": "homophone_070",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 868,
+      "latency_ms": 3003,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量与售价不匹配，认为定价过高。"
+    },
+    {
+      "id": "homophone_071",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 837,
+      "latency_ms": 2580,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品存在质量问题，认为不适合售卖。"
+    },
+    {
+      "id": "homophone_072",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 862,
+      "latency_ms": 3384,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n太从来没遇到过这种问题"
+    },
+    {
+      "id": "homophone_073",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1001,
+      "latency_ms": 4497,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n你们的系统把我的订单弄丢了。"
+    },
+    {
+      "id": "homophone_074",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 894,
+      "latency_ms": 3165,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈快递将其包裹摔坏。"
+    },
+    {
+      "id": "homophone_075",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 881,
+      "latency_ms": 3012,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈已等待一个星期，但问题仍未得到处理。"
+    },
+    {
+      "id": "homophone_076",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 841,
+      "latency_ms": 2694,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对设计方案提出了质疑，认为设计不合理。"
+    },
+    {
+      "id": "homophone_077",
+      "expected": 4,
+      "actual": 2,
+      "correct": false,
+      "tokens": 1162,
+      "latency_ms": 6420,
+      "output": "[情绪判断] 客户有轻微不满\n\n你们这废5服务太令人失望了"
+    },
+    {
+      "id": "homophone_078",
+      "expected": 4,
+      "actual": 2,
+      "correct": false,
+      "tokens": 945,
+      "latency_ms": 3845,
+      "output": "[情绪判断] 客户有轻微不满\n\n真是废柴一样的产品设计"
+    },
+    {
+      "id": "homophone_079",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1234,
+      "latency_ms": 7509,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈产品使用三天后出现故障。"
+    },
+    {
+      "id": "homophone_080",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 843,
+      "latency_ms": 2605,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈客服服务态度不佳。"
+    },
+    {
+      "id": "homophone_081",
+      "expected": 4,
+      "actual": 2,
+      "correct": false,
+      "tokens": 908,
+      "latency_ms": 3084,
+      "output": "[情绪判断] 客户有轻微不满\n\n你们这弱zhiapp又闪退了真受不了"
+    },
+    {
+      "id": "homophone_082",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1074,
+      "latency_ms": 5124,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户花费较多金额购买商品，使用后认为商品质量不佳。"
+    },
+    {
+      "id": "leet_083",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1119,
+      "latency_ms": 5337,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\nDFA预处理结果：检测到1处命中（sh1t）。\n用户反馈应用再次崩溃，导致数据全部丢失。"
+    },
+    {
+      "id": "leet_084",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 848,
+      "latency_ms": 2425,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品在使用一周后出现故障。"
+    },
+    {
+      "id": "leet_085",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 864,
+      "latency_ms": 2967,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客服支持从未回复我的邮件。"
+    },
+    {
+      "id": "leet_086",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 907,
+      "latency_ms": 2836,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈服务耗费了整个下午时间，但未解决问题。\n\nDFA 预处理结果：检测到 1 处命中（b1tch）。"
+    },
+    {
+      "id": "leet_087",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1428,
+      "latency_ms": 9909,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nDFA预处理检测到1处敏感词（d1ck）。客户反馈网站频繁导致用户退出登录。"
+    },
+    {
+      "id": "leet_088",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1364,
+      "latency_ms": 9136,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — DFA预处理检测到1处脏话变体 — 以下为过滤后内容\n\n客户表示支付了高额费用，但对这次体验不满意。"
+    },
+    {
+      "id": "leet_089",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 876,
+      "latency_ms": 3033,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈贵公司无法处理一个简单的退款请求。"
+    },
+    {
+      "id": "leet_090",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 865,
+      "latency_ms": 2766,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈此次购买是最糟糕的购物体验。"
+    },
+    {
+      "id": "leet_091",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 887,
+      "latency_ms": 2909,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈经过三次维修尝试，您的团队仍未解决问题。"
+    },
+    {
+      "id": "leet_092",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 883,
+      "latency_ms": 3011,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n根据DFA检测结果，原文中的攻击性词汇（b!tch）已被移除。客户反馈配送的包裹延误了两周，并且到达时已损坏。"
+    },
+    {
+      "id": "leet_093",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 892,
+      "latency_ms": 2877,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nThe app crashed again and I lost all my data."
+    },
+    {
+      "id": "leet_094",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 902,
+      "latency_ms": 2891,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用一周后出现故障。"
+    },
+    {
+      "id": "leet_095",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1420,
+      "latency_ms": 9241,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 (DFA预处理结果：检测到1处命中: phuck) — 以下为过滤后内容\n\n客户反馈客服团队从未回复其邮件。"
+    },
+    {
+      "id": "leet_096",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 967,
+      "latency_ms": 3767,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈服务浪费了整个下午时间，未获得任何结果。"
+    },
+    {
+      "id": "leet_097",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 952,
+      "latency_ms": 3990,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\nwhat is wrong with this website it keeps logging me out"
+    },
+    {
+      "id": "leet_098",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1651,
+      "latency_ms": 14453,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n顾客表示支付了较高的费用，但对本次体验不满意。"
+    },
+    {
+      "id": "leet_099",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1200,
+      "latency_ms": 7122,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈该公司未能处理一个简单的退款请求。"
+    },
+    {
+      "id": "leet_100",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 961,
+      "latency_ms": 3778,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈本次购买体验不佳，认为是最差的一次购物经历。"
+    },
+    {
+      "id": "leet_101",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1029,
+      "latency_ms": 4863,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反映经过三次尝试后，团队仍未解决问题。"
+    },
+    {
+      "id": "leet_102",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1131,
+      "latency_ms": 6121,
+      "output": "[情绪判断] 客户情绪愤怒（DFA检测到1处攻击性语言），建议优先处理\n\n客户反馈包裹延迟两周送达且出现损坏。"
+    },
+    {
+      "id": "cnen_mix_103",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1081,
+      "latency_ms": 5415,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户表示产品存在严重问题，使用后感到不满。"
+    },
+    {
+      "id": "cnen_mix_104",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1064,
+      "latency_ms": 5210,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反映产品的设计质量不佳，令其不满意。"
+    },
+    {
+      "id": "cnen_mix_105",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 882,
+      "latency_ms": 2892,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待时间较长，且收到的货物存在发错货的情况。"
+    },
+    {
+      "id": "cnen_mix_106",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1169,
+      "latency_ms": 6167,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — DFA预处理检测到1处命中（f u c k）\n\n客户反馈使用该App几天后完全无法正常工作，要求处理。"
+    },
+    {
+      "id": "cnen_mix_107",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 966,
+      "latency_ms": 3493,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对售后服务表示不满。"
+    },
+    {
+      "id": "cnen_mix_108",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 954,
+      "latency_ms": 3673,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对产品表示强烈不满，认为产品存在严重问题。"
+    },
+    {
+      "id": "cnen_mix_109",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1690,
+      "latency_ms": 13338,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量让人无语。"
+    },
+    {
+      "id": "cnen_mix_110",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 902,
+      "latency_ms": 3192,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待产品较长时间后，收到的货物与订单不符（发错货）。"
+    },
+    {
+      "id": "cnen_mix_111",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 960,
+      "latency_ms": 4458,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n产品使用几天后出现完全故障。"
+    },
+    {
+      "id": "cnen_mix_112",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 885,
+      "latency_ms": 2866,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对服务及售后体验表示不满。"
+    },
+    {
+      "id": "cnen_mix_113",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1075,
+      "latency_ms": 5352,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈认为产品存在欺骗行为，对产品表示强烈不满。"
+    },
+    {
+      "id": "cnen_mix_114",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 926,
+      "latency_ms": 3341,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品质量令人不满。"
+    },
+    {
+      "id": "cnen_mix_115",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1322,
+      "latency_ms": 8628,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n等了这质量这么久居然还发错货"
+    },
+    {
+      "id": "cnen_mix_116",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1027,
+      "latency_ms": 5075,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用几天后完全损坏。"
+    },
+    {
+      "id": "cnen_mix_117",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 948,
+      "latency_ms": 4297,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对售后服务表示不满。"
+    },
+    {
+      "id": "cnen_mix_118",
+      "expected": 3,
+      "actual": 2,
+      "correct": false,
+      "tokens": 1234,
+      "latency_ms": 7761,
+      "output": "[情绪判断] 客户有轻微不满\n\n你们这e 心死了产品真是绝了"
+    },
+    {
+      "id": "cnen_mix_119",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1439,
+      "latency_ms": 10431,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n这产品的质量简直让人无语"
+    },
+    {
+      "id": "cnen_mix_120",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 838,
+      "latency_ms": 2309,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待时间过长，且收到的货物与订单不符。"
+    },
+    {
+      "id": "cnen_mix_121",
+      "expected": 4,
+      "actual": 2,
+      "correct": false,
+      "tokens": 1013,
+      "latency_ms": 4780,
+      "output": "[情绪判断] 客户有轻微不满\n\n用了纯纯 waste 东西几天就彻底坏了"
+    },
+    {
+      "id": "cnen_mix_122",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1732,
+      "latency_ms": 13717,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户对售后服务表示强烈不满，认为处理方式极不合理。"
+    },
+    {
+      "id": "pinyin_mix_123",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 921,
+      "latency_ms": 3587,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈产品使用三天后出现故障。"
+    },
+    {
+      "id": "pinyin_mix_124",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 867,
+      "latency_ms": 2764,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈产品质量和客服态度较差。"
+    },
+    {
+      "id": "pinyin_mix_125",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1774,
+      "latency_ms": 13760,
+      "output": "[情绪判断] 客户情绪激烈，含攻击"
+    },
+    {
+      "id": "pinyin_mix_126",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 854,
+      "latency_ms": 2541,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈花费较高金额购买的商品质量不佳，对产品表示不满。"
+    },
+    {
+      "id": "pinyin_mix_127",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1138,
+      "latency_ms": 6395,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈售后服务体验不佳，感到非常不满。"
+    },
+    {
+      "id": "pinyin_mix_128",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 945,
+      "latency_ms": 3644,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待时间较长，但收到的东西与预期不符。"
+    },
+    {
+      "id": "pinyin_mix_129",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1015,
+      "latency_ms": 4383,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nDFA 预处理结果：检测到 2 处命中（cao, 妈的）。  \n客户反馈产品质量无法匹配当前售价，认为定价过高。"
+    },
+    {
+      "id": "pinyin_mix_130",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 1064,
+      "latency_ms": 5502,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户认为该产品质量较差，对产品能够被销售表示质疑。"
+    },
+    {
+      "id": "pinyin_mix_131",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1328,
+      "latency_ms": 8562,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — DFA预处理检测到1处脏话\n\n客户反馈等待了半个月时间，表示此前从未遇到过此类问题。"
+    },
+    {
+      "id": "pinyin_mix_132",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1102,
+      "latency_ms": 5705,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n系统把我的订单弄丢了。"
+    },
+    {
+      "id": "pinyin_mix_133",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 899,
+      "latency_ms": 2907,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈快递在运输过程中导致包裹损坏。"
+    },
+    {
+      "id": "pinyin_mix_134",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 1312,
+      "latency_ms": 8133,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈等待一个星期后仍无人处理。"
+    },
+    {
+      "id": "pinyin_mix_135",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 902,
+      "latency_ms": 3098,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户对产品设计表示不满，认为设计存在缺陷，并询问该设计的出处。"
+    },
+    {
+      "id": "pinyin_mix_136",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 844,
+      "latency_ms": 2487,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户认为服务方案设计不合理，对此感到失望。"
+    },
+    {
+      "id": "pinyin_mix_137",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 870,
+      "latency_ms": 2910,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈同一款产品再次出现故障，对产品设计表示不满。"
+    },
+    {
+      "id": "sarcasm_138",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 865,
+      "latency_ms": 2723,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈包裹从北京到上海配送耗时15天，认为超出正常时效，对配送速度不满意。"
+    },
+    {
+      "id": "sarcasm_139",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 874,
+      "latency_ms": 2937,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反映售后响应时间过长，等待两周后才收到回复，认为效率低下。"
+    },
+    {
+      "id": "sarcasm_140",
+      "expected": 3,
+      "actual": 2,
+      "correct": false,
+      "tokens": 1014,
+      "latency_ms": 4402,
+      "output": "[情绪判断] 客户有轻微不满\n\n退款速度绝了 比蜗牛还快 已经过去一个月了 赞一个"
+    },
+    {
+      "id": "sarcasm_141",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 899,
+      "latency_ms": 2891,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈app打开后频繁闪退，一天内闪退十次，认为app存在严重不稳定问题，使用体验很差。"
+    },
+    {
+      "id": "sarcasm_142",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 867,
+      "latency_ms": 2661,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈客服未能回答任何问题，认为客服的专业能力不足。"
+    },
+    {
+      "id": "sarcasm_143",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 937,
+      "latency_ms": 3591,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈产品使用三天后出现掉漆现象，对产品质量表示不满。"
+    },
+    {
+      "id": "sarcasm_144",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 973,
+      "latency_ms": 4311,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈每次软件更新后都会出现新的bug，对更新效果表示不满。"
+    },
+    {
+      "id": "sarcasm_145",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 904,
+      "latency_ms": 3085,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈包装外观精美，但拆开后发现屏幕已碎裂。"
+    },
+    {
+      "id": "sarcasm_146",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1029,
+      "latency_ms": 4679,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈配送耗时二十天，认为速度过慢，对配送时效不满。"
+    },
+    {
+      "id": "sarcasm_147",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 875,
+      "latency_ms": 2574,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈会员服务存在未经同意自动续费的问题，对此表示不满。"
+    },
+    {
+      "id": "sarcasm_148",
+      "expected": 3,
+      "actual": 1,
+      "correct": false,
+      "tokens": 934,
+      "latency_ms": 3547,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n活动优惠力度真大 原价999 现价只要998 简直白送"
+    },
+    {
+      "id": "sarcasm_149",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 986,
+      "latency_ms": 4279,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈该功能需要点击五层菜单才能找到，认为操作步骤过多，使用不便。"
+    },
+    {
+      "id": "sarcasm_150",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 865,
+      "latency_ms": 2844,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈服务器每隔半小时需要重新登录一次，认为稳定性存在问题。"
+    },
+    {
+      "id": "sarcasm_151",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 901,
+      "latency_ms": 3333,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户认为价格偏高，比隔壁贵了三倍，而服务质量并未相应提升。"
+    },
+    {
+      "id": "sarcasm_152",
+      "expected": 3,
+      "actual": 2,
+      "correct": false,
+      "tokens": 837,
+      "latency_ms": 1997,
+      "output": "[情绪判断] 客户有轻微不满\n\n感谢你们让我学会了修手机 买回来就坏了全靠自己修"
+    },
+    {
+      "id": "en_dfa_miss_153",
+      "expected": 3,
+      "actual": 3,
+      "correct": true,
+      "tokens": 1190,
+      "latency_ms": 7355,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理  \n预处理：检测到1处情绪词命中（bloody）  \n\nThis app is absolutely terrible and keeps crashing."
+    },
+    {
+      "id": "en_dfa_miss_154",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 873,
+      "latency_ms": 2917,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈产品没有使用价值。"
+    },
+    {
+      "id": "en_dfa_miss_155",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 1339,
+      "latency_ms": 7718,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容（DFA检测到1处脏话）\n\n客户反馈贵公司发送的物品存在破损，且未回复客户的邮件。"
+    },
+    {
+      "id": "en_dfa_miss_156",
+      "expected": 2,
+      "actual": 2,
+      "correct": true,
+      "tokens": 942,
+      "latency_ms": 3689,
+      "output": "[情绪判断] 客户有轻微不满\n\nthis is such a mug service I want my money back immediately"
+    },
+    {
+      "id": "en_dfa_miss_157",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 1524,
+      "latency_ms": 11147,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n（DFA预处理检测到脏话变体“sod”已过滤）客户反馈网站设计不合理，难以理解。"
+    },
+    {
+      "id": "en_dfa_miss_158",
+      "expected": 2,
+      "actual": 2,
+      "correct": true,
+      "tokens": 905,
+      "latency_ms": 3055,
+      "output": "[情绪判断] 客户有轻微不满\n\nyour dodgy delivery driver threw my package over the fence"
+    },
+    {
+      "id": "en_dfa_miss_159",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 882,
+      "latency_ms": 2902,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n产品使用两天后停止工作。"
+    },
+    {
+      "id": "en_dfa_miss_160",
+      "expected": 4,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1684,
+      "latency_ms": 14520,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理（注：DFA检测到不文明用语'bugger'，已按规则过滤）\n\n客户反馈从未使用过体验如此差的应用。"
+    },
+    {
+      "id": "en_dfa_miss_161",
+      "expected": 2,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1216,
+      "latency_ms": 7100,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈今天在三次通话中被支持团队挂断电话。"
+    },
+    {
+      "id": "en_dfa_miss_162",
+      "expected": 4,
+      "actual": 4,
+      "correct": true,
+      "tokens": 864,
+      "latency_ms": 2704,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈该商品的质量与价格不符，认为性价比极低。"
+    },
+    {
+      "id": "en_dfa_miss_163",
+      "expected": 2,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1048,
+      "latency_ms": 5350,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈其订阅的会员服务在未获得授权的情况下自动续费，要求处理。"
+    },
+    {
+      "id": "en_dfa_miss_164",
+      "expected": 2,
+      "actual": 2,
+      "correct": true,
+      "tokens": 1093,
+      "latency_ms": 5333,
+      "output": "[情绪判断] 客户有轻微不满\n\nwhat kind of git service is this I have been waiting for a month"
+    },
+    {
+      "id": "en_dfa_miss_165",
+      "expected": 3,
+      "actual": 4,
+      "correct": false,
+      "tokens": 1384,
+      "latency_ms": 8128,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言（DFA检测到攻击性词：plonker） — 以下为过滤后内容\n\n客户反馈结账系统对同一订单重复收费两次。"
+    },
+    {
+      "id": "en_dfa_miss_166",
+      "expected": 2,
+      "actual": 4,
+      "correct": false,
+      "tokens": 1302,
+      "latency_ms": 8582,
+      "output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nthis is the most experience I have ever had shopping online"
+    },
+    {
+      "id": "en_dfa_miss_167",
+      "expected": 2,
+      "actual": 3,
+      "correct": false,
+      "tokens": 1140,
+      "latency_ms": 6281,
+      "output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈产品附带的说明书难以理解或操作复杂，认为无法按说明执行。"
+    },
+    {
+      "id": "normal_168",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 823,
+      "latency_ms": 1756,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n订单编号ORDER20240523的包裹签收后发现外包装破损请协助处理谢谢"
+    },
+    {
+      "id": "normal_169",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 815,
+      "latency_ms": 1850,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n请问这个商品什么时候能补货我想买但是显示缺货了"
+    },
+    {
+      "id": "normal_170",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 816,
+      "latency_ms": 2074,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我于昨天收到的手机屏幕有一条划痕请安排换货处理"
+    },
+    {
+      "id": "normal_171",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 804,
+      "latency_ms": 1697,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我已经提交退款申请三天了请问什么时候能审核通过"
+    },
+    {
+      "id": "normal_172",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 833,
+      "latency_ms": 2046,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n上个月买的衣服洗了一次就缩水了能否退货"
+    },
+    {
+      "id": "normal_173",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 810,
+      "latency_ms": 1729,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n快递显示已签收但我并没有收到包裹请帮忙核实"
+    },
+    {
+      "id": "normal_174",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 838,
+      "latency_ms": 2029,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n这个充电器用了不到两个月就不能充电了还在保修期内吗"
+    },
+    {
+      "id": "normal_175",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 800,
+      "latency_ms": 1626,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我账号里的积分突然少了2000分请问是什么原因"
+    },
+    {
+      "id": "normal_176",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 807,
+      "latency_ms": 1809,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n你们的会员权益里写了免运费为什么这次还是收了运费"
+    },
+    {
+      "id": "normal_177",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 817,
+      "latency_ms": 1998,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我在你们平台买到的商品和页面描述的完全不一样"
+    },
+    {
+      "id": "normal_178",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 809,
+      "latency_ms": 1629,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n这个软件安装后电脑变得很卡能帮忙看一下吗"
+    },
+    {
+      "id": "normal_179",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 808,
+      "latency_ms": 1799,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n昨天直播买的商品到现在还没发货请问什么时候能发"
+    },
+    {
+      "id": "normal_180",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 811,
+      "latency_ms": 1646,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我的优惠券在支付时显示过期了但是明明还没到日期"
+    },
+    {
+      "id": "normal_181",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 817,
+      "latency_ms": 1871,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n更新app后之前的订单记录全部消失了请问怎么恢复"
+    },
+    {
+      "id": "normal_182",
+      "expected": 1,
+      "actual": 1,
+      "correct": true,
+      "tokens": 860,
+      "latency_ms": 2528,
+      "output": "[情绪判断] 客户情绪平稳，正常诉求\n\n我在门店买的和你们线上卖的是同一款吗价格差了好多"
+    }
+  ]
+}
