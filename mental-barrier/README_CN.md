@@ -13,12 +13,29 @@
 ## 特性
 
 - **零外部依赖** — 纯 Python 标准库，无需 pip install
-- **双层过滤** — DFA 精确匹配（402 词，精确率 90.4%）+ LLM 语义理解
+- **双层过滤** — DFA 精确匹配（429 中文 + 1,071 英文词，分级）+ LLM 语义理解
+- **英文增强** — Leet speak 归一化（sh1t→shit）、重复压缩（fuuuck→fuck）、审查绕过（f\*\*k）、缩写（stfu/gtfo）
 - **关键信息保留** — 订单号、金额、地址、联系方式、日期等 16 种实体
 - **对抗鲁棒** — 7 种对抗绕过检测：空格/符号分隔、谐音替换、Leet、中英混杂、拼音混杂、讽刺语义、词典外英文
 - **纯自然语言输出** — 两段式格式：[情绪判断] + 净化后文本
+- **DFA 测试 100% 通过** — 83 条常规 + 40 条边界样例，零误报
 
 ## 使用
+
+### 在 Claude Code 中安装
+
+```bash
+# 方式1：克隆仓库后复制
+git clone https://github.com/Mangkhut160/dirty-words-clean.git
+cp -r dirty-words-clean/mental-barrier your-project/.claude/skills/mental-barrier
+
+# 方式2：直接下载到项目
+mkdir -p .claude/skills && cd .claude/skills
+git clone https://github.com/Mangkhut160/dirty-words-clean.git --depth 1
+mv dirty-words-clean/mental-barrier . && rm -rf dirty-words-clean
+```
+
+### 调用
 
 ```
 /mental-barrier 你们tmd这个破产品用了三天就坏了赶紧退款
@@ -66,8 +83,8 @@ DFA 检测到 1 处情绪化表达（tmd），已过滤。
   ▼
 ┌─────────────────────────────────────┐
 │  第1层：DFA 精确匹配 (~50ms)         │
-│  402 中文 + 798 英文词               │
-│  Trie O(n) + ASCII词边界 + 全角预处理 │
+│  429 中文 + 1,071 英文词（分级）      │
+│  Trie O(n) + 词边界 + 全角 + Leet归一化│
 └─────────────────────────────────────┘
   │
   ▼
@@ -87,18 +104,31 @@ DFA 检测到 1 处情绪化表达（tmd），已过滤。
 mental-barrier/
 ├── SKILL.md                 # 主指令文件（241行，8个few-shot）
 ├── scripts/
-│   ├── dfa_filter.py        # DFA 精确匹配（全角预处理）
-│   └── validator.py         # 实体保留验证（16种实体）
+│   ├── dfa_filter.py        # DFA 精确匹配（全角 + Leet归一化 + 重复压缩）
+│   └── validator.py         # 实体保留验证（16种实体，支持中英数字等价）
 ├── references/
-│   ├── profanity_dict.txt   # 402 中文脏话词
-│   ├── profanity_en.txt     # 798 英文脏话词
+│   ├── profanity_dict.txt   # 429 中文脏话词
+│   ├── profanity_en.txt     # 1,071 英文脏话词（Level 3/4 分级）
 │   └── homophone_guide.md   # 谐音变体参考
 ├── tests/
 │   ├── test_cases.json      # 23 条测试用例
-│   └── test_pipeline.py     # 自动化测试 (66/66)
+│   └── test_pipeline.py     # 自动化测试
 ├── adversarial/             # 对抗评测（182 用例）
 └── benchmark/               # 基准报告
 ```
+
+## 版本对比
+
+| | mental-barrier (Skill) | mental-barrier-server (Server) |
+|---|---|---|
+| 运行方式 | Claude Code 内直接调用 | 独立 FastAPI 服务 |
+| LLM | Claude 自身 | MiniMax M2.7（需 API key） |
+| 适合场景 | 开发/体验/少量使用 | 生产部署/批量测试/成本验证 |
+| 依赖 | 零（纯 Python 标准库） | pip install + API key |
+| 成本 | 包含在 Claude 订阅内 | ¥0.00055/条 |
+| 在线演示 | — | [HF Spaces](https://huggingface.co/spaces/pzr114514/skills-demo) |
+
+> **推荐**：如果只是想在 Claude Code 里体验，直接用 `mental-barrier/` 目录即可，零配置开箱即用。
 
 ## 许可
 

@@ -2,7 +2,7 @@
 
 > **[中文](README_CN.md)** | English
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tests/test_pipeline.py)
+[![Tests](https://img.shields.io/badge/DFA_tests-123%2F123%20passed-brightgreen)](tests/test_pipeline.py)
 
 ---
 
@@ -13,10 +13,25 @@ A Claude Code SKILL for customer complaint emotion de-escalation and text saniti
 ## Features
 
 - **Zero dependencies** — Pure Python stdlib, no pip install needed
-- **Two-layer filtering** — DFA exact matching (402 words, 90.4% precision) + LLM semantic review
+- **Two-layer filtering** — DFA exact matching (429 CN + 1,071 EN words, graded) + LLM semantic review
+- **English enhanced** — Leet speak normalization (sh1t→shit), repeat compression (fuuuck→fuck), censor bypass (f\*\*k), abbreviations (stfu/gtfo)
 - **Entity preservation** — Order IDs, amounts, addresses, contacts, dates (16 entity types)
 - **Adversarial robustness** — 7 bypass types: spacing, homophones, leet, CN-EN mixing, pinyin, sarcasm, out-of-dictionary
 - **Natural language output** — Two-part format: [emotion tag] + sanitized text
+- **DFA tests 100% pass** — 83 regular + 40 boundary cases, zero false positives
+
+## Installation (Claude Code)
+
+```bash
+# Option 1: Clone and copy
+git clone https://github.com/Mangkhut160/dirty-words-clean.git
+cp -r dirty-words-clean/mental-barrier your-project/.claude/skills/mental-barrier
+
+# Option 2: Direct download
+mkdir -p .claude/skills && cd .claude/skills
+git clone https://github.com/Mangkhut160/dirty-words-clean.git --depth 1
+mv dirty-words-clean/mental-barrier . && rm -rf dirty-words-clean
+```
 
 ## Usage
 
@@ -64,8 +79,9 @@ Input
   ▼
 ┌─────────────────────────────────────┐
 │  Layer 1: DFA Exact Match (~50ms)    │
-│  402 CN + 798 EN words               │
-│  Trie O(n) + word boundary + fullwidth│
+│  429 CN + 1,071 EN words (graded)    │
+│  Trie O(n) + boundary + fullwidth    │
+│  + leet normalization + repeat comp  │
 └─────────────────────────────────────┘
   │
   ▼
@@ -85,18 +101,31 @@ Output: [Emotion Tag] + Sanitized Text
 mental-barrier/
 ├── SKILL.md                 # Main instruction file (241 lines, 8 few-shot)
 ├── scripts/
-│   ├── dfa_filter.py        # DFA matching (fullwidth support)
-│   └── validator.py         # Entity validator (16 types)
+│   ├── dfa_filter.py        # DFA engine (fullwidth + leet + repeat compress)
+│   └── validator.py         # Entity validator (16 types, CN/EN numeral equiv)
 ├── references/
-│   ├── profanity_dict.txt   # 402 CN profanity words
-│   ├── profanity_en.txt     # 798 EN profanity words
+│   ├── profanity_dict.txt   # 429 CN profanity words
+│   ├── profanity_en.txt     # 1,071 EN profanity words (Level 3/4 graded)
 │   └── homophone_guide.md   # Homophone reference
 ├── tests/
 │   ├── test_cases.json      # 23 test cases
-│   └── test_pipeline.py     # Auto tests (66/66)
+│   └── test_pipeline.py     # Auto tests
 ├── adversarial/             # Adversarial eval (182 cases)
 └── benchmark/               # Benchmark reports
 ```
+
+## Version Comparison
+
+| | mental-barrier (Skill) | mental-barrier-server (Server) |
+|---|---|---|
+| Runtime | Inside Claude Code | Standalone FastAPI service |
+| LLM | Claude itself | MiniMax M2.7 (API key required) |
+| Best for | Development / experience / light use | Production / batch testing / cost validation |
+| Dependencies | Zero (Python stdlib only) | pip install + API key |
+| Cost | Included in Claude subscription | ¥0.00055/call |
+| Live demo | — | [HF Spaces](https://huggingface.co/spaces/pzr114514/skills-demo) |
+
+> **Recommendation**: For Claude Code experience, just use the `mental-barrier/` directory — zero config, works out of the box.
 
 ## License
 
