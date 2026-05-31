@@ -49,6 +49,21 @@ def extract_entities(text):
     return entities
 
 
+CN_NUM = {'一': '1', '二': '2', '两': '2', '三': '3', '四': '4', '五': '5',
+          '六': '6', '七': '7', '八': '8', '九': '9', '十': '10', '半': '0.5'}
+
+
+def cn_to_digits(text):
+    """将中文数字转为阿拉伯数字字符串用于比较。"""
+    result = []
+    for ch in text:
+        if ch in CN_NUM:
+            result.append(CN_NUM[ch])
+        elif ch.isdigit():
+            result.append(ch)
+    return ''.join(result) if result else ''
+
+
 def entity_key(entity):
     text = entity["text"]
     label = entity["label"]
@@ -68,7 +83,9 @@ def entity_key(entity):
 
     if "日期" in label or "时间量" in label:
         nums = re.findall(r'\d+', text)
-        return "".join(nums) if nums else text
+        if nums:
+            return "".join(nums)
+        return cn_to_digits(text) or text
 
     if label == "地址":
         return text
@@ -94,9 +111,11 @@ def keys_match(key1, key2, label=None):
     # 数字实体：精确比较数字序列，不允许子集匹配
     # Numeric entities: compare digit sequences exactly, no subset matching
     if label in ("金额", "日期", "日期短格式", "时间量", "日期-中文", "时间量-中文", "时间量-英文") or "日期" in (label or "") or "时间量" in (label or ""):
-        nums1 = re.findall(r'\d+', str(key1))
-        nums2 = re.findall(r'\d+', str(key2))
-        if nums1 or nums2:
+        nums1 = re.findall(r'\d+', str(key1)) or [cn_to_digits(str(key1))]
+        nums2 = re.findall(r'\d+', str(key2)) or [cn_to_digits(str(key2))]
+        nums1 = [n for n in nums1 if n]
+        nums2 = [n for n in nums2 if n]
+        if nums1 and nums2:
             return nums1 == nums2
         return key1 == key2
     # 未知实体类型的通用回退方案
@@ -106,6 +125,17 @@ def keys_match(key1, key2, label=None):
     nums1 = set(re.findall(r'\d+', str(key1)))
     nums2 = set(re.findall(r'\d+', str(key2)))
     return bool(nums1 & nums2)
+
+
+def label_family(label):
+    """将标签归入同一族，允许等价格式匹配（如 时间量-中文 ≈ 时间量-英文）。"""
+    if "日期" in label:
+        return "日期"
+    if "时间量" in label:
+        return "时间量"
+    if "单号" in label or "订单" in label:
+        return "订单号"
+    return label
 
 
 def main():
@@ -120,8 +150,9 @@ def main():
     for oe in orig_entities:
         okey = entity_key(oe)
         found = False
+        oe_family = label_family(oe["label"])
         for se in sanitized_entities:
-            if oe["label"] == se["label"]:
+            if label_family(se["label"]) == oe_family:
                 skey = entity_key(se)
                 if keys_match(okey, skey, oe["label"]):
                     found = True

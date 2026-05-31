@@ -1,6 +1,7 @@
-"""LLM API 封装 — DeepSeek OpenAI 兼容格式，含重试机制。"""
+"""LLM API 封装 — OpenAI 兼容格式，异步调用 + 重试机制。"""
+import asyncio
 import time
-from openai import OpenAI
+from openai import AsyncOpenAI
 from config import LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
 
 MAX_RETRIES = 2
@@ -9,11 +10,11 @@ MAX_RETRIES = 2
 def get_client():
     if not LLM_API_KEY:
         return None
-    return OpenAI(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
+    return AsyncOpenAI(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
 
 
 async def call_llm(system_prompt: str, user_prompt: str) -> dict:
-    """调用 DeepSeek，空响应自动重试最多 MAX_RETRIES 次。"""
+    """异步调用 LLM，空响应自动重试最多 MAX_RETRIES 次。"""
     client = get_client()
     if not client:
         return _mock_response(system_prompt, user_prompt)
@@ -23,7 +24,7 @@ async def call_llm(system_prompt: str, user_prompt: str) -> dict:
 
     for attempt in range(1 + MAX_RETRIES):
         try:
-            response = client.chat.completions.create(
+            response = await client.chat.completions.create(
                 model=LLM_MODEL,
                 messages=[
                     {"role": "system", "content": system_prompt},
@@ -38,7 +39,7 @@ async def call_llm(system_prompt: str, user_prompt: str) -> dict:
 
             if not content.strip() and attempt < MAX_RETRIES:
                 last_error = "empty_response"
-                time.sleep(0.5)
+                await asyncio.sleep(0.5)
                 continue
 
             latency_ms = int((time.time() - start) * 1000)
@@ -53,7 +54,7 @@ async def call_llm(system_prompt: str, user_prompt: str) -> dict:
         except Exception as e:
             last_error = f"{type(e).__name__}: {e}"
             if attempt < MAX_RETRIES:
-                time.sleep(0.5)
+                await asyncio.sleep(0.5)
                 continue
 
             latency_ms = int((time.time() - start) * 1000)

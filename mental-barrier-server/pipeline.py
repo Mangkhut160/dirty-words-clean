@@ -28,7 +28,7 @@ def run_dfa(text: str) -> dict:
         data["latency_ms"] = latency_ms
         return data
     except Exception as e:
-        return {"has_profanity": False, "matches": [], "total_matches": 0,
+        return {"has_profanity": None, "dfa_failed": True, "matches": [], "total_matches": 0,
                 "summary": f"DFA 执行失败: {e}", "latency_ms": 0}
 
 
@@ -52,19 +52,23 @@ def run_validator(original: str, sanitized: str) -> dict:
 
 
 def parse_level_from_output(text: str):
-    if "平稳" in text:
+    """只从第一行（[情绪判断]标签行）解析级别，避免正文内容干扰。"""
+    first_line = text.strip().split("\n")[0]
+    if "平稳" in first_line:
         return 1
-    if "轻微" in text:
+    if "轻微" in first_line:
         return 2
-    if "愤怒" in text:
+    if "愤怒" in first_line:
         return 3
-    if "激烈" in text:
+    if "激烈" in first_line:
         return 4
     return None
 
 
 def hybrid_shortcircuit(text: str, dfa_result: dict) -> dict | None:
     """hybrid 模式短路判断。返回 None 表示需要调用 LLM。"""
+    if dfa_result.get("dfa_failed"):
+        return None
     has_profanity = dfa_result.get("has_profanity", False)
     has_emotion_word = any(kw in text for kw in EMOTION_KEYWORDS)
 

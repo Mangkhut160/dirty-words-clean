@@ -1,3 +1,10 @@
+// HTML 转义，防止 XSS
+function esc(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+}
+
 // Tab 切换
 document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -137,8 +144,8 @@ async function runBatch() {
 
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${items[i].id}</td>
-                <td title="${items[i].text}">${items[i].text.slice(0, 30)}...</td>
+                <td>${esc(items[i].id)}</td>
+                <td title="${esc(items[i].text)}">${esc(items[i].text.slice(0, 30))}...</td>
                 <td>${items[i].expected_level || '-'}</td>
                 <td>${data.level}</td>
                 <td class="${correct === true ? 'pass' : correct === false ? 'fail' : ''}">${correct === true ? '✓' : correct === false ? '✗' : '-'}</td>
@@ -192,7 +199,7 @@ async function loadHistory(page) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${time}</td>
-            <td title="${r.input_text}">${r.input_text.slice(0, 40)}</td>
+            <td title="${esc(r.input_text)}">${esc(r.input_text.slice(0, 40))}</td>
             <td><span class="level-badge level-${r.level}">L${r.level}</span></td>
             <td>${r.mode}</td>
             <td>${r.total_tokens}</td>
