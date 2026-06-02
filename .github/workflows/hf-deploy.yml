@@ -37,6 +37,7 @@ jobs:
             --exclude='batch_results_*.json' \
             --exclude='batch_test_*.json' \
             --exclude='config.py' \
+            --exclude='harassment/' \
             mental-barrier-server/ hf-space/
 
           # 从 .example 生成 config.py 并注入 LLM 配置（来自 GH secrets）
