@@ -27,15 +27,16 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Mental Barrier 生产环境模拟", lifespan=lifespan)
 
 
-# 诊断用:把 500 的真实异常打到日志,方便排查 HF Space 上 TemplateResponse 失败原因
+# 诊断用:把 500 的真实异常打到响应,方便排查 HF Space 上 TemplateResponse 失败原因
 @app.exception_handler(Exception)
 async def debug_exception_handler(request: StarletteRequest, exc: Exception):
     import traceback
+    tb = traceback.format_exc()
     print(f"[DEBUG 500] {request.method} {request.url} → {type(exc).__name__}: {exc}", flush=True)
-    traceback.print_exc()
+    print(tb, flush=True)
     return JSONResponse(
         status_code=500,
-        content={"detail": f"{type(exc).__name__}: {exc}"},
+        content={"detail": f"{type(exc).__name__}: {exc}", "traceback": tb},
     )
 
 BASE_DIR = os.path.dirname(__file__)
