@@ -13,7 +13,7 @@ app_port: 7860
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688)](https://fastapi.tiangolo.com)
-[![MiniMax](https://img.shields.io/badge/LLM-MiniMax%20M2.7-purple)](https://minimax.io)
+[![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek%20V4%20Flash-purple)](https://deepseek.com)
 [![HF Spaces](https://img.shields.io/badge/Demo-HuggingFace%20Spaces-yellow)](https://huggingface.co/spaces/pzr114514/skills-demo)
 
 > **在线演示**: https://huggingface.co/spaces/pzr114514/skills-demo （支持中英双语切换）
@@ -84,9 +84,9 @@ pip3 install -r requirements.txt
 编辑 `config.py` 或设置环境变量：
 
 ```bash
-export LLM_API_KEY="your-minimax-api-key"
-export LLM_BASE_URL="https://api.minimax.io/v1"
-export LLM_MODEL="MiniMax-M2.7-highspeed"
+export LLM_API_KEY="your-deepseek-api-key"
+export LLM_BASE_URL="https://api.deepseek.com"
+export LLM_MODEL="deepseek-chat"
 ```
 
 ### 启动
@@ -137,7 +137,7 @@ POST /api/filter {text, mode}
     └────┬────┘
     yes/ │ \no
    ┌───┐ │  ┌──────────────────┐
-   │短路│ │  │  MiniMax M2.7 │  ← 精简 system prompt (~977 tokens)
+   │短路│ │  │  DeepSeek V4 Flash │  ← 精简 system prompt (~977 tokens)
    │输出│ │  │  (~5s)             │
    └───┘ │  └────────┬─────────┘
          │           │
@@ -158,7 +158,7 @@ POST /api/filter {text, mode}
 mental-barrier-server/
 ├── server.py          # FastAPI 主服务（路由 + 静态文件 + 模板）
 ├── pipeline.py        # 管道编排（DFA + LLM + Validator）
-├── llm_client.py      # MiniMax API 封装（AsyncOpenAI 异步格式）
+├── llm_client.py      # DeepSeek API 封装（AsyncOpenAI 异步格式）
 ├── prompts.py         # 精简版 system prompt（从 SKILL.md 提取）
 ├── config.py          # 配置（API key / 模型 / 端口）
 ├── history.py         # SQLite 调用历史存储
@@ -192,7 +192,7 @@ mental-barrier-server/
 
 - Python 3.9+
 - FastAPI + Uvicorn（HTTP 服务）
-- OpenAI SDK（MiniMax API 兼容，异步模式）
+- OpenAI SDK（DeepSeek API 兼容，异步模式）
 - aiosqlite（异步 SQLite）
 - Jinja2（模板渲染）
 
@@ -205,7 +205,7 @@ mental-barrier-server/
 git clone https://huggingface.co/spaces/pzr114514/skills-demo
 
 # 设置 Secret（在 Space Settings → Variables and secrets）
-# LLM_API_KEY = your-minimax-api-key
+# LLM_API_KEY = your-deepseek-api-key
 
 # 推送更新
 cd skills-demo
@@ -284,9 +284,9 @@ pip3 install -r requirements.txt
 Edit `config.py` or set environment variables:
 
 ```bash
-export LLM_API_KEY="your-minimax-api-key"
-export LLM_BASE_URL="https://api.minimax.io/v1"
-export LLM_MODEL="MiniMax-M2.7-highspeed"
+export LLM_API_KEY="your-deepseek-api-key"
+export LLM_BASE_URL="https://api.deepseek.com"
+export LLM_MODEL="deepseek-chat"
 ```
 
 ### Run
@@ -337,7 +337,7 @@ POST /api/filter {text, mode}
     └────┬────┘
     yes/ │ \no
    ┌───┐ │  ┌──────────────────┐
-   │Out│ │  │  MiniMax M2.7 │  ← Compact system prompt (~977 tokens)
+   │Out│ │  │  DeepSeek V4 Flash │  ← Compact system prompt (~977 tokens)
    │put│ │  │  (~5s)             │
    └───┘ │  └────────┬─────────┘
          │           │
@@ -358,7 +358,7 @@ POST /api/filter {text, mode}
 mental-barrier-server/
 ├── server.py          # FastAPI main server (routes + static + templates)
 ├── pipeline.py        # Pipeline orchestration (DFA + LLM + Validator)
-├── llm_client.py      # MiniMax API wrapper (AsyncOpenAI format)
+├── llm_client.py      # DeepSeek API wrapper (AsyncOpenAI format)
 ├── prompts.py         # Compact system prompt (extracted from SKILL.md)
 ├── config.py          # Configuration (API key / model / port)
 ├── history.py         # SQLite call history storage
@@ -392,7 +392,7 @@ mental-barrier-server/
 
 - Python 3.9+
 - FastAPI + Uvicorn (HTTP server)
-- OpenAI SDK (MiniMax API compatible, async mode)
+- OpenAI SDK (DeepSeek API compatible, async mode)
 - aiosqlite (async SQLite)
 - Jinja2 (template rendering)
 
@@ -405,7 +405,7 @@ This project is deployed on HF Spaces (Docker SDK mode):
 git clone https://huggingface.co/spaces/pzr114514/skills-demo
 
 # Set Secret (in Space Settings → Variables and secrets)
-# LLM_API_KEY = your-minimax-api-key
+# LLM_API_KEY = your-deepseek-api-key
 
 # Push updates
 cd skills-demo
