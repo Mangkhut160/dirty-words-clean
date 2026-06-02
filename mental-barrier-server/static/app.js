@@ -290,6 +290,7 @@ async function runBatch() {
 
     const btn = document.getElementById('btn-batch');
     btn.disabled = true;
+    btn.textContent = t('btn-processing');
     document.getElementById('batch-progress').classList.remove('hidden');
 
     const progressFill = document.getElementById('progress-fill');
@@ -345,6 +346,7 @@ async function runBatch() {
     `;
 
     btn.disabled = false;
+    btn.textContent = t('btn-run-batch');
     loadStats();
 }
 
