@@ -44,6 +44,10 @@ button:hover { background: #2d2d4e; }
 /* 批量测试 */
 .batch-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
 .file-label { font-size: 13px; color: #666; white-space: nowrap; }
+.file-hidden { position: absolute; width: 0; height: 0; opacity: 0; pointer-events: none; }
+.file-btn { display: inline-block; padding: 6px 14px; background: #1a1a2e; color: #fff; border-radius: 6px; cursor: pointer; font-size: 13px; white-space: nowrap; }
+.file-btn:hover { background: #2d2d4e; }
+.file-name { font-size: 13px; color: #888; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .progress-bar { width: 100%; height: 6px; background: #e0e0e0; border-radius: 3px; margin: 12px 0; }
 #progress-fill { height: 100%; background: #4caf50; border-radius: 3px; transition: width 0.3s; width: 0%; }
 #batch-summary { background: #e8f5e9; padding: 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }

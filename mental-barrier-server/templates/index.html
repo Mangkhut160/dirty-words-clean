@@ -61,7 +61,9 @@
         <section id="tab-batch" class="tab-content">
             <div class="batch-controls">
                 <label class="file-label" data-i18n="batch-file-hint">Upload .json test file:</label>
-                <input type="file" id="batch-file" accept=".json">
+                <label class="file-btn" for="batch-file" data-i18n="btn-choose-file">Choose File</label>
+                <span class="file-name" id="batch-file-name" data-i18n="no-file-selected">No file selected</span>
+                <input type="file" id="batch-file" accept=".json" class="file-hidden">
                 <select id="batch-mode">
                     <option value="full" data-i18n="mode-full">Full mode</option>
                     <option value="hybrid" data-i18n="mode-hybrid">Hybrid mode</option>

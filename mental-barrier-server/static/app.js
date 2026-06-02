@@ -43,6 +43,8 @@ const I18N = {
         'llm-skipped': '⚡ LLM skipped (hybrid short-circuit)',
         'entity-warn': '⚠️ Entity may be lost',
         'batch-file-hint': 'Upload .json test file:',
+        'btn-choose-file': 'Choose File',
+        'no-file-selected': 'No file selected',
         'batch-select-file': 'Please select a JSON test file',
         'batch-parse-fail': 'JSON parse failed: ',
         'batch-done': 'Batch test complete',
@@ -101,6 +103,8 @@ const I18N = {
         'llm-skipped': '⚡ LLM 已跳过（hybrid 短路）',
         'entity-warn': '⚠️ 实体可能丢失',
         'batch-file-hint': '上传 .json 测试文件：',
+        'btn-choose-file': '选择文件',
+        'no-file-selected': '未选择任何文件',
         'batch-select-file': '请选择 JSON 测试文件',
         'batch-parse-fail': 'JSON 解析失败: ',
         'batch-done': '批量测试完成',
@@ -162,6 +166,18 @@ document.getElementById('lang-zh').addEventListener('click', () => setLang('zh')
 
 // 启动时立刻应用（默认 en）
 applyI18n();
+
+// 文件选择后显示文件名
+document.getElementById('batch-file').addEventListener('change', function() {
+    const nameEl = document.getElementById('batch-file-name');
+    if (this.files.length) {
+        nameEl.textContent = this.files[0].name;
+        nameEl.style.color = '#333';
+    } else {
+        nameEl.textContent = t('no-file-selected');
+        nameEl.style.color = '#888';
+    }
+});
 
 // ========== 工具函数 ==========
 function esc(str) {
