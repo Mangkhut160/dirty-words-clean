@@ -43,6 +43,7 @@ button:hover { background: #2d2d4e; }
 
 /* 批量测试 */
 .batch-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+.file-label { font-size: 13px; color: #666; white-space: nowrap; }
 .progress-bar { width: 100%; height: 6px; background: #e0e0e0; border-radius: 3px; margin: 12px 0; }
 #progress-fill { height: 100%; background: #4caf50; border-radius: 3px; transition: width 0.3s; width: 0%; }
 #batch-summary { background: #e8f5e9; padding: 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }

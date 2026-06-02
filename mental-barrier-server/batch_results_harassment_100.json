@@ -1,0 +1,1106 @@
+{
+  "summary": {
+    "total": 100,
+    "correct": 85,
+    "accuracy": 0.85,
+    "precision": 0.8372,
+    "recall": 0.8182,
+    "f1": 0.8276,
+    "tp": 36,
+    "fp": 7,
+    "fn": 8,
+    "tn": 49,
+    "avg_latency_ms": 0.43
+  },
+  "results": [
+    {
+      "id": "cn_h_001",
+      "text": "你他妈的是不是脑子有病啊",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6694,
+      "dfa_hits": [
+        "你他妈",
+        "有病"
+      ]
+    },
+    {
+      "id": "cn_h_002",
+      "text": "傻逼客服，连个问题都解决不了",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "傻逼"
+      ]
+    },
+    {
+      "id": "cn_h_003",
+      "text": "操你妈的垃圾公司",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7318,
+      "dfa_hits": [
+        "垃圾",
+        "操你妈"
+      ]
+    },
+    {
+      "id": "cn_h_004",
+      "text": "你这个废物去死吧",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5099,
+      "dfa_hits": [
+        "废物",
+        "去死吧"
+      ]
+    },
+    {
+      "id": "cn_h_005",
+      "text": "信不信我找你们公司弄死你",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.3985,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_h_006",
+      "text": "你妈死了吧，这种服务",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6884,
+      "dfa_hits": [
+        "你妈"
+      ]
+    },
+    {
+      "id": "cn_h_007",
+      "text": "智障一样的客服，说话都不会",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "智障"
+      ]
+    },
+    {
+      "id": "cn_h_008",
+      "text": "滚你妈的，退钱",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "你妈的"
+      ]
+    },
+    {
+      "id": "cn_h_009",
+      "text": "你是不是欠打啊，这态度",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5586,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_h_010",
+      "text": "沙比东西，浪费老子时间",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "沙比",
+        "老子"
+      ]
+    },
+    {
+      "id": "cn_h_011",
+      "text": "草泥马的破产品",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "草泥马"
+      ]
+    },
+    {
+      "id": "cn_h_012",
+      "text": "你全家都去死吧",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "去死吧"
+      ]
+    },
+    {
+      "id": "cn_h_013",
+      "text": "脑残客服，说了三遍还不懂",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "脑残"
+      ]
+    },
+    {
+      "id": "cn_h_014",
+      "text": "老子要投诉你到你被开除",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "老子"
+      ]
+    },
+    {
+      "id": "cn_h_015",
+      "text": "你这种人就该被社会淘汰",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7151,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_h_016",
+      "text": "尼玛的，又出问题了",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "尼玛"
+      ]
+    },
+    {
+      "id": "cn_h_017",
+      "text": "我操，你们是不是故意坑人",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6031,
+      "dfa_hits": [
+        "坑人",
+        "我操"
+      ]
+    },
+    {
+      "id": "cn_h_018",
+      "text": "贱人客服，装什么装",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "贱人"
+      ]
+    },
+    {
+      "id": "cn_h_019",
+      "text": "等着吧，我会让你们好看的",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.2896,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_h_020",
+      "text": "tmd 这破玩意儿谁设计的",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "tmd"
+      ]
+    },
+    {
+      "id": "en_h_001",
+      "text": "fuck you and your shitty service",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "shitty",
+        "fuck you"
+      ]
+    },
+    {
+      "id": "en_h_002",
+      "text": "you stupid bitch, can you even read?",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.9486,
+      "dfa_hits": [
+        "bitch"
+      ]
+    },
+    {
+      "id": "en_h_003",
+      "text": "I will find where you work and make you pay",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5038,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_004",
+      "text": "die in a fire you worthless piece of shit",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6488,
+      "dfa_hits": [
+        "shit"
+      ]
+    },
+    {
+      "id": "en_h_005",
+      "text": "you retarded moron, how hard is it to process a refund",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.537,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_006",
+      "text": "go kill yourself, worst customer service ever",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.4708,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_007",
+      "text": "you dumb cunt, I asked a simple question",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.8151,
+      "dfa_hits": [
+        "cunt"
+      ]
+    },
+    {
+      "id": "en_h_008",
+      "text": "I hope your company burns to the ground",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.2078,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_009",
+      "text": "shut the fuck up and give me my money back",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6498,
+      "dfa_hits": [
+        "fuck up"
+      ]
+    },
+    {
+      "id": "en_h_010",
+      "text": "you people are all useless idiots",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.1799,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_011",
+      "text": "what a fucking joke, your support is garbage",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5377,
+      "dfa_hits": [
+        "fucking"
+      ]
+    },
+    {
+      "id": "en_h_012",
+      "text": "I swear I will sue every single one of you bastards",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "bastards"
+      ]
+    },
+    {
+      "id": "en_h_013",
+      "text": "are you brain dead or just pretending",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5046,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_014",
+      "text": "eat shit and die, terrible company",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.5785,
+      "dfa_hits": [
+        "shit"
+      ]
+    },
+    {
+      "id": "en_h_015",
+      "text": "you incompetent fool, this is the third time",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.4451,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_016",
+      "text": "get your head out of your ass and fix this",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "ass"
+      ]
+    },
+    {
+      "id": "en_h_017",
+      "text": "I will destroy your reputation online",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.3212,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_018",
+      "text": "pathetic losers working at a pathetic company",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.6843,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_019",
+      "text": "you better watch your back after this",
+      "expected_harassment": true,
+      "expected_sub_label": "threat",
+      "actual": false,
+      "correct": false,
+      "confidence": 0.3465,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_h_020",
+      "text": "absolute dogshit service from dogshit people",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "dogshit"
+      ]
+    },
+    {
+      "id": "cn_n_001",
+      "text": "请问我的订单什么时候能发货？",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3321,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_002",
+      "text": "我想退货，产品和描述不符",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3061,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_003",
+      "text": "能帮我查一下物流信息吗",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2488,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_004",
+      "text": "这个功能怎么用啊，看不太懂",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4885,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_005",
+      "text": "我的会员到期了，怎么续费",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2677,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_006",
+      "text": "收到的商品有破损，想换一个",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2197,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_007",
+      "text": "你好，我想咨询一下退款政策",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1972,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_008",
+      "text": "等了三天还没收到，有点着急",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2002,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_009",
+      "text": "这个价格能优惠一点吗",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3118,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_010",
+      "text": "我的账号登不上去了，帮我看看",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1818,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_011",
+      "text": "产品质量不太好，有点失望",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1042,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_012",
+      "text": "发票什么时候能开好",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.296,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_013",
+      "text": "我想修改一下收货地址",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1459,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_014",
+      "text": "这个颜色和图片差别有点大",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.219,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_015",
+      "text": "能不能加急处理一下我的工单",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3342,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_016",
+      "text": "上次的问题还没解决呢",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3282,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_017",
+      "text": "你们的售后响应太慢了",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": true,
+      "correct": false,
+      "confidence": 0.5594,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_018",
+      "text": "我买错了，能换个型号吗",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1916,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_019",
+      "text": "这个优惠券怎么用不了",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4463,
+      "dfa_hits": []
+    },
+    {
+      "id": "cn_n_020",
+      "text": "麻烦帮我催一下快递",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2833,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_001",
+      "text": "Hi, when will my order be shipped?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3829,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_002",
+      "text": "I would like to return this item please",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4699,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_003",
+      "text": "Can you check the tracking number for me?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2226,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_004",
+      "text": "How do I use this feature? The docs are unclear",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": true,
+      "correct": false,
+      "confidence": 0.7092,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_005",
+      "text": "My subscription expired, how do I renew?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": true,
+      "correct": false,
+      "confidence": 0.5474,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_006",
+      "text": "The product arrived damaged, I need a replacement",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4452,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_007",
+      "text": "Hello, I have a question about your refund policy",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2423,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_008",
+      "text": "It has been 5 days and I still have not received it",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.351,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_009",
+      "text": "Is there any discount available for this item?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": true,
+      "correct": false,
+      "confidence": 0.5251,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_010",
+      "text": "I cannot log into my account, please help",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2214,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_011",
+      "text": "The quality is not what I expected, quite disappointing",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4872,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_012",
+      "text": "When will my invoice be ready?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2253,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_013",
+      "text": "I need to change my shipping address",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.1614,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_014",
+      "text": "The color looks different from the product photos",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3927,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_015",
+      "text": "Could you please expedite my support ticket?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2255,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_016",
+      "text": "My previous issue has not been resolved yet",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3005,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_017",
+      "text": "Your response time is really slow",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2285,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_018",
+      "text": "I ordered the wrong size, can I exchange it?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2708,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_019",
+      "text": "This coupon code does not seem to work",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2471,
+      "dfa_hits": []
+    },
+    {
+      "id": "en_n_020",
+      "text": "Please follow up on my delivery",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2014,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_001",
+      "text": "你们效率也太差了吧",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文强烈不满但非骚扰",
+      "actual": true,
+      "correct": false,
+      "confidence": 0.5861,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_002",
+      "text": "这产品就是个垃圾",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "note": "中文垃圾在训练集中为冒犯",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7321,
+      "dfa_hits": [
+        "垃圾"
+      ]
+    },
+    {
+      "id": "bd_003",
+      "text": "This is absolutely unacceptable service",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文强烈不满但非骚扰",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3041,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_004",
+      "text": "我真的很生气，再不解决我就投诉了",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文愤怒但无脏话",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3488,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_005",
+      "text": "I am extremely frustrated with your company",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文沮丧但非骚扰",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4036,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_006",
+      "text": "卧槽又出bug了",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "note": "中文感叹粗口",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "卧槽"
+      ]
+    },
+    {
+      "id": "bd_007",
+      "text": "damn it, the app crashed again",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文轻度粗口",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3307,
+      "dfa_hits": [
+        "damn"
+      ]
+    },
+    {
+      "id": "bd_008",
+      "text": "你们是不是觉得客户好欺负",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文讽刺但非骚扰",
+      "actual": true,
+      "correct": false,
+      "confidence": 0.7444,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_009",
+      "text": "What a waste of my time dealing with you people",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文不满但非骚扰",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.4025,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_010",
+      "text": "再这样下去我要找消协了",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文威胁投诉但非人身攻击",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3625,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_011",
+      "text": "sh1t service, f*ck this app",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "note": "英文 leet speak 绕过",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "f*ck",
+        "sh1t"
+      ]
+    },
+    {
+      "id": "bd_012",
+      "text": "沙比产品用一天就坏",
+      "expected_harassment": true,
+      "expected_sub_label": "insult",
+      "note": "中文谐音变体",
+      "actual": true,
+      "correct": true,
+      "confidence": 0.7,
+      "dfa_hits": [
+        "沙比"
+      ]
+    },
+    {
+      "id": "bd_013",
+      "text": "Your product is trash and you should be ashamed",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文负面但非骚扰",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3829,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_014",
+      "text": "我对你们非常失望",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文失望情绪",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2883,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_015",
+      "text": "I want to speak to your manager right now",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文要求升级但非骚扰",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2473,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_016",
+      "text": "你们就是骗子公司",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文指控但非人身攻击",
+      "actual": true,
+      "correct": false,
+      "confidence": 0.9571,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_017",
+      "text": "Never buying from you again, worst experience ever",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文负面评价",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.315,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_018",
+      "text": "服务态度差到极点",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文强烈不满",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3383,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_019",
+      "text": "How many times do I have to explain this to you?",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "英文不耐烦",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.2062,
+      "dfa_hits": []
+    },
+    {
+      "id": "bd_020",
+      "text": "你们客服是机器人吧，完全听不懂人话",
+      "expected_harassment": false,
+      "expected_sub_label": null,
+      "note": "中文讽刺",
+      "actual": false,
+      "correct": true,
+      "confidence": 0.3369,
+      "dfa_hits": []
+    }
+  ]
+}
