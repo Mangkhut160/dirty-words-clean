@@ -2,6 +2,68 @@ import sys
 import json
 import re
 
+CN_NUMERAL_MAP = {
+    "零": 0, "〇": 0,
+    "一": 1, "二": 2, "两": 2, "三": 3, "四": 4, "五": 5,
+    "六": 6, "七": 7, "八": 8, "九": 9, "十": 10,
+}
+EN_NUMERAL_MAP = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+    "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+}
+
+
+def parse_cn_number(token):
+    """解析 1-99 范围内的常见中文数字。"""
+    if not token:
+        return None
+    if token in CN_NUMERAL_MAP:
+        return CN_NUMERAL_MAP[token]
+    if "十" in token:
+        left, _, right = token.partition("十")
+        if left == "":
+            tens = 1
+        else:
+            tens = CN_NUMERAL_MAP.get(left)
+        ones = 0 if right == "" else CN_NUMERAL_MAP.get(right)
+        if tens is None or ones is None:
+            return None
+        return tens * 10 + ones
+    return None
+
+
+def normalize_cn_number_words(text):
+    """把常见中文数字时间/日期中的数字部分转为阿拉伯数字。"""
+    pattern = re.compile(r"[零〇一二两三四五六七八九十]+(?=[天日周个月年号])")
+
+    def repl(match):
+        value = parse_cn_number(match.group(0))
+        return str(value) if value is not None else match.group(0)
+
+    return pattern.sub(repl, text)
+
+
+def normalize_small_number_word(text):
+    """把常见中英文小数字转为阿拉伯数字，用于时间量等价比较。"""
+    lowered = text.lower()
+    for word, value in EN_NUMERAL_MAP.items():
+        lowered = re.sub(r"\b" + word + r"\b", str(value), lowered)
+    return normalize_cn_number_words(lowered)
+
+
+def number_values(text):
+    """抽取数字值，允许 2999 与 2999.00 等价。"""
+    normalized = normalize_small_number_word(str(text))
+    values = []
+    for raw in re.findall(r"\d+(?:\.\d+)?", normalized):
+        value = float(raw)
+        if value.is_integer():
+            values.append(int(value))
+        else:
+            values.append(value)
+    return values
+
+
 ENTITY_PATTERNS = [
     (r"订单(?:[号编]|编号)\s*[：:]*\s*[A-Za-z0-9\-_]+", "订单号"),
     (r"[订货发快递物流][单号]\s*[：:]*\s*[A-Za-z0-9\-_]+", "物流单号"),
@@ -30,6 +92,8 @@ ENTITY_PATTERNS = [
     # 英文数字时间
     # English numeric time expressions
     (r"\b(?:a\s+few|several|a\s+couple\s+of|one|two|three|four|five|six|seven|eight|nine|ten|half\s+a)\s+(?:day|days|week|weeks|month|months|year|years)\b", "时间量-英文"),
+    # 英文阿拉伯数字+时间单位 (2 weeks, 15 days, 6 months)
+    (r"\b\d+\s+(?:days?|weeks?|months?|years?|hours?|minutes?)\b", "时间量-英文"),
     (r"(?<![a-zA-Z])(?!(?:known|ai|debugging|gathering|support|sending|linear|hard|user)-)(?:[A-Za-z0-9]*[A-Za-z][A-Za-z0-9]*[-_][A-Za-z0-9]*[0-9][A-Za-z0-9]*|[A-Za-z0-9]*[0-9][A-Za-z0-9]*[-_][A-Za-z0-9]*[A-Za-z][A-Za-z0-9]*)", "产品型号"),
 ]
 
@@ -49,21 +113,6 @@ def extract_entities(text):
     return entities
 
 
-CN_NUM = {'一': '1', '二': '2', '两': '2', '三': '3', '四': '4', '五': '5',
-          '六': '6', '七': '7', '八': '8', '九': '9', '十': '10', '半': '0.5'}
-
-
-def cn_to_digits(text):
-    """将中文数字转为阿拉伯数字字符串用于比较。"""
-    result = []
-    for ch in text:
-        if ch in CN_NUM:
-            result.append(CN_NUM[ch])
-        elif ch.isdigit():
-            result.append(ch)
-    return ''.join(result) if result else ''
-
-
 def entity_key(entity):
     text = entity["text"]
     label = entity["label"]
@@ -73,7 +122,8 @@ def entity_key(entity):
         return m.group() if m else text
 
     if label == "金额":
-        return text
+        nums = number_values(text)
+        return nums if nums else text
 
     if label in ("手机号", "座机号"):
         return text
@@ -82,10 +132,8 @@ def entity_key(entity):
         return text
 
     if "日期" in label or "时间量" in label:
-        nums = re.findall(r'\d+', text)
-        if nums:
-            return "".join(nums)
-        return cn_to_digits(text) or text
+        nums = number_values(text)
+        return nums if nums else text
 
     if label == "地址":
         return text
@@ -111,11 +159,9 @@ def keys_match(key1, key2, label=None):
     # 数字实体：精确比较数字序列，不允许子集匹配
     # Numeric entities: compare digit sequences exactly, no subset matching
     if label in ("金额", "日期", "日期短格式", "时间量", "日期-中文", "时间量-中文", "时间量-英文") or "日期" in (label or "") or "时间量" in (label or ""):
-        nums1 = re.findall(r'\d+', str(key1)) or [cn_to_digits(str(key1))]
-        nums2 = re.findall(r'\d+', str(key2)) or [cn_to_digits(str(key2))]
-        nums1 = [n for n in nums1 if n]
-        nums2 = [n for n in nums2 if n]
-        if nums1 and nums2:
+        nums1 = number_values(key1)
+        nums2 = number_values(key2)
+        if nums1 or nums2:
             return nums1 == nums2
         return key1 == key2
     # 未知实体类型的通用回退方案
@@ -127,15 +173,15 @@ def keys_match(key1, key2, label=None):
     return bool(nums1 & nums2)
 
 
-def label_family(label):
-    """将标签归入同一族，允许等价格式匹配（如 时间量-中文 ≈ 时间量-英文）。"""
-    if "日期" in label:
-        return "日期"
-    if "时间量" in label:
-        return "时间量"
-    if "单号" in label or "订单" in label:
-        return "订单号"
-    return label
+def labels_compatible(label1, label2):
+    """判断实体标签是否可比较；数字/日期格式转换后标签可能变化。"""
+    if label1 == label2:
+        return True
+    if label1 == "金额" and label2 == "金额":
+        return True
+    if ("时间量" in label1 or "日期" in label1) and ("时间量" in label2 or "日期" in label2):
+        return True
+    return False
 
 
 def main():
@@ -150,9 +196,8 @@ def main():
     for oe in orig_entities:
         okey = entity_key(oe)
         found = False
-        oe_family = label_family(oe["label"])
         for se in sanitized_entities:
-            if label_family(se["label"]) == oe_family:
+            if labels_compatible(oe["label"], se["label"]):
                 skey = entity_key(se)
                 if keys_match(okey, skey, oe["label"]):
                     found = True
@@ -167,7 +212,7 @@ def main():
         "sanitized_entity_count": len(sanitized_entities),
         "preserved_count": len(orig_entities) - len(lost),
         "lost_count": len(lost),
-        "lost_entities": [e["text"] for e in lost],
+        "lost_entities": [{"type": e["label"], "value": e["text"]} for e in lost],
         "passed": not core_lost,
     }
 

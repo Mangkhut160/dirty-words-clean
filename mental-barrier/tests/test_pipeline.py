@@ -130,6 +130,55 @@ def run_tests():
         if case_passed:
             passed_phase1 += 1
 
+    # ===== 第1.5层：级别一致性校验（DFA 可判定的规则） =====
+    # Layer 1.5: Level consistency check (rules determinable by DFA).
+    # 规则：有辱骂性脏话 → level 4，有感叹粗口 → level 3，无脏话 → level 1/2
+    print("\n" + "=" * 70)
+    print("  第1.5层：级别一致性校验（DFA 规则可判定部分）")
+    print("=" * 70)
+
+    # 感叹粗口（level 3）vs 辱骂性脏话（level 4）的区分词
+    EXCLAMATORY_WORDS = {"卧槽", "窝草", "我靠", "我去", "damn", "bloody", "hell", "crap"}
+    level_cases = [c for c in cases if "expected_level" in c]
+    level_issues = []
+
+    for case in level_cases:
+        case_id = case["id"]
+        expected_level = case["expected_level"]
+        input_text = case["input"]
+
+        try:
+            output = run_dfa(input_text)
+        except Exception:
+            continue
+
+        has_profanity = output.get("has_profanity", False)
+        detected_words = set(m["word"] for m in output.get("matches", []))
+
+        # 基本一致性规则
+        if expected_level == 1 and has_profanity:
+            # level 1 不应有任何脏话命中（除非是已知的误报排除词）
+            level_issues.append(
+                f"  [{case_id}] level=1 但 DFA 命中: {detected_words}"
+            )
+        elif expected_level == 4 and not has_profanity:
+            # level 4 必须有脏话（否则不应标为 4）
+            # 例外：leet speak/谐音等 DFA 可能漏报，LLM 补充
+            pass  # DFA 漏报是正常的，不算不一致
+        elif expected_level <= 2 and has_profanity:
+            level_issues.append(
+                f"  [{case_id}] level={expected_level} 但 DFA 命中: {detected_words}"
+            )
+
+    if level_issues:
+        print(f"\n  发现 {len(level_issues)} 个级别不一致:")
+        for issue in level_issues:
+            print(issue)
+        print("\n  注意：以上不一致可能是 DFA 误报或 expected_level 标注错误。")
+        print("  请核对 SKILL.md 级别定义后修正 test_cases.json。")
+    else:
+        print("\n  级别一致性校验通过：所有 expected_level 与 DFA 结果无矛盾。")
+
     # ===== 第2层：验证器端到端测试（实体保留 + 净化质量） =====
     # Layer 2: Validator end-to-end testing (entity-preservation + purification quality).
     print("\n" + "=" * 70)
@@ -207,10 +256,45 @@ def run_tests():
             "expect_pass": False,
         },
         {
-            "id": "reg_profanity_e2e_test",
-            "category": "回归-E2E脏话检查应覆盖variant",
+            "id": "reg_validator_does_not_check_profanity",
+            "category": "回归-validator 只负责实体保留，不负责脏话清除",
             "original": "他妈的这个产品坏了",
             "sanitized": "他妈的这个产品坏了",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_amount_decimal_equivalent",
+            "category": "回归-金额等价格式应通过",
+            "original": "金额2999元的手机坏了。",
+            "sanitized": "金额2999.00元的手机坏了。",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_en_time_word_equivalent",
+            "category": "回归-英文数字时间等价格式应通过",
+            "original": "It has been 2 weeks since my order was placed.",
+            "sanitized": "It has been two weeks since my order was placed.",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_cn_time_digit_equivalent",
+            "category": "回归-中文数字时间等价格式应通过",
+            "original": "用了两天就坏了。",
+            "sanitized": "用了2天就坏了。",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_cn_time_twelve_equivalent",
+            "category": "回归-中文十位数字时间等价格式应通过",
+            "original": "用了十二天就坏了。",
+            "sanitized": "用了12天就坏了。",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_cn_date_word_equivalent",
+            "category": "回归-中文日期等价格式应通过",
+            "original": "十二月一日买的。",
+            "sanitized": "12月1日买的。",
             "expect_pass": True,
         },
         {
@@ -261,6 +345,27 @@ def run_tests():
             "original": "金额2999元的手机坏了。",
             "sanitized": "金额2999元的手机坏了。",
             "expect_pass": True,
+        },
+        {
+            "id": "reg_en_numeric_time_lost",
+            "category": "回归-英文数字时间丢失应失败",
+            "original": "I waited 15 days for delivery and got nothing.",
+            "sanitized": "I got nothing.",
+            "expect_pass": False,
+        },
+        {
+            "id": "reg_en_numeric_time_preserved",
+            "category": "回归-英文数字时间保留应通过",
+            "original": "I waited 15 days for delivery and got nothing.",
+            "sanitized": "I waited 15 days for delivery and got nothing.",
+            "expect_pass": True,
+        },
+        {
+            "id": "reg_en_weeks_lost",
+            "category": "回归-英文周数丢失应失败",
+            "original": "It has been 2 weeks since my order was placed.",
+            "sanitized": "My order was placed.",
+            "expect_pass": False,
         },
     ]
 
@@ -315,6 +420,68 @@ def run_tests():
 
         if case_passed:
             passed_phase2 += 1
+
+    # ===== 第2.5层：DFA 脏话清除风险回归 =====
+    # Layer 2.5: DFA profanity-removal risk regression.
+    # validator 只检查实体保留；这里单独检查应删除的脏话是否能被 DFA 命中。
+    print("\n" + "=" * 70)
+    print("  第2.5层：DFA 脏话清除风险回归")
+    print("=" * 70)
+
+    profanity_regression_cases = [
+        {
+            "id": "reg_profanity_dfa_hits_cn",
+            "input": "他妈的这个产品坏了",
+            "expected_dfa": ["他妈的"],
+        },
+        {
+            "id": "reg_profanity_dfa_hits_a55_attack",
+            "input": "your a55 support is useless",
+            "expected_dfa": ["ass(leet)"],
+        },
+        {
+            "id": "reg_profanity_dfa_hits_a55_support_context",
+            "input": "this a55 support is useless",
+            "expected_dfa": ["ass(leet)"],
+        },
+        {
+            "id": "reg_profanity_dfa_ignores_a55_model",
+            "input": "Need support for device A55.",
+            "expected_dfa": [],
+        },
+        {
+            "id": "reg_profanity_dfa_ignores_standalone_a55_model",
+            "input": "I bought A55 yesterday and it reboots.",
+            "expected_dfa": [],
+        },
+        {
+            "id": "reg_profanity_dfa_ignores_a55_replacement",
+            "input": "Please replace A55.",
+            "expected_dfa": [],
+        },
+        {
+            "id": "reg_profanity_dfa_ignores_ass2_firmware",
+            "input": "Need support for ASS2 firmware on device A55.",
+            "expected_dfa": [],
+        },
+    ]
+    total_phase25 = len(profanity_regression_cases)
+    passed_phase25 = 0
+    for i, case in enumerate(profanity_regression_cases, 1):
+        output = run_dfa(case["input"])
+        detected_words = [m["word"] for m in output.get("matches", [])]
+        detected_set = set(detected_words)
+        expected = case["expected_dfa"]
+        if expected:
+            case_passed = all(word in detected_set for word in expected)
+        else:
+            case_passed = len(detected_words) == 0
+        status = "[PASS]" if case_passed else "[FAIL]"
+        print(f"\n[{i:02d}/{total_phase25:02d}] {status} [{case['id']}]")
+        print(f"  输入: {case['input']}")
+        print(f"  命中: {detected_words}  期望: {expected}")
+        if case_passed:
+            passed_phase25 += 1
 
     # ===== 第3层：DFA 对抗行为验证 =====
     # Layer 3: DFA adversarial behavior verification.
@@ -379,16 +546,22 @@ def run_tests():
     p1_total = total_phase1
     p2_total = total_phase2 + len(regression_cases)
     p3_total = total_phase3
-    grand_total = p1_total + p2_total + p3_total
-    grand_passed = passed_phase1 + passed_phase2 + passed_phase3
+    grand_total = p1_total + p2_total + total_phase25 + p3_total
+    grand_passed = passed_phase1 + passed_phase2 + passed_phase25 + passed_phase3
 
     print(f"  第1层 (DFA):      {passed_phase1:2d}/{p1_total:2d} 通过")
     print(f"  第2层 (验证器):    {passed_phase2:2d}/{p2_total:2d} 通过")
+    print(f"  第2.5层 (脏话回归): {passed_phase25:2d}/{total_phase25:2d} 通过")
     if p3_total > 0:
         print(f"  第3层 (对抗回归):  {passed_phase3:2d}/{p3_total:2d} 通过")
     print(f"  合计:             {grand_passed:2d}/{grand_total:2d} 通过")
 
-    all_pass = passed_phase1 == p1_total and passed_phase2 == p2_total and (p3_total == 0 or passed_phase3 == p3_total)
+    all_pass = (
+        passed_phase1 == p1_total
+        and passed_phase2 == p2_total
+        and passed_phase25 == total_phase25
+        and (p3_total == 0 or passed_phase3 == p3_total)
+    )
 
     print()
     if all_pass:
