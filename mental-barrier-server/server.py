@@ -28,16 +28,19 @@ app = FastAPI(title="Mental Barrier 生产环境模拟", lifespan=lifespan)
 
 
 # 诊断用:把 500 的真实异常打到响应,方便排查 HF Space 上 TemplateResponse 失败原因
-@app.exception_handler(Exception)
-async def debug_exception_handler(request: StarletteRequest, exc: Exception):
-    import traceback
-    tb = traceback.format_exc()
-    print(f"[DEBUG 500] {request.method} {request.url} → {type(exc).__name__}: {exc}", flush=True)
-    print(tb, flush=True)
-    return JSONResponse(
-        status_code=500,
-        content={"detail": f"{type(exc).__name__}: {exc}", "traceback": tb},
-    )
+from fastapi.responses import PlainTextResponse
+
+# 暂时禁用全局 handler,避免覆盖 / 路由自己的 try/except
+# @app.exception_handler(Exception)
+# async def debug_exception_handler(request: StarletteRequest, exc: Exception):
+#     import traceback
+#     tb = traceback.format_exc()
+#     print(f"[DEBUG 500] {request.method} {request.url} → {type(exc).__name__}: {exc}", flush=True)
+#     print(tb, flush=True)
+#     return PlainTextResponse(
+#         status_code=500,
+#         content=f"EXC: {type(exc).__name__}: {exc}\n\nTRACEBACK:\n{tb}",
+#     )
 
 BASE_DIR = os.path.dirname(__file__)
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
@@ -62,7 +65,15 @@ class BatchRequest(BaseModel):
 
 @app.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    try:
+        return templates.TemplateResponse("index.html", {"request": request})
+    except Exception as e:
+        import traceback
+        tb = traceback.format_exc()
+        return PlainTextResponse(
+            status_code=500,
+            content=f"INDEX EXC: {type(e).__name__}: {e}\n\nTRACEBACK:\n{tb}",
+        )
 
 
 @app.post("/api/filter")
