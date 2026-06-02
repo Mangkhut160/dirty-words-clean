@@ -1,0 +1,41 @@
+name: 同步到 Hugging Face Spaces
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mental-barrier-server/**'
+  workflow_dispatch:
+
+jobs:
+  sync-to-hf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: 推送到 HF Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+          HF_SPACE: skills-demo
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+          git clone https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE} hf-space
+
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='history.db' \
+            --exclude='*.log' \
+            --exclude='batch_results_*.json' \
+            --exclude='batch_test_*.json' \
+            mental-barrier-server/ hf-space/
+
+          cd hf-space
+          git add -A
+          git diff --staged --quiet || git commit -m "sync: $(date '+%Y-%m-%d %H:%M') from GitHub"
+          git push
