@@ -15,6 +15,7 @@ from contextlib import asynccontextmanager
 from config import SERVER_HOST, SERVER_PORT
 from pipeline import process_text
 from history import init_db, save_record, get_history, get_stats
+from starlette.requests import Request as StarletteRequest
 
 
 @asynccontextmanager
@@ -24,6 +25,18 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Mental Barrier 生产环境模拟", lifespan=lifespan)
+
+
+# 诊断用:把 500 的真实异常打到日志,方便排查 HF Space 上 TemplateResponse 失败原因
+@app.exception_handler(Exception)
+async def debug_exception_handler(request: StarletteRequest, exc: Exception):
+    import traceback
+    print(f"[DEBUG 500] {request.method} {request.url} → {type(exc).__name__}: {exc}", flush=True)
+    traceback.print_exc()
+    return JSONResponse(
+        status_code=500,
+        content={"detail": f"{type(exc).__name__}: {exc}"},
+    )
 
 BASE_DIR = os.path.dirname(__file__)
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
