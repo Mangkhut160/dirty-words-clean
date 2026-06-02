@@ -6,8 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 from typing import Optional
 from contextlib import asynccontextmanager
@@ -15,7 +14,6 @@ from contextlib import asynccontextmanager
 from config import SERVER_HOST, SERVER_PORT
 from pipeline import process_text
 from history import init_db, save_record, get_history, get_stats
-from starlette.requests import Request as StarletteRequest
 
 
 @asynccontextmanager
@@ -27,24 +25,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Mental Barrier 生产环境模拟", lifespan=lifespan)
 
 
-# 诊断用:把 500 的真实异常打到响应,方便排查 HF Space 上 TemplateResponse 失败原因
-from fastapi.responses import PlainTextResponse
-
-# 暂时禁用全局 handler,避免覆盖 / 路由自己的 try/except
-# @app.exception_handler(Exception)
-# async def debug_exception_handler(request: StarletteRequest, exc: Exception):
-#     import traceback
-#     tb = traceback.format_exc()
-#     print(f"[DEBUG 500] {request.method} {request.url} → {type(exc).__name__}: {exc}", flush=True)
-#     print(tb, flush=True)
-#     return PlainTextResponse(
-#         status_code=500,
-#         content=f"EXC: {type(exc).__name__}: {exc}\n\nTRACEBACK:\n{tb}",
-#     )
-
 BASE_DIR = os.path.dirname(__file__)
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
-templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 
 class FilterRequest(BaseModel):
@@ -65,15 +47,9 @@ class BatchRequest(BaseModel):
 
 @app.get("/")
 async def index(request: Request):
-    try:
-        return templates.TemplateResponse("index.html", {"request": request})
-    except Exception as e:
-        import traceback
-        tb = traceback.format_exc()
-        return PlainTextResponse(
-            status_code=500,
-            content=f"INDEX EXC: {type(e).__name__}: {e}\n\nTRACEBACK:\n{tb}",
-        )
+    # 直接读 HTML 文件返回,绕开 jinja2(starlette 0.49 + jinja2 3.1 组合在
+    # HF Space Python 3.11 镜像上会触发 cache_key unhashable bug)。
+    return FileResponse(os.path.join(BASE_DIR, "templates", "index.html"), media_type="text/html")
 
 
 @app.post("/api/filter")
