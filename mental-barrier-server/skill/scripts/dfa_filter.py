@@ -39,26 +39,51 @@ LEET_MAP = {'1': 'i', '3': 'e', '4': 'a', '5': 's', '0': 'o',
 
 _REPEAT2_RE = re.compile(r'(.)\1{2,}')
 _CENSOR_RE = re.compile(r'(?<=[a-z])[*_.\-](?=[a-z])')
+_ASCII_TOKEN_RE = re.compile(r'[A-Za-z0-9@$!]+')
+_A55_ATTACK_PREV = {"your", "you", "ur"}
+_A55_ATTACK_NEXT = {"support", "team", "company", "service"}
+
+
+def _previous_ascii_word(text, start):
+    """返回 token 前一个 ASCII 单词，用于判断上下文。"""
+    prefix = text[:start].rstrip()
+    if not prefix:
+        return ""
+    m = re.search(r'([A-Za-z]+)\s*$', prefix)
+    return m.group(1).lower() if m else ""
+
+
+def _next_ascii_word(text, end):
+    """返回 token 后一个 ASCII 单词，用于判断上下文。"""
+    suffix = text[end:].lstrip()
+    if not suffix:
+        return ""
+    m = re.match(r'([A-Za-z]+)', suffix)
+    return m.group(1).lower() if m else ""
 
 
 def normalize_leet(text):
-    """Replace leet speak characters with letters, but only within word-like sequences."""
-    result = []
-    i = 0
-    while i < len(text):
-        if text[i] in LEET_MAP:
-            has_alpha_neighbor = (
-                (i > 0 and text[i-1].isalpha()) or
-                (i + 1 < len(text) and text[i+1].isalpha())
-            )
-            if has_alpha_neighbor:
-                result.append(LEET_MAP[text[i]])
-            else:
-                result.append(text[i])
-        else:
-            result.append(text[i])
-        i += 1
-    return ''.join(result)
+    """Replace leet speak inside ASCII word-like tokens.
+
+    a55 默认按产品型号保护；只有 your/you/ur a55 或 a55 support/team/company/service
+    这类明显攻击上下文才归一化为 ass，避免普通 A55 型号误伤。
+    """
+    def replace_token(match):
+        token = match.group(0)
+        lowered = token.lower()
+        if lowered == "a55":
+            prev_word = _previous_ascii_word(text, match.start())
+            next_word = _next_ascii_word(text, match.end())
+            if prev_word in _A55_ATTACK_PREV or next_word in _A55_ATTACK_NEXT:
+                return "ass"
+            return token
+
+        normalized = ''.join(LEET_MAP.get(ch, ch) for ch in lowered)
+        if any(ch.isalpha() for ch in token):
+            return normalized
+        return token
+
+    return _ASCII_TOKEN_RE.sub(replace_token, text)
 
 
 def strip_censor_chars(text):
@@ -103,20 +128,30 @@ def load_trie(path):
 
 
 def is_alpha_boundary(text, start, end):
-    """检查纯英文词是否有词边界——前后不能同时是英文字母。
-    防止 "class"→"ass"、"USB-C"→"sb"、"damaged"→"ma" 等子串误报。
-    仅对 ASCII 字母组成的词做边界检查（中文 isalpha 也返回 True）。
+    """检查匹配词是否有合理的词边界。
+    ASCII 词：前后不能是 ASCII 字母/数字。
+    防止 "class"→"ass"、"Galaxy A55"→"a55"、"ASS2 firmware"→"ass" 等误报。
+    中文多义词：后续字符构成非骂人复合词时不算命中（如"垃圾袋"）。
 
-    Check if a pure English word has word boundaries — both sides must not be English letters.
-    Prevents substring false positives like "class"→"ass", "USB-C"→"sb", "damaged"→"ma".
-    Only performs boundary checks on words composed of ASCII letters (Chinese isalpha also returns True)."""
+    Check word boundaries.
+    ASCII words: no adjacent ASCII alnum chars.
+    Prevents false positives like "class"→"ass", "Galaxy A55"→"a55", "ASS2 firmware"→"ass".
+    Chinese ambiguous words: safe compound suffixes suppress the match."""
     word = text[start:end]
-    if not word.isascii() or not word.isalpha():
+    # ASCII 词前后都不能是 ASCII 字母或数字，避免 ASS2/A55/J8 等产品型号误报。
+    if word.isascii() and word.replace('-', '').replace('_', '').isalnum():
+        if start > 0 and text[start - 1].isascii() and text[start - 1].isalnum():
+            return False
+        if end < len(text) and text[end].isascii() and text[end].isalnum():
+            return False
         return True
-    if start > 0 and text[start - 1].isascii() and text[start - 1].isalpha():
-        return False
-    if end < len(text) and text[end].isascii() and text[end].isalpha():
-        return False
+    # 非纯 ASCII（含中文）：检查多义词安全后缀
+    _CJK_SAFE_SUFFIXES = {
+        "垃圾": "袋桶箱站车分回处场堆池筒类",
+    }
+    if word in _CJK_SAFE_SUFFIXES and end < len(text):
+        if text[end] in _CJK_SAFE_SUFFIXES[word]:
+            return False
     return True
 
 
@@ -180,21 +215,39 @@ def main():
         cn_norm = dfa_search(dfa_cn, normalized)
         en_norm = dfa_search(dfa_en, normalized)
         existing_pos = {(m["start"], m["end"]) for m in cn_matches + en_matches}
-        for m in cn_norm + en_norm:
+        for m in cn_norm:
             if (m["start"], m["end"]) not in existing_pos:
                 m["word"] = m["word"] + "(fullwidth)"
                 cn_matches.append(m)
+        for m in en_norm:
+            if (m["start"], m["end"]) not in existing_pos:
+                m["word"] = m["word"] + "(fullwidth)"
+                en_matches.append(m)
 
     # 英文归一化预处理：leet speak + 重复压缩 + 审查符号剥离
     # English normalization: catch sh1t, f*ck, fuuuck etc.
+    # 只按位置重叠去重（同一个词在不同位置出现应分别计数）
+    #
+    # ⚠️ 已知限制：归一化（重复压缩、审查符号剥离）会改变文本长度，
+    # 因此带 (leet) 后缀的命中，其 start/end 是【归一化后文本】的偏移，
+    # 不保证对应原文同一区间。例如 "fuuuuck" 压缩为 "fuck" 后 end 会偏小。
+    # 当前下游仅消费 word/has_profanity 字段，未依赖精确 span；
+    # 若未来需要原文高亮，须重构为维护 原文↔变体 的坐标映射。
     en_variants = normalize_english(text)
+    existing_pos = {(m["start"], m["end"]) for m in en_matches}
     for variant in en_variants:
         en_norm_matches = dfa_search(dfa_en, variant)
-        existing_pos = {(m["start"], m["end"]) for m in en_matches}
         for m in en_norm_matches:
-            if (m["start"], m["end"]) not in existing_pos:
-                m["word"] = m["word"] + "(leet)"
-                en_matches.append(m)
+            # 位置重叠检查（归一化可能改变偏移，用重叠而非精确匹配）
+            overlaps = any(
+                not (m["end"] <= es or m["start"] >= ee)
+                for es, ee in existing_pos
+            )
+            if overlaps:
+                continue
+            m["word"] = m["word"] + "(leet)"
+            en_matches.append(m)
+            existing_pos.add((m["start"], m["end"]))
 
     # 合并去重（按位置），英文词典优先（避免 CN 词典中的英文词条被误标）
     # Merge and deduplicate (by position), English dictionary takes priority (avoid English entries in CN dict being mislabeled)
