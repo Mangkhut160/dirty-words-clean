@@ -21,6 +21,9 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: ${{ secrets.HF_USERNAME }}
           HF_SPACE: skills-demo
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
@@ -36,10 +39,18 @@ jobs:
             --exclude='config.py' \
             mental-barrier-server/ hf-space/
 
-          # 兜底：HF Space 之前手工放的 config.py（含真实 LLM 配置）不入仓，
-          # 如果 owner 还没手工放，从 .example 复制。LLM_API_KEY 必须通过 HF Space Secrets 注入。
-          if [ ! -f hf-space/config.py ]; then
-            echo "config.py 不存在，从 config.py.example 复制兜底"
+          # 从 .example 生成 config.py 并注入 LLM 配置（来自 GH secrets）
+          # 真实 key 不入仓、不出现在 git log
+          if [ -n "$LLM_API_KEY" ]; then
+            echo "✓ 注入 LLM 配置: model=$LLM_MODEL base_url=$LLM_BASE_URL"
+            sed -e "s|^LLM_API_KEY = .*|LLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"$LLM_API_KEY\")|" \
+                -e "s|^LLM_BASE_URL = .*|LLM_BASE_URL = os.environ.get(\"LLM_BASE_URL\", \"$LLM_BASE_URL\")|" \
+                -e "s|^LLM_MODEL = .*|LLM_MODEL = os.environ.get(\"LLM_MODEL\", \"$LLM_MODEL\")|" \
+                hf-space/config.py.example > hf-space/config.py
+          elif [ -f hf-space/config.py ]; then
+            echo "! LLM_API_KEY 未在 GH secrets 配，保留 Space 现有 config.py"
+          else
+            echo "⚠ LLM_API_KEY 未配且 config.py 不存在，从 .example 复制空模板"
             cp hf-space/config.py.example hf-space/config.py
           fi
 
