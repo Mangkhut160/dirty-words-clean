@@ -33,7 +33,15 @@ jobs:
             --exclude='*.log' \
             --exclude='batch_results_*.json' \
             --exclude='batch_test_*.json' \
+            --exclude='config.py' \
             mental-barrier-server/ hf-space/
+
+          # 兜底：HF Space 之前手工放的 config.py（含真实 LLM 配置）不入仓，
+          # 如果 owner 还没手工放，从 .example 复制。LLM_API_KEY 必须通过 HF Space Secrets 注入。
+          if [ ! -f hf-space/config.py ]; then
+            echo "config.py 不存在，从 config.py.example 复制兜底"
+            cp hf-space/config.py.example hf-space/config.py
+          fi
 
           cd hf-space
           git add -A
