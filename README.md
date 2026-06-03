@@ -1,7 +1,7 @@
 # dirty-words-clean
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](mental-barrier/tests/test_pipeline.py)
-[![Accuracy](https://img.shields.io/badge/business%20accuracy-92.9%25-blue)](mental-barrier-server/batch_results_182.json)
+[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tonebarrier/tests/test_pipeline.py)
+[![Accuracy](https://img.shields.io/badge/business%20accuracy-92.9%25-blue)](tonebarrier-server/batch_results_182.json)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 

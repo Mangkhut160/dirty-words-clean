@@ -2,8 +2,8 @@
 
 > 中文 **[中文](README_CN.md)** | English
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](mental-barrier/tests/test_pipeline.py)
-[![Accuracy](https://img.shields.io/badge/business%20accuracy-92.9%25-blue)](mental-barrier-server/batch_results_182.json)
+[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tonebarrier/tests/test_pipeline.py)
+[![Accuracy](https://img.shields.io/badge/business%20accuracy-92.9%25-blue)](tonebarrier-server/batch_results_182.json)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 
 ---
@@ -48,14 +48,14 @@ Two-layer design: DFA handles exact matching (high precision, low recall), LLM h
 
 ```
 dirty-words-clean/
-├── mental-barrier/              # Core SKILL (standalone)
+├── tonebarrier/              # Core SKILL (standalone)
 │   ├── SKILL.md                 # Main instruction file (241 lines)
 │   ├── scripts/                 # DFA + Validator scripts
 │   ├── references/              # Profanity dictionaries + homophone table
 │   ├── tests/                   # Unit tests (66/66 passed)
 │   ├── adversarial/             # Adversarial evaluation (182 cases)
 │   └── benchmark/               # Benchmark reports
-├── mental-barrier-server/       # Production simulation (Web UI)
+├── tonebarrier-server/       # Production simulation (Web UI)
 │   ├── server.py                # FastAPI server
 │   ├── pipeline.py              # Pipeline orchestration
 │   ├── prompts.py               # Compact system prompt
@@ -71,16 +71,16 @@ dirty-words-clean/
 ### Option 1: Claude Code SKILL
 
 ```bash
-cp -r mental-barrier ~/.claude/skills/
+cp -r tonebarrier ~/.claude/skills/
 
 # Usage:
-/mental-barrier This fucking app is garbage fix this shit now
+/tonebarrier This fucking app is garbage fix this shit now
 ```
 
 ### Option 2: Local Web Service
 
 ```bash
-cd mental-barrier-server
+cd tonebarrier-server
 pip3 install -r requirements.txt
 cp config.py.example config.py
 # Edit config.py with your LLM_API_KEY

@@ -1,0 +1,1078 @@
+# English Profanity Dictionary for Mental Barrier
+# 英文脏话词典 — 用于 DFA 精确匹配层
+# Source: surge-ai/profanity + dsojevic/profanity-list + manual curation
+# Lines starting with # are comments (ignored by DFA loader)
+#
+# LEVEL 4: Abusive profanity (辱骂性脏话)
+#   - Direct insults, slurs, severe profanity
+#   - Maps to emotion level 4 in tonebarrier
+#
+# LEVEL 3: Exclamatory/mild profanity (感叹式粗口)
+#   - Emotional venting without direct personal attack
+#   - Maps to emotion level 3 in tonebarrier
+
+# === LEVEL 4: Abusive / Severe ===
+
+5h17
+5h1t
+@55
+@ss
+@ssfcker
+@ssfucker
+@ssfvcker
+@sshole
+a$$
+a_s_s
+animal fucker
+ape shit
+ape shite
+apeshit
+apeshite
+arse-fucker
+arse-fuckers
+arsefuck
+arsefucker
+arsehole
+arseholes
+arseshit
+ashole
+ass
+ass bandit
+ass eating boiolas
+ass fecker
+ass fuck
+ass fucker
+ass fucking boiolas
+ass hole
+ass kisser
+ass licking
+ass muncher
+ass-bandit
+ass-fucker
+ass-fuckers
+ass-hole
+assclown
+asses
+assface
+assfck
+assfcker
+assfk
+assfkcer
+assfker
+assfkr
+assfook
+assfuccer
+assfuck
+assfuck3r
+assfucker
+assfuckers
+assfuckerz
+assfukah
+assfukka
+assfukker
+assfukkerz
+assfvck3r
+assfvcker
+asshat
+asshol3
+asshole
+asshole fucker
+assholes
+assmunch
+assmuncher
+asswhole
+asswipe
+azz
+azzhole
+b!tch
+b1+ch
+b17ch
+b1otch
+b1otchs
+b1tch
+b1tch1ng
+b1tch35
+b1tch3s
+b1tchees
+b1tches
+b1tchez
+b1tchin
+b1tching
+b1tchs
+b1tchy
+bassturd
+bastard
+bastardish
+bastards
+basterd
+bastid
+bastinado
+basturd
+batshit
+batshite
+beaner
+beeotch
+bellend
+beyoch
+beyotch
+bi + ch
+bi+ch
+biatch
+biches
+biotch
+biotches
+biotchez
+bishes
+bitch
+bitch3s
+bitchass
+bitchasses
+bitched
+bitcher
+bitchers
+bitches
+bitchez
+bitchfuck
+bitchhole
+bitchin
+bitchin'
+bitching
+bitchlike
+bitchness
+bitchs
+bitchslap
+bitchtits
+bitchy
+bitchy ass
+bizzach
+bull shit
+bullshi
+bullshit
+bullshite
+butt fuck
+butt fucker
+butt-fucker
+butt-fuckers
+butt-fucking-bandit
+buttfuck
+buttfucker
+buttfuckers
+b！tch
+c*ck
+c*nt
+c*ntface
+c*nts
+c*nty
+c0ck
+caca
+chink
+closet fuckhead
+clusterfuck
+clusterfucked
+clusterfucker
+clusterfucking
+clusterfucks
+cnt
+cockshit
+cocksucker
+cocksucking
+cocksucking mothafuckers
+crazy mofos
+crazy sob
+cunt
+cunt ass
+cunt fart
+cunt lick
+cunt licker
+cunt lips
+cuntasaurus rex
+cuntbag
+cuntbollock
+cuntelope
+cuntits
+cuntless
+cuntlick
+cuntlicker
+cuntlickers
+cuntness
+cunts
+cunty
+cuntz
+cuunt
+cyberfck
+cyberfcks
+cyberfuccs
+cyberfucks
+cyberfucs
+cyberfukk
+cyberfukks
+cyberfvcks
+d!ck
+d!cks
+d1ck
+d1ckhead
+d1ckheads
+d1cks
+d1cksucker
+d1cksukka
+d1ckz
+dafuq
+darkass
+darkfuck
+darkshit
+darktard
+dick breath
+dick face
+dick fucker
+dick head
+dick licker
+dick milker
+dick nibbler
+dick smoker
+dick sucker
+dick-face
+dick-gobbler
+dick-head
+dickface
+dickfucker
+dickhead
+dickheads
+dickjockies
+dickless
+dicklicker
+dickmuncher
+dicks
+dickskin
+dickslapper
+dicksmoker
+dicksucker
+dickvag
+dickwad
+dickz
+dikhead
+diks
+dipsh1t
+dipsh1tty
+dipshat
+dipshidiot
+dipshit
+dipshite
+dipshits
+dipshitter
+dipshitty
+dix
+dlck
+dlcks
+dog fuck
+dog fucker
+dog fucking
+dog shit
+dog-fucker
+dogsh1t
+dogsh1ts
+dogshit
+dogshits
+double dick
+double dicking
+dumasses
+dumb bastard
+dumb fucker
+dumb@ss
+dumbarrassed
+dumbass
+dumbass fucker
+dumbass mofoes
+dumbass mothafuckers
+dumbass son-of-a-bitch
+dumbasses
+dumbfucks
+dumbshit
+f'ed
+f'er
+f*ck
+f0ck
+f0cked
+f0cker
+f0ckers
+f@ck
+f@cker bunny
+f@g
+f@gg0t
+f@gging
+f@ggot
+f@gs
+f@gshit
+f@k
+f_u_c_k
+face fuck
+fack
+fackuhs
+fag
+fag asses
+fag bag
+fag hag
+fag queen
+fag0t
+faget
+fagg0t
+fagging
+faggo
+faggot
+faggot mofoes
+faggot mothafuckers
+faggot nob jokeys
+faggot nobjockies
+faggot son-of-a-bitch
+faggoting
+faggots
+faggs
+faggy
+fagot
+fags
+fagshit
+fart-fucker
+fatass
+fatasses
+fccuker
+fck
+fck you
+fcka
+fckahz
+fcked
+fckedup
+fcker
+fckin
+fcking
+fckk
+fckked
+fckking
+fcks
+fcktard
+fckyeah
+fcuk
+fcuked
+fcuker
+fcukers
+fcuking
+fcukker
+fcuks
+fcvking
+feck
+fecker
+feg
+ffs
+fick
+finger fuck
+fk bunny
+fkbny
+fked
+fker
+fking
+fkings
+fkker
+foad
+focker
+fook
+fooker
+fookuh
+forked
+fothermuckers
+fuc
+fucc
+fucca
+fuccers
+fuccing
+fuccs
+fuck
+fuck arse
+fuck face
+fuck faces
+fuck goblin
+fuck head
+fuck off
+fuck up
+fuck y0u
+fuck you
+fuck your
+fuck your mother
+fucka
+fuckahs
+fuckass
+fuckasses
+fuckaz
+fuckbag
+fuckboy
+fucked
+fucked up
+fuckem
+fucker
+fucker off
+fuckers
+fuckface
+fuckfaces
+fuckhead
+fuckheaded
+fuckheads
+fuckin
+fucking
+fucking a
+fucking asshole
+fucking bastard
+fucking hell
+fucking me
+fucking retard
+fucking shit
+fuckk
+fuckless
+fuckmachine
+fucknuckle
+fucks
+fuckshit
+fuckshitface
+fuckshithead
+fuckstar
+fuckster
+fuckstick
+fucktard
+fucktards
+fuckup
+fuckwad
+fuckwhore
+fuckwit
+fucs
+fucx
+fudgefucker
+fudgepackershitter
+fudgepacking fucker
+fugged
+fugger
+fuggerz
+fuggings
+fugly
+fuk
+fuk1n
+fuk1ng
+fukcs
+fuker
+fukheads
+fukin
+fuking
+fukk
+fukka
+fukked
+fukker
+fukkers
+fukking
+fukkings
+fukkuh
+fuks
+fuku
+fukwhore
+fukwit
+full of shit
+fuq
+futhamucka
+fux
+fux0r
+fvck
+fvck you
+fvcka
+fvckbunny
+fvcker
+fvckers
+fvckin
+fvcking
+fvckker bunny
+fvckwhi
+fxck
+fxcked
+fxcker
+fxcking
+g@y b1tch
+g@yshit
+gay ass
+gay bitch
+gay fuck
+gay fucker
+gay shit
+gaytard
+get fucked
+gfy
+go fuck yourself
+gobshite
+goddamn mothafuckers
+goddamn son-of-a-bitch
+gook
+gtfo
+higg3r
+higg@
+higga
+higger
+higgers
+hoar
+hoe-asses
+holy fuck
+homo asses
+horse shit
+horse's asses
+horseshit
+jackass
+jackasses
+jackasss
+jigga
+jigger
+jigro
+jizzfucker
+kike
+kiss ass
+kiss my ass
+knickers
+knobhead
+kys
+l3i + ch
+l3i+ch
+l3itch
+l3itches
+lmfao
+m0f0
+m0f0s
+m0fo
+m0foes
+m0fos
+m0thafucked
+m0thafucker
+m0thafucking
+m0therfuckeds
+m0therfucker
+m0therfucking
+m0therfvcker
+m@derfaker
+m@derfuck
+m@derfuckers
+markasses
+mecha fag
+mega fag
+mf
+mf'er
+mf'ers
+mf'ing
+mfckers
+mfer
+mfers
+mfing
+mfk
+mfs
+mfukk
+mfukker
+mindfuck
+mof0es
+mof0s
+mofcker
+mofo
+mofo ass
+mofoes
+mofos
+mofoshit
+mofuccers
+mofucckers
+mofuck
+mofucker
+mofuckkas
+mofuk
+mofukkas
+motha fucka
+motha fucker
+motha fuckers
+mothaf@cked
+mothafcked
+mothafcking
+mothafucc
+mothafucced
+mothafuccer
+mothafuccing
+mothafuck
+mothafucka
+mothafuckas
+mothafuckasses
+mothafuckaz
+mothafuckazzes
+mothafucked
+mothafuckeds
+mothafucker
+mothafuckers
+mothafuckin
+mothafucking
+mothafuckings
+mothafuckins
+mothafucks
+mothafuckz
+mothafvcked
+mother effer
+mother fuck
+mother fuck you
+mother fucka
+mother fucker
+mother fuckers
+mother fucking
+mothercker
+motherf@kka
+motherfacking
+motherfcked
+motherfckin
+motherfcking
+motherfcks
+motherfckshit
+motherfecka
+motherfecker
+motherfk
+motherfucca
+motherfuccas
+motherfuccers
+motherfuck
+motherfucked
+motherfuckeds
+motherfucker
+motherfuckers
+motherfuckin
+motherfucking
+motherfuckings
+motherfuckingshit
+motherfuckins
+motherfuckka
+motherfuckkas
+motherfuckkers
+motherfucks
+motherfukka
+motherfukker
+motherfukkings
+motherfvck
+motherfvcked
+motherfvckeds
+motherfvcker
+motherfvckers
+motherfvcking
+motherfxck
+motherfxcking
+mothfck
+mothter fuck
+mtherfuker
+mthrfcker
+muddafukkas
+mudderfuk
+mudderfukker
+muhfucking
+mutha fucka
+mutha fucker
+muthafecker
+muthafeckers
+muthafucka
+muthafuckers
+muthafuckings
+muthafuckker
+muthafuckkers
+muthafukka
+mutherfucker
+mutherfuckers
+n1ckker
+n1g3r
+n1g3rz
+n1gg3r
+n1gg3rs
+n1gg@
+n1gga
+n1ggah
+n1ggas
+n1ggazes
+n1gger
+n1ggers
+n1gguh
+negga
+neggar
+niccer
+nicka
+nickas
+nicker
+nickk3r
+nickker
+nig
+nig-nog
+niga
+nigah
+nigasses
+nigers
+nigg3r
+nigg3rs
+nigg4h
+nigg4hs
+nigg@
+nigg@hs
+nigg@s
+nigg@z
+nigg@zzes
+nigga
+nigga lover
+niggah
+niggahs
+niggahz
+niggas
+niggass
+niggaz
+niggazzes
+nigger
+nigger lover
+niggers
+niggerz
+niggir
+niggress
+nigguh
+nigguhs
+nigguhz
+niglet
+nignigs
+nignog
+nigra
+nigre
+nigs
+niguh
+nikk3r
+nikkas
+nikker
+nuckas
+nuggets
+p3nisfcker
+p3nisfcukers
+p3nisfvcker
+p3nisfvckers
+packingfudgefucker
+packingfudgefucking
+packsomefudgefucker
+paki
+penisfcker
+penisfuccer
+penisfucker
+penisfuckers
+penisfvcker
+penisfvckers
+ph@ggots
+phaggot
+phaggots
+phagot
+phags
+phuc
+phucc
+phuccer
+phucchead
+phuccing
+phuck
+phuck3r
+phucked
+phucker
+phuckin
+phucking
+phuckings
+phucks
+phucup
+phuk
+phuked
+phukeds
+phukhead
+phuking
+phukings
+phukk
+phukked
+phukkeds
+phukker
+phukking
+phuks
+phukshit
+phuku
+phukup
+phuq
+phuqs
+phvckings
+pig fucker
+pigfucker
+pigfuckers
+pigfucking
+pigfukker
+piggyfuck
+pigshit
+piss off fuckhead
+piss shit
+pos
+punk ass mofoes
+punkasses
+pussy fucker
+queerasses
+r3t@rd
+r3tard
+raghead
+ragtard
+rat bastard
+rat baztad
+retard
+retardo
+retardotron
+s-lut
+s.o.b.
+s.o.b.s
+s/h/i/t
+s_h_i_
+s_h_i_s
+sand nigger
+scamfuck
+scumfuck
+scumfucker
+scumfvck
+sh! +
+sh!+
+sh!t
+sh1s
+sh1t
+sh1t3
+sh1td1ck
+sh1tdick
+sh1te
+sh1tfuck
+sh1th3ad
+sh1theads
+sh1ts
+sh1tsome
+sh1tt
+sh1tty
+shat
+sheeeet
+sheet
+sheister
+shet
+shi+
+shi+e
+shi+y
+shiat
+shiddick
+shiesterfuck
+shiesterfuckface
+shiesterfuckhead
+shiesterfucks
+shipdit
+shit
+s**t
+s*it
+sh*t
+s.h.i.t
+shit face
+shit for brains
+shit fuck
+shit fucker
+shit head
+shit licker
+shit stain
+shit-arse
+shit-ass
+shit-bandit
+shit-fucker
+shit-stuffers
+shit3
+shitass
+shitasses
+shitassfucker
+shitassfuckface
+shitbag
+shitbird
+shitblimp
+shitblimps
+shitbrain
+shitd1ck
+shitdick
+shitdicks
+shitdikk
+shitdip
+shite
+shiteblimps
+shited
+shitedick
+shitefuck
+shitefulls
+shitehead
+shites
+shitey
+shitface
+shitfaced
+shitfacefuck
+shitfacefucker
+shitfck
+shitfk
+shitfreak
+shitfuck
+shitfucker
+shitfuckhead
+shitfuckmotherfucker
+shitfucks
+shitfudgefucker
+shitfvck
+shithead
+shitheadfucker
+shitheadfuckface
+shitheads
+shithole
+shits
+shitsdick
+shitsfuck
+shitsful
+shitshow
+shitstorm
+shittastic
+shittasticfuck
+shitte
+shitted
+shitter
+shitterfucker
+shitti
+shitties
+shittiest
+shitting
+shittings
+shitty
+shitty mofoes
+shittydick
+shittydicks
+shittyfuck
+shittyfuckface
+shittyful
+shtfuk
+shytfeisterfuck
+slantard
+slanteye b1tch
+slanteyeshit
+slut
+slut hole
+sluts
+slutty
+soab
+sob
+son o bitch
+son-of-a-bitch
+sonna bitch
+sonofabitch
+sonofbitches
+sons of b1tches
+sons of bitches
+sons-of-bitches
+sonz of bitchez
+spic
+spicfuck
+spicshit
+stfu
+stupid fucker
+stupidasses
+suck my d
+suck my dick
+sumbitch
+swine fucker
+tard
+tard asses
+timber nigger
+tongue fucker
+tongue fucking
+tosser
+tossers
+towelhead
+towelshithead
+trashb1tch
+trashbitch
+trashbitches
+trashbitchez
+trashbtch
+trasherbitch
+trasherbitchs
+trashybitches
+tw@t
+twa+
+twat
+twat waffle
+twatface
+twats
+twatt
+twattish
+twatzilla
+useless fucker
+w4nk3r
+w4nker
+w@nker
+w@nkers
+wank
+wank off
+wank3r
+wank3rs
+wankbastard
+wanked
+wanker
+wankers
+wankies
+wanking
+wanks
+wetback
+wh0r3
+wh0re
+what the fuck
+whoar
+whoars
+whor3
+whore
+whores
+wigger
+wise ass
+wnker
+wtf
+wth
+
+# === LEVEL 3: Exclamatory / Mild ===
+
+arse
+berk
+blimey
+bloody
+bloody hell
+bollock
+bollocks
+bs
+bugger
+buggered
+buggering
+crap
+crappy
+craptastic
+d*mn
+dammit
+damn
+damned
+damnit
+dang
+darn
+effing
+for fucks sake
+for gods sake
+freaking
+frigging
+git
+goddammit
+goddamn
+goddamnit
+h*ll
+heck
+hell
+piss
+pissed
+pissing
+pissy
+rubbish
+sod
+sodding
+idiot
+idiots
+moron
+morons
+imbecile
+imbeciles
+loser
+losers

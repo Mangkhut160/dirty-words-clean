@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'mental-barrier-server/**'
+      - 'tonebarrier-server/**'
   workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
             --exclude='batch_test_*.json' \
             --exclude='config.py' \
             --exclude='harassment/' \
-            mental-barrier-server/ hf-space/
+            tonebarrier-server/ hf-space/
 
           # 从 .example 生成 config.py 并注入 LLM 配置（来自 GH secrets）
           # 真实 key 不入仓、不出现在 git log

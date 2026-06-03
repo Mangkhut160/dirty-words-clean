@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=device-width, initial-scale=1.0">
+    <title data-i18n="title">ToneBarrier — Production Simulation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-row">
+            <h1 data-i18n="h1">ToneBarrier</h1>
+            <div class="lang-switch" role="group" aria-label="Language switcher">
+                <button id="lang-en" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-sep">|</span>
+                <button id="lang-zh" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+            </div>
+        </div>
+        <div id="status-bar">
+            <span class="status-dot green"></span>
+            <span id="stat-calls" data-i18n="stat-calls">0 calls</span>
+            <span class="sep">|</span>
+            <span id="stat-tokens" data-i18n="stat-tokens">avg 0 tokens</span>
+            <span class="sep">|</span>
+            <span id="stat-latency" data-i18n="stat-latency">avg 0ms</span>
+            <span class="sep">|</span>
+            <span id="stat-cost">¥0.0000</span>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab active" data-tab="manual" data-i18n="tab-manual">Manual Test</button>
+        <button class="tab" data-tab="batch" data-i18n="tab-batch">Batch Test</button>
+        <button class="tab" data-tab="history" data-i18n="tab-history">History</button>
+    </nav>
+
+    <main>
+        <!-- Manual Test -->
+        <section id="tab-manual" class="tab-content active">
+            <div class="input-panel">
+                <textarea id="input-text" data-i18n-placeholder="placeholder-input" placeholder="Enter a customer complaint text..." rows="4"></textarea>
+                <div class="controls">
+                    <select id="mode-select">
+                        <option value="full" data-i18n="mode-full">Full mode (complete pipeline)</option>
+                        <option value="hybrid" data-i18n="mode-hybrid">Hybrid mode (DFA short-circuit)</option>
+                    </select>
+                    <button id="btn-send" onclick="sendManual()" data-i18n="btn-send">Send</button>
+                </div>
+            </div>
+            <div id="result-panel" class="result-panel hidden">
+                <div class="result-header">
+                    <span id="result-level" class="level-badge"></span>
+                    <span id="result-metrics" class="metrics-text"></span>
+                </div>
+                <div id="result-output" class="result-output"></div>
+                <div id="result-details" class="result-details"></div>
+            </div>
+        </section>
+
+        <!-- Batch Test -->
+        <section id="tab-batch" class="tab-content">
+            <div class="batch-controls">
+                <label class="file-label" data-i18n="batch-file-hint">Upload .json test file:</label>
+                <label class="file-btn" for="batch-file" data-i18n="btn-choose-file">Choose File</label>
+                <span class="file-name" id="batch-file-name" data-i18n="no-file-selected">No file selected</span>
+                <input type="file" id="batch-file" accept=".json" class="file-hidden">
+                <select id="batch-mode">
+                    <option value="full" data-i18n="mode-full">Full mode</option>
+                    <option value="hybrid" data-i18n="mode-hybrid">Hybrid mode</option>
+                </select>
+                <button id="btn-batch" onclick="runBatch()" data-i18n="btn-run-batch">Run Batch</button>
+            </div>
+            <div id="batch-progress" class="hidden">
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div id="batch-summary" class="hidden"></div>
+            <table id="batch-table" class="hidden">
+                <thead>
+                    <tr>
+                        <th data-i18n="th-id">ID</th>
+                        <th data-i18n="th-input">Input</th>
+                        <th data-i18n="th-expected">Expected</th>
+                        <th data-i18n="th-actual">Actual</th>
+                        <th data-i18n="th-result">Result</th>
+                        <th data-i18n="th-tokens">Tokens</th>
+                        <th data-i18n="th-latency">Latency</th>
+                    </tr>
+                </thead>
+                <tbody id="batch-tbody"></tbody>
+            </table>
+        </section>
+
+        <!-- History -->
+        <section id="tab-history" class="tab-content">
+            <div class="history-controls">
+                <select id="history-mode" onchange="loadHistory()">
+                    <option value="" data-i18n="filter-all-modes">All modes</option>
+                    <option value="full">Full</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+                <select id="history-level" onchange="loadHistory()">
+                    <option value="" data-i18n="filter-all-levels">All levels</option>
+                    <option value="1" data-i18n="level-1">Level 1</option>
+                    <option value="2" data-i18n="level-2">Level 2</option>
+                    <option value="3" data-i18n="level-3">Level 3</option>
+                    <option value="4" data-i18n="level-4">Level 4</option>
+                </select>
+                <button onclick="exportCSV()" data-i18n="btn-export-csv">Export CSV</button>
+            </div>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="th-time">Time</th>
+                        <th data-i18n="th-input">Input</th>
+                        <th data-i18n="th-level">Level</th>
+                        <th data-i18n="th-mode">Mode</th>
+                        <th data-i18n="th-tokens">Tokens</th>
+                        <th data-i18n="th-latency">Latency</th>
+                        <th data-i18n="th-llm-skip">LLM Skip</th>
+                    </tr>
+                </thead>
+                <tbody id="history-tbody"></tbody>
+            </table>
+            <div id="history-pagination" class="pagination"></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -2,8 +2,8 @@
 
 > **[English](README_EN.md)** | 中文
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](mental-barrier/tests/test_pipeline.py)
-[![Accuracy](https://img.shields.io/badge/业务准确率-92.9%25-blue)](mental-barrier-server/batch_results_182.json)
+[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tonebarrier/tests/test_pipeline.py)
+[![Accuracy](https://img.shields.io/badge/业务准确率-92.9%25-blue)](tonebarrier-server/batch_results_182.json)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 
 ---
@@ -48,14 +48,14 @@
 
 ```
 dirty-words-clean/
-├── mental-barrier/              # 核心 SKILL（可独立使用）
+├── tonebarrier/              # 核心 SKILL（可独立使用）
 │   ├── SKILL.md                 # 主指令文件（241行）
 │   ├── scripts/                 # DFA + Validator 脚本
 │   ├── references/              # 脏话词典 + 谐音对照表
 │   ├── tests/                   # 单元测试（66/66 通过）
 │   ├── adversarial/             # 对抗评测（182 用例）
 │   └── benchmark/               # 基准报告
-├── mental-barrier-server/       # 生产环境模拟（Web UI）
+├── tonebarrier-server/       # 生产环境模拟（Web UI）
 │   ├── server.py                # FastAPI 服务
 │   ├── pipeline.py              # 管道编排
 │   ├── prompts.py               # 精简版 system prompt
@@ -71,16 +71,16 @@ dirty-words-clean/
 ### 方式一：Claude Code SKILL
 
 ```bash
-cp -r mental-barrier ~/.claude/skills/
+cp -r tonebarrier ~/.claude/skills/
 
 # 使用：
-/mental-barrier 你们tmd这个破产品用了三天就坏了赶紧退款
+/tonebarrier 你们tmd这个破产品用了三天就坏了赶紧退款
 ```
 
 ### 方式二：本地 Web 服务
 
 ```bash
-cd mental-barrier-server
+cd tonebarrier-server
 pip3 install -r requirements.txt
 cp config.py.example config.py
 # 编辑 config.py 填入 LLM_API_KEY

@@ -1,0 +1,119 @@
+"""FastAPI 主服务 — 路由 + 静态文件 + 模板渲染。"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(__file__))
+
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse, FileResponse
+from pydantic import BaseModel
+from typing import Optional
+from contextlib import asynccontextmanager
+
+from config import SERVER_HOST, SERVER_PORT
+from pipeline import process_text
+from history import init_db, save_record, get_history, get_stats
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await init_db()
+    yield
+
+
+app = FastAPI(title="ToneBarrier 生产环境模拟", lifespan=lifespan)
+
+
+BASE_DIR = os.path.dirname(__file__)
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
+
+
+class FilterRequest(BaseModel):
+    text: str
+    mode: str = "full"
+    lang: str = "en"
+
+
+class BatchItem(BaseModel):
+    id: str = ""
+    text: str
+    expected_level: Optional[int] = None
+
+
+class BatchRequest(BaseModel):
+    items: list[BatchItem]
+    mode: str = "full"
+    lang: str = "en"
+
+
+@app.get("/")
+async def index(request: Request):
+    # 直接读 HTML 文件返回,绕开 jinja2(starlette 0.49 + jinja2 3.1 组合在
+    # HF Space Python 3.11 镜像上会触发 cache_key unhashable bug)。
+    return FileResponse(os.path.join(BASE_DIR, "templates", "index.html"), media_type="text/html")
+
+
+@app.post("/api/filter")
+async def api_filter(req: FilterRequest):
+    result = await process_text(req.text, req.mode, req.lang)
+    await save_record(req.text, req.mode, result)
+    return result
+
+
+@app.post("/api/batch")
+async def api_batch(req: BatchRequest):
+    results = []
+    total_tokens = 0
+    total_latency = 0
+    correct = 0
+    total_with_expected = 0
+
+    for item in req.items:
+        result = await process_text(item.text, req.mode, req.lang)
+        await save_record(item.text, req.mode, result)
+
+        entry = {
+            "id": item.id,
+            "input_text": item.text,
+            "expected_level": item.expected_level,
+            "actual_level": result.get("level"),
+            "correct": None,
+            **result,
+        }
+
+        if item.expected_level is not None:
+            entry["correct"] = result.get("level") == item.expected_level
+            total_with_expected += 1
+            if entry["correct"]:
+                correct += 1
+
+        results.append(entry)
+        total_tokens += result.get("metrics", {}).get("total_tokens", 0)
+        total_latency += result.get("metrics", {}).get("total_latency_ms", 0)
+
+    n = len(results)
+    summary = {
+        "total": n,
+        "avg_tokens": round(total_tokens / n) if n else 0,
+        "avg_latency_ms": round(total_latency / n) if n else 0,
+        "accuracy": round(correct / total_with_expected, 4) if total_with_expected else None,
+        "total_cost_yuan": round(total_tokens / 1_000_000 * 1.0, 4),
+    }
+
+    return {"total": n, "completed": n, "results": results, "summary": summary}
+
+
+@app.get("/api/history")
+async def api_history(page: int = 1, limit: int = 20, mode: str = None, level: int = None):
+    return await get_history(page, limit, mode, level)
+
+
+@app.get("/api/stats")
+async def api_stats():
+    return await get_stats()
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("server:app", host=SERVER_HOST, port=SERVER_PORT, reload=True)

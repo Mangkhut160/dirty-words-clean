@@ -1,0 +1,26 @@
+[
+  {
+    "id": "format_bypass_001",
+    "skill_output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nThe customer reports that the application crashed and all their data was lost."
+  },
+  {
+    "id": "format_bypass_002",
+    "skill_output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\nThe customer reports that the product broke after just one week of use."
+  },
+  {
+    "id": "format_bypass_003",
+    "skill_output": "[情绪判断] 客户情绪激烈，含攻击性语言 — 以下为过滤后内容\n\n客户反馈使用该产品三天后出现故障。"
+  },
+  {
+    "id": "sarcasm_138",
+    "skill_output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈包裹从北京到上海配送耗时15天，对物流速度不满意。"
+  },
+  {
+    "id": "sarcasm_139",
+    "skill_output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈等待两周未收到售后回复，对响应速度不满意。"
+  },
+  {
+    "id": "sarcasm_140",
+    "skill_output": "[情绪判断] 客户情绪愤怒，建议优先处理\n\n客户反馈退款处理已超过一个月仍未到账，对处理速度不满意。"
+  }
+]

@@ -1,22 +1,22 @@
 # API keys and secrets
 .env
 *.env
-mental-barrier/adversarial/.env
-mental-barrier-server/config.py
+tonebarrier/adversarial/.env
+tonebarrier-server/config.py
 
 # LLM outputs (large files with potential sensitive data)
-mental-barrier/adversarial/llm_real_outputs_*.json
-mental-barrier/adversarial/llm_judged.json
-mental-barrier/adversarial/llm_full_judged.json
-mental-barrier/adversarial/judge_results.json
-mental-barrier/adversarial/judge_prompts.json
-mental-barrier/adversarial/run_results.json
-mental-barrier/adversarial/batch_results.json
-mental-barrier/adversarial/e2e_results.json
+tonebarrier/adversarial/llm_real_outputs_*.json
+tonebarrier/adversarial/llm_judged.json
+tonebarrier/adversarial/llm_full_judged.json
+tonebarrier/adversarial/judge_results.json
+tonebarrier/adversarial/judge_prompts.json
+tonebarrier/adversarial/run_results.json
+tonebarrier/adversarial/batch_results.json
+tonebarrier/adversarial/e2e_results.json
 
 # Runtime files
-mental-barrier-server/history.db
-mental-barrier-server/server.log
+tonebarrier-server/history.db
+tonebarrier-server/server.log
 __pycache__/
 *.pyc
 *.pyo

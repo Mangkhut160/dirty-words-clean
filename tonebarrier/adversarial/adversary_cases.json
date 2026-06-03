@@ -1,0 +1,1835 @@
+{
+  "total": 182,
+  "by_category": {
+    "format_bypass": 31,
+    "homophone": 51,
+    "leet": 20,
+    "cnen_mix": 20,
+    "pinyin_mix": 15,
+    "sarcasm": 15,
+    "en_dfa_miss": 15,
+    "normal": 15
+  },
+  "cases": [
+    {
+      "id": "format_bypass_001",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "this t m d app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "tmd",
+      "variant": "t m d"
+    },
+    {
+      "id": "format_bypass_002",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "your c n m product broke after just one week of use",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cnm",
+      "variant": "c n m"
+    },
+    {
+      "id": "format_bypass_003",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "用了这傻 逼产品三天就出故障了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "傻 逼"
+    },
+    {
+      "id": "format_bypass_004",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "this f u c k service wasted my entire afternoon for nothing",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "f u c k"
+    },
+    {
+      "id": "format_bypass_005",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "what is wrong with this s h i t website it keeps logging me out",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "shit",
+      "variant": "s h i t"
+    },
+    {
+      "id": "format_bypass_006",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "I paid good money for this s b experience",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "sb",
+      "variant": "s b"
+    },
+    {
+      "id": "format_bypass_007",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "your a s s company cannot even process a simple refund",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "ass",
+      "variant": "a s s"
+    },
+    {
+      "id": "format_bypass_008",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "this is the j b worst purchase I have ever made",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "jb",
+      "variant": "j b"
+    },
+    {
+      "id": "format_bypass_009",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "这垃 圾质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "垃圾",
+      "variant": "垃 圾"
+    },
+    {
+      "id": "format_bypass_010",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "the n m s l delivery arrived two weeks late and damaged",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "nmsl",
+      "variant": "n m s l"
+    },
+    {
+      "id": "format_bypass_011",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "this w c n m app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "wcnm",
+      "variant": "w c n m"
+    },
+    {
+      "id": "format_bypass_012",
+      "category": "format_bypass",
+      "subtype": "space",
+      "input": "your c a o product broke after just one week of use",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cao",
+      "variant": "c a o"
+    },
+    {
+      "id": "format_bypass_013",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "this f*u*c*k service wasted my entire afternoon for nothing",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "f*u*c*k"
+    },
+    {
+      "id": "format_bypass_014",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "what is wrong with this s.h.i.t website it keeps logging me out",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "shit",
+      "variant": "s.h.i.t"
+    },
+    {
+      "id": "format_bypass_015",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "I paid good money for this t-m-d experience",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "tmd",
+      "variant": "t-m-d"
+    },
+    {
+      "id": "format_bypass_016",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "傻·逼的售后简直让人崩溃",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "傻·逼"
+    },
+    {
+      "id": "format_bypass_017",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "this is the c*n*m worst purchase I have ever made",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cnm",
+      "variant": "c*n*m"
+    },
+    {
+      "id": "format_bypass_018",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "after three attempts your s.b team still has not fixed it",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "sb",
+      "variant": "s.b"
+    },
+    {
+      "id": "format_bypass_019",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "the a.s.s delivery arrived two weeks late and damaged",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "ass",
+      "variant": "a.s.s"
+    },
+    {
+      "id": "format_bypass_020",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "this f-u-c-k app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "f-u-c-k"
+    },
+    {
+      "id": "format_bypass_021",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "your b.i.t.c.h product broke after just one week of use",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "bitch",
+      "variant": "b.i.t.c.h"
+    },
+    {
+      "id": "format_bypass_022",
+      "category": "format_bypass",
+      "subtype": "symbol",
+      "input": "the d.i.c.k customer support never responds to my emails",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "dick",
+      "variant": "d.i.c.k"
+    },
+    {
+      "id": "format_bypass_023",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "花了这么多钱买个ｔｍｄ东西回来",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "tmd",
+      "variant": "ｔｍｄ"
+    },
+    {
+      "id": "format_bypass_024",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "your ｆｕｃｋ company cannot even process a simple refund",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "ｆｕｃｋ"
+    },
+    {
+      "id": "format_bypass_025",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "this is the ｓｈｉｔ worst purchase I have ever made",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "shit",
+      "variant": "ｓｈｉｔ"
+    },
+    {
+      "id": "format_bypass_026",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "这ＣＮＭ质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cnm",
+      "variant": "ＣＮＭ"
+    },
+    {
+      "id": "format_bypass_027",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "the ａｓｓ delivery arrived two weeks late and damaged",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "ass",
+      "variant": "ａｓｓ"
+    },
+    {
+      "id": "format_bypass_028",
+      "category": "format_bypass",
+      "subtype": "fullwidth",
+      "input": "this ｄａｍｎ app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "damn",
+      "variant": "ｄａｍｎ"
+    },
+    {
+      "id": "format_bypass_029",
+      "category": "format_bypass",
+      "subtype": "underscore",
+      "input": "等了这么久就等到这c_n_m结果",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cnm",
+      "variant": "c_n_m"
+    },
+    {
+      "id": "format_bypass_030",
+      "category": "format_bypass",
+      "subtype": "underscore",
+      "input": "这n_m_b质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "nmb",
+      "variant": "n_m_b"
+    },
+    {
+      "id": "format_bypass_031",
+      "category": "format_bypass",
+      "subtype": "underscore",
+      "input": "你们j_b这破产品还好意思拿出来卖",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "jb",
+      "variant": "j_b"
+    },
+    {
+      "id": "homophone_032",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这煞笔服务太令人失望了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "傻逼",
+      "variant": "煞笔"
+    },
+    {
+      "id": "homophone_033",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "真是沙比一样的产品设计",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "傻逼",
+      "variant": "沙比"
+    },
+    {
+      "id": "homophone_034",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "用了这傻B产品三天就出故障了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "傻逼",
+      "variant": "傻B"
+    },
+    {
+      "id": "homophone_035",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这傻比客服态度实在太差了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "傻逼",
+      "variant": "傻比"
+    },
+    {
+      "id": "homophone_036",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这沙幣app又闪退了真受不了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "沙幣"
+    },
+    {
+      "id": "homophone_037",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "花了这么多钱买个傻13东西回来",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "傻13"
+    },
+    {
+      "id": "homophone_038",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "洒比的售后简直让人崩溃",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "洒比"
+    },
+    {
+      "id": "homophone_039",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "等了这么久就等到这草泥马结果",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "草泥马"
+    },
+    {
+      "id": "homophone_040",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这草拟吗质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "草拟吗"
+    },
+    {
+      "id": "homophone_041",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们艹泥马这破产品还好意思拿出来卖",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "艹泥马"
+    },
+    {
+      "id": "homophone_042",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "太操尼玛了从来没遇到过这种问题",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "操尼玛"
+    },
+    {
+      "id": "homophone_043",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们的草尼馬系统把我的订单弄丢了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "草尼馬"
+    },
+    {
+      "id": "homophone_044",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这个操妮玛快递把我的包裹摔烂了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "操妮玛"
+    },
+    {
+      "id": "homophone_045",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "我已经等了草拟麻一个星期了还没人处理",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "草拟麻"
+    },
+    {
+      "id": "homophone_046",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你这卧槽设计是谁想出来的",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "卧槽"
+    },
+    {
+      "id": "homophone_047",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这我草服务太令人失望了",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "我草"
+    },
+    {
+      "id": "homophone_048",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "真是窝草一样的产品设计",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "窝草"
+    },
+    {
+      "id": "homophone_049",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "用了这我艹产品三天就出故障了",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "我艹"
+    },
+    {
+      "id": "homophone_050",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这我曹客服态度实在太差了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "我操",
+      "variant": "我曹"
+    },
+    {
+      "id": "homophone_051",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这窝嘈app又闪退了真受不了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "我操",
+      "variant": "窝嘈"
+    },
+    {
+      "id": "homophone_052",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "花了这么多钱买个我擦东西回来",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "我擦"
+    },
+    {
+      "id": "homophone_053",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "特么的售后简直让人崩溃",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "他妈",
+      "variant": "特么"
+    },
+    {
+      "id": "homophone_054",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "等了这么久就等到这踏马结果",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "他妈",
+      "variant": "踏马"
+    },
+    {
+      "id": "homophone_055",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这特麽质量也敢卖这个价",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "他妈",
+      "variant": "特麽"
+    },
+    {
+      "id": "homophone_056",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们塔玛这破产品还好意思拿出来卖",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "他妈",
+      "variant": "塔玛"
+    },
+    {
+      "id": "homophone_057",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "太它玛了从来没遇到过这种问题",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "他妈",
+      "variant": "它玛"
+    },
+    {
+      "id": "homophone_058",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们的尼玛系统把我的订单弄丢了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈",
+      "variant": "尼玛"
+    },
+    {
+      "id": "homophone_059",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这个尼马快递把我的包裹摔烂了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈",
+      "variant": "尼马"
+    },
+    {
+      "id": "homophone_060",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "我已经等了你玛一个星期了还没人处理",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈",
+      "variant": "你玛"
+    },
+    {
+      "id": "homophone_061",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你这尼瑪设计是谁想出来的",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈",
+      "variant": "尼瑪"
+    },
+    {
+      "id": "homophone_062",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这尼碼服务太令人失望了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈",
+      "variant": "尼碼"
+    },
+    {
+      "id": "homophone_063",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "真是妮马一样的产品设计",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈",
+      "variant": "妮马"
+    },
+    {
+      "id": "homophone_064",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "用了这jb产品三天就出故障了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "鸡巴",
+      "variant": "jb"
+    },
+    {
+      "id": "homophone_065",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这几把客服态度实在太差了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "鸡巴",
+      "variant": "几把"
+    },
+    {
+      "id": "homophone_066",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这鸡8app又闪退了真受不了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "鸡巴",
+      "variant": "鸡8"
+    },
+    {
+      "id": "homophone_067",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "花了这么多钱买个鸡吧东西回来",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "鸡巴",
+      "variant": "鸡吧"
+    },
+    {
+      "id": "homophone_068",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "几巴的售后简直让人崩溃",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "鸡巴",
+      "variant": "几巴"
+    },
+    {
+      "id": "homophone_069",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "等了这么久就等到这j吧结果",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "鸡巴",
+      "variant": "j吧"
+    },
+    {
+      "id": "homophone_070",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这尼玛的质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈的",
+      "variant": "尼玛的"
+    },
+    {
+      "id": "homophone_071",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们nmd这破产品还好意思拿出来卖",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈的",
+      "variant": "nmd"
+    },
+    {
+      "id": "homophone_072",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "太你马的了从来没遇到过这种问题",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈的",
+      "variant": "你马的"
+    },
+    {
+      "id": "homophone_073",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们的妮玛的系统把我的订单弄丢了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈的",
+      "variant": "妮玛的"
+    },
+    {
+      "id": "homophone_074",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这个mlgb快递把我的包裹摔烂了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "妈了个逼",
+      "variant": "mlgb"
+    },
+    {
+      "id": "homophone_075",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "我已经等了妈了gb一个星期了还没人处理",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "妈了个逼",
+      "variant": "妈了gb"
+    },
+    {
+      "id": "homophone_076",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你这ml个b设计是谁想出来的",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "妈了个逼",
+      "variant": "ml个b"
+    },
+    {
+      "id": "homophone_077",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这废5服务太令人失望了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "废物",
+      "variant": "废5"
+    },
+    {
+      "id": "homophone_078",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "真是废柴一样的产品设计",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "废物",
+      "variant": "废柴"
+    },
+    {
+      "id": "homophone_079",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "用了这费物产品三天就出故障了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "废物",
+      "variant": "费物"
+    },
+    {
+      "id": "homophone_080",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "这若智客服态度实在太差了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "弱智",
+      "variant": "若智"
+    },
+    {
+      "id": "homophone_081",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "你们这弱zhiapp又闪退了真受不了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "弱智",
+      "variant": "弱zhi"
+    },
+    {
+      "id": "homophone_082",
+      "category": "homophone",
+      "subtype": "homophone",
+      "input": "花了这么多钱买个ruo智东西回来",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "弱智",
+      "variant": "ruo智"
+    },
+    {
+      "id": "leet_083",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this sh1t app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "shit",
+      "variant": "sh1t"
+    },
+    {
+      "id": "leet_084",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "your @ss product broke after just one week of use",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "ass",
+      "variant": "@ss"
+    },
+    {
+      "id": "leet_085",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "the a55 customer support never responds to my emails",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "ass",
+      "variant": "a55"
+    },
+    {
+      "id": "leet_086",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this b1tch service wasted my entire afternoon for nothing",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "bitch",
+      "variant": "b1tch"
+    },
+    {
+      "id": "leet_087",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "what is wrong with this d1ck website it keeps logging me out",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "dick",
+      "variant": "d1ck"
+    },
+    {
+      "id": "leet_088",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "I paid good money for this f*ck experience",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "fuck",
+      "variant": "f*ck"
+    },
+    {
+      "id": "leet_089",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "your f**k company cannot even process a simple refund",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "fuck",
+      "variant": "f**k"
+    },
+    {
+      "id": "leet_090",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this is the 5h1t worst purchase I have ever made",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "shit",
+      "variant": "5h1t"
+    },
+    {
+      "id": "leet_091",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "after three attempts your @$$ team still has not fixed it",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "ass",
+      "variant": "@$$"
+    },
+    {
+      "id": "leet_092",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "the b!tch delivery arrived two weeks late and damaged",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "bitch",
+      "variant": "b!tch"
+    },
+    {
+      "id": "leet_093",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this d!ck app crashed again and I lost all my data",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "dick",
+      "variant": "d!ck"
+    },
+    {
+      "id": "leet_094",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "your 5hit product broke after just one week of use",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "shit",
+      "variant": "5hit"
+    },
+    {
+      "id": "leet_095",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "the phuck customer support never responds to my emails",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "phuck"
+    },
+    {
+      "id": "leet_096",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this d@mn service wasted my entire afternoon for nothing",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "damn",
+      "variant": "d@mn"
+    },
+    {
+      "id": "leet_097",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "what is wrong with this h3ll website it keeps logging me out",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "hell",
+      "variant": "h3ll"
+    },
+    {
+      "id": "leet_098",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "I paid good money for this cr@p experience",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "crap",
+      "variant": "cr@p"
+    },
+    {
+      "id": "leet_099",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "your sux company cannot even process a simple refund",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "sucks",
+      "variant": "sux"
+    },
+    {
+      "id": "leet_100",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "this is the fukin worst purchase I have ever made",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fucking",
+      "variant": "fukin"
+    },
+    {
+      "id": "leet_101",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "after three attempts your f**kin team still has not fixed it",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "fucking",
+      "variant": "f**kin"
+    },
+    {
+      "id": "leet_102",
+      "category": "leet",
+      "subtype": "leet",
+      "input": "the g0dd@mn delivery arrived two weeks late and damaged",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "goddamn",
+      "variant": "g0dd@mn"
+    },
+    {
+      "id": "cnen_mix_103",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "你们这操 n i m a b 的产品真是绝了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "操 n i m a b 的"
+    },
+    {
+      "id": "cnen_mix_104",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "这这 s h a b i 设计质量简直让人无语",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "这 s h a b i 设计"
+    },
+    {
+      "id": "cnen_mix_105",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "等了c a o 你 m a 的这么久居然还发错货",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "c a o 你 m a 的"
+    },
+    {
+      "id": "cnen_mix_106",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "用了l a j i f u c k app几天就彻底坏了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fucking",
+      "variant": "l a j i f u c k app"
+    },
+    {
+      "id": "cnen_mix_107",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "你 m a 的 s h i t这售后我真是服了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "shit",
+      "variant": "你 m a 的 s h i t"
+    },
+    {
+      "id": "cnen_mix_108",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "你们这k a o 你 m a 的玩意产品真是绝了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "k a o 你 m a 的玩意"
+    },
+    {
+      "id": "cnen_mix_109",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "这你就是个 s h a b i质量简直让人无语",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "你就是个 s h a b i"
+    },
+    {
+      "id": "cnen_mix_110",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "等了你这 f u c k 产品这么久居然还发错货",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "fuck",
+      "variant": "你这 f u c k 产品"
+    },
+    {
+      "id": "cnen_mix_111",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "用了纯属 t r a s h 品质几天就彻底坏了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "垃圾",
+      "variant": "纯属 t r a s h 品质"
+    },
+    {
+      "id": "cnen_mix_112",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "这服务 c n m 了这售后我真是服了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "cnm",
+      "variant": "这服务 c n m 了"
+    },
+    {
+      "id": "cnen_mix_113",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "你们这简直 t m d 在骗钱产品真是绝了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "tmd",
+      "variant": "简直 t m d 在骗钱"
+    },
+    {
+      "id": "cnen_mix_114",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "这你就是个 s b质量简直让人无语",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "你就是个 s b"
+    },
+    {
+      "id": "cnen_mix_115",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "等了w o 操这质量这么久居然还发错货",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "操",
+      "variant": "w o 操这质量"
+    },
+    {
+      "id": "cnen_mix_116",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "用了n i 妈 d e 真坑几天就彻底坏了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈",
+      "variant": "n i 妈 d e 真坑"
+    },
+    {
+      "id": "cnen_mix_117",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "t a 妈 d e 货这售后我真是服了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "他妈",
+      "variant": "t a 妈 d e 货"
+    },
+    {
+      "id": "cnen_mix_118",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "你们这e 心死了产品真是绝了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "恶心",
+      "variant": "e 心死了"
+    },
+    {
+      "id": "cnen_mix_119",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "这操 u r m o m 的质量简直让人无语",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "操 u r m o m 的"
+    },
+    {
+      "id": "cnen_mix_120",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "等了什么 j b 玩意这么久居然还发错货",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "什么 j b 玩意"
+    },
+    {
+      "id": "cnen_mix_121",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "用了纯纯 w a s t e 东西几天就彻底坏了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "废物",
+      "variant": "纯纯 w a s t e 东西"
+    },
+    {
+      "id": "cnen_mix_122",
+      "category": "cnen_mix",
+      "subtype": "mix",
+      "input": "像个 i d i 0 t 一样这售后我真是服了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "弱智",
+      "variant": "像个 i d i 0 t 一样"
+    },
+    {
+      "id": "pinyin_mix_123",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "用了这操 ni 马的产品三天就出故障了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "操 ni 马的"
+    },
+    {
+      "id": "pinyin_mix_124",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "这wo 操这质量客服态度实在太差了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "我操",
+      "variant": "wo 操这质量"
+    },
+    {
+      "id": "pinyin_mix_125",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "你们这cao 你妈的垃圾app又闪退了真受不了",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "cao 你妈的垃圾"
+    },
+    {
+      "id": "pinyin_mix_126",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "花了这么多钱买个ta 马的破玩意东西回来",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "他妈",
+      "variant": "ta 马的破玩意"
+    },
+    {
+      "id": "pinyin_mix_127",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "ni 妈的烦死了的售后简直让人崩溃",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈",
+      "variant": "ni 妈的烦死了"
+    },
+    {
+      "id": "pinyin_mix_128",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "等了这么久就等到这sha 逼一样的东西结果",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "sha 逼一样的东西"
+    },
+    {
+      "id": "pinyin_mix_129",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "这cao ni 妈的什么东西质量也敢卖这个价",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "操你妈",
+      "variant": "cao ni 妈的什么东西"
+    },
+    {
+      "id": "pinyin_mix_130",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "你们真 ta 妈坑人这破产品还好意思拿出来卖",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "他妈",
+      "variant": "真 ta 妈坑人"
+    },
+    {
+      "id": "pinyin_mix_131",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "太ni 妈的等了半个月了从来没遇到过这种问题",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "你妈",
+      "variant": "ni 妈的等了半个月"
+    },
+    {
+      "id": "pinyin_mix_132",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "你们的cao 这破东西系统把我的订单弄丢了",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "操",
+      "variant": "cao 这破东西"
+    },
+    {
+      "id": "pinyin_mix_133",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "这个caonimade 这质量快递把我的包裹摔烂了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "操你妈",
+      "variant": "caonimade 这质量"
+    },
+    {
+      "id": "pinyin_mix_134",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "我已经等了ta ma 的简直离谱一个星期了还没人处理",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "他妈",
+      "variant": "ta ma 的简直离谱"
+    },
+    {
+      "id": "pinyin_mix_135",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "你这ni ma 的设计真烂设计是谁想出来的",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "你妈",
+      "variant": "ni ma 的设计真烂"
+    },
+    {
+      "id": "pinyin_mix_136",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "你们这sha bi CEO想出来的吧服务太令人失望了",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "傻逼",
+      "variant": "sha bi CEO想出来的吧"
+    },
+    {
+      "id": "pinyin_mix_137",
+      "category": "pinyin_mix",
+      "subtype": "pinyin",
+      "input": "真是wo cao 怎么又坏了一样的产品设计",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "我操",
+      "variant": "wo cao 怎么又坏了"
+    },
+    {
+      "id": "sarcasm_138",
+      "category": "sarcasm",
+      "subtype": "讽刺物流慢",
+      "input": "你们这物流可真快啊 从北京到上海走了整整15天 真不愧是极速达呢👍",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_139",
+      "category": "sarcasm",
+      "subtype": "讽刺售后慢",
+      "input": "售后太棒了 等了两个星期终于有人回我了 效率感人",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_140",
+      "category": "sarcasm",
+      "subtype": "讽刺退款慢",
+      "input": "退款速度绝了 比蜗牛还快 已经过去一个月了 赞一个",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_141",
+      "category": "sarcasm",
+      "subtype": "讽刺App闪退",
+      "input": "从来没有见过这么好用的app呢 打开就闪退 一天闪退十次 太稳定了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_142",
+      "category": "sarcasm",
+      "subtype": "讽刺客服不专业",
+      "input": "客服一定是博士毕业的 太专业了 一个问题都答不上来",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_143",
+      "category": "sarcasm",
+      "subtype": "讽刺产品质量差",
+      "input": "产品质量太好了 用了三天就开始掉漆 不愧是名牌",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_144",
+      "category": "sarcasm",
+      "subtype": "讽刺程序员",
+      "input": "你们的程序员真是天才 每次更新都能带来新的bug 太惊喜了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_145",
+      "category": "sarcasm",
+      "subtype": "讽刺包装/产品质量",
+      "input": "包装真是精美 拆开发现屏幕碎了 完美 省得我自己砸",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_146",
+      "category": "sarcasm",
+      "subtype": "讽刺配送慢",
+      "input": "这配送速度比走路还快 下单到收货只用了二十天 真是太感谢了",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_147",
+      "category": "sarcasm",
+      "subtype": "讽刺自动续费",
+      "input": "你们的会员服务太超值了 自动续费完全不用我同意 贴心",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_148",
+      "category": "sarcasm",
+      "subtype": "讽刺优惠力度",
+      "input": "活动优惠力度真大 原价999 现价只要998 简直白送",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_149",
+      "category": "sarcasm",
+      "subtype": "讽刺功能设计",
+      "input": "这个功能设计得太人性化了 要点五层菜单才能找到 锻炼用户耐心",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_150",
+      "category": "sarcasm",
+      "subtype": "讽刺服务器不稳定",
+      "input": "你们的服务器稳定性真是业界标杆 每隔半小时就要重新登录一次",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_151",
+      "category": "sarcasm",
+      "subtype": "讽刺价格贵",
+      "input": "这价格太实惠了 比隔壁贵了三倍 但服务只差了一点点",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "sarcasm_152",
+      "category": "sarcasm",
+      "subtype": "讽刺产品质量差需自修",
+      "input": "感谢你们让我学会了修手机 买回来就坏了全靠自己修",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "en_dfa_miss_153",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "this bloody app is absolutely terrible and keeps crashing",
+      "expected_level": 3,
+      "expected_dfa_hit": true,
+      "source_word": "bloody",
+      "variant": "bloody"
+    },
+    {
+      "id": "en_dfa_miss_154",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "what a load of bollocks your product is useless",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "bollocks",
+      "variant": "bollocks"
+    },
+    {
+      "id": "en_dfa_miss_155",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "your wank company sent me a broken item and ignored my emails",
+      "expected_level": 4,
+      "expected_dfa_hit": true,
+      "source_word": "wank",
+      "variant": "wank"
+    },
+    {
+      "id": "en_dfa_miss_156",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语-蠢货",
+      "input": "this is such a mug service I want my money back immediately",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "mug",
+      "variant": "mug"
+    },
+    {
+      "id": "en_dfa_miss_157",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "what sod designed this website it makes no sense at all",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "sod",
+      "variant": "sod"
+    },
+    {
+      "id": "en_dfa_miss_158",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语-可疑的",
+      "input": "your dodgy delivery driver threw my package over the fence",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "dodgy",
+      "variant": "dodgy"
+    },
+    {
+      "id": "en_dfa_miss_159",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "this tosser product stopped working after exactly two days",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "tosser",
+      "variant": "tosser"
+    },
+    {
+      "id": "en_dfa_miss_160",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "I have never used such a bugger app in my entire life",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "bugger",
+      "variant": "bugger"
+    },
+    {
+      "id": "en_dfa_miss_161",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语-累坏了",
+      "input": "your knackered support team hung up on me three times today",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "knackered",
+      "variant": "knackered"
+    },
+    {
+      "id": "en_dfa_miss_162",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "the wanker quality of this item is unbelievable for the price",
+      "expected_level": 4,
+      "expected_dfa_hit": false,
+      "source_word": "wanker",
+      "variant": "wanker"
+    },
+    {
+      "id": "en_dfa_miss_163",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语-蠢货",
+      "input": "this prat subscription auto-renewed without my permission",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "prat",
+      "variant": "prat"
+    },
+    {
+      "id": "en_dfa_miss_164",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语-讨厌鬼",
+      "input": "what kind of git service is this I have been waiting for a month",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "git",
+      "variant": "git"
+    },
+    {
+      "id": "en_dfa_miss_165",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "your plonker checkout system charged me twice for the same order",
+      "expected_level": 3,
+      "expected_dfa_hit": false,
+      "source_word": "plonker",
+      "variant": "plonker"
+    },
+    {
+      "id": "en_dfa_miss_166",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "this is the most berk experience I have ever had shopping online",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "berk",
+      "variant": "berk"
+    },
+    {
+      "id": "en_dfa_miss_167",
+      "category": "en_dfa_miss",
+      "subtype": "英式俚语",
+      "input": "the pillock instructions that came with the product were impossible to follow",
+      "expected_level": 2,
+      "expected_dfa_hit": false,
+      "source_word": "pillock",
+      "variant": "pillock"
+    },
+    {
+      "id": "normal_168",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "订单编号ORDER20240523的包裹签收后发现外包装破损请协助处理谢谢",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_169",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "请问这个商品什么时候能补货我想买但是显示缺货了",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_170",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我于昨天收到的手机屏幕有一条划痕请安排换货处理",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_171",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我已经提交退款申请三天了请问什么时候能审核通过",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_172",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "上个月买的衣服洗了一次就缩水了能否退货",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_173",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "快递显示已签收但我并没有收到包裹请帮忙核实",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_174",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "这个充电器用了不到两个月就不能充电了还在保修期内吗",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_175",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我账号里的积分突然少了2000分请问是什么原因",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_176",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "你们的会员权益里写了免运费为什么这次还是收了运费",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_177",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我在你们平台买到的商品和页面描述的完全不一样",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_178",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "这个软件安装后电脑变得很卡能帮忙看一下吗",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_179",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "昨天直播买的商品到现在还没发货请问什么时候能发",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_180",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我的优惠券在支付时显示过期了但是明明还没到日期",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_181",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "更新app后之前的订单记录全部消失了请问怎么恢复",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    },
+    {
+      "id": "normal_182",
+      "category": "normal",
+      "subtype": "clean_complaint",
+      "input": "我在门店买的和你们线上卖的是同一款吗价格差了好多",
+      "expected_level": 1,
+      "expected_dfa_hit": false,
+      "source_word": "",
+      "variant": ""
+    }
+  ]
+}
