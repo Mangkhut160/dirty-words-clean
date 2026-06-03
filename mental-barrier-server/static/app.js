@@ -234,7 +234,7 @@ async function sendManual() {
         const res = await fetch('/api/filter', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({text, mode})
+            body: JSON.stringify({text, mode, lang: currentLang})
         });
         const data = await res.json();
         showResult(data);
@@ -326,7 +326,7 @@ async function runBatch() {
             const res = await fetch('/api/filter', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({text: items[i].text, mode})
+                body: JSON.stringify({text: items[i].text, mode, lang: currentLang})
             });
             const data = await res.json();
             const correct = items[i].expected_level != null ? data.level === items[i].expected_level : null;

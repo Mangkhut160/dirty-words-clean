@@ -32,6 +32,7 @@ app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), na
 class FilterRequest(BaseModel):
     text: str
     mode: str = "full"
+    lang: str = "en"
 
 
 class BatchItem(BaseModel):
@@ -43,6 +44,7 @@ class BatchItem(BaseModel):
 class BatchRequest(BaseModel):
     items: list[BatchItem]
     mode: str = "full"
+    lang: str = "en"
 
 
 @app.get("/")
@@ -54,7 +56,7 @@ async def index(request: Request):
 
 @app.post("/api/filter")
 async def api_filter(req: FilterRequest):
-    result = await process_text(req.text, req.mode)
+    result = await process_text(req.text, req.mode, req.lang)
     await save_record(req.text, req.mode, result)
     return result
 
@@ -68,7 +70,7 @@ async def api_batch(req: BatchRequest):
     total_with_expected = 0
 
     for item in req.items:
-        result = await process_text(item.text, req.mode)
+        result = await process_text(item.text, req.mode, req.lang)
         await save_record(item.text, req.mode, result)
 
         entry = {
