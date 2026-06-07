@@ -232,7 +232,7 @@ ToneBarrier是一个双层情绪过滤 SKILL，将客服投诉中的脏话、讽
 ## 9. 文件结构与资源
 
 ```
-tonebarrier/                    (9.4KB SKILL.md)
+skills/tonebarrier/             (9.4KB SKILL.md)
 ├── SKILL.md                       # 主指令（234行，10 few-shot）
 ├── README.md                      # 双语文档（含 Emoji 识别说明）
 ├── scripts/

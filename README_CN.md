@@ -51,7 +51,8 @@ ToneBarrier/
 ├── skills/tonebarrier/       # 轻量 Claude Code Skill（可直接安装）
 │   ├── SKILL.md                 # 主指令文件（241行）
 │   ├── scripts/                 # DFA + Validator 脚本
-│   ├── references/              # 脏话词典 + 谐音对照表
+│   └── references/              # 脏话词典 + 谐音对照表
+├── evaluation/tonebarrier/   # 评测体系
 │   ├── tests/                   # 自动化回归测试（81/81 通过）
 │   ├── adversarial/             # 对抗评测（182 用例）
 │   └── benchmark/               # 基准报告

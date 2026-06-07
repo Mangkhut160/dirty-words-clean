@@ -51,8 +51,9 @@ ToneBarrier/
 ├── skills/tonebarrier/       # Lightweight Claude Code Skill (installable)
 │   ├── SKILL.md                 # Main instruction file (241 lines)
 │   ├── scripts/                 # DFA + Validator scripts
-│   ├── references/              # Profanity dictionaries + homophone table
-│   ├── tests/                   # Unit tests (81/81 passed)
+│   └── references/              # Profanity dictionaries + homophone table
+├── evaluation/tonebarrier/   # Evaluation suite
+│   ├── tests/                   # Automated regression tests (81/81 passed)
 │   ├── adversarial/             # Adversarial evaluation (182 cases)
 │   └── benchmark/               # Benchmark reports
 ├── tonebarrier-server/       # Production simulation (Web UI)

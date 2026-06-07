@@ -4,9 +4,8 @@
 支持多模型切换。
 
 用法:
-  python3 batch_run_llm.py --model deepseek   # DeepSeek
-  python3 batch_run_llm.py --model deepseek   # DeepSeek V4 Flash
-  python3 batch_run_llm.py                    # 默认 deepseek
+  python3 batch_run_llm.py --model deepseek   # DeepSeek V4 Flash (默认)
+  python3 batch_run_llm.py                    # 同上
 """
 import json, os, sys, time
 
