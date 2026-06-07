@@ -1,18 +1,18 @@
 # API keys and secrets
 .env
 *.env
-tonebarrier/adversarial/.env
+evaluation/tonebarrier/adversarial/.env
 tonebarrier-server/config.py
 
 # LLM outputs (large files with potential sensitive data)
-tonebarrier/adversarial/llm_real_outputs_*.json
-tonebarrier/adversarial/llm_judged.json
-tonebarrier/adversarial/llm_full_judged.json
-tonebarrier/adversarial/judge_results.json
-tonebarrier/adversarial/judge_prompts.json
-tonebarrier/adversarial/run_results.json
-tonebarrier/adversarial/batch_results.json
-tonebarrier/adversarial/e2e_results.json
+evaluation/tonebarrier/adversarial/llm_real_outputs_*.json
+evaluation/tonebarrier/adversarial/llm_judged.json
+evaluation/tonebarrier/adversarial/llm_full_judged.json
+evaluation/tonebarrier/adversarial/judge_results.json
+evaluation/tonebarrier/adversarial/judge_prompts.json
+evaluation/tonebarrier/adversarial/run_results.json
+evaluation/tonebarrier/adversarial/batch_results.json
+evaluation/tonebarrier/adversarial/e2e_results.json
 
 # Runtime files
 tonebarrier-server/history.db
@@ -26,3 +26,28 @@ __pycache__/
 .idea/
 .vscode/
 *.swp
+
+# Local Claude Code / agent workspace config
+.claude/
+.agents/
+AGENTS.md
+CLAUDE.md
+skills-lock.json
+mental-barrier-review
+
+# Local research / scratch artifacts not part of the public portfolio repo
+autoresearch/
+projects/
+datasets/
+dirty-words-clean/
+baidu_netdisk_upload_data/
+配置.txt
+会议总结.txt
+调研报告-精神内耗终结者.md
+技术路线方案报告-精神内耗终结者.md
+数据集调研报告-Fewshot构建.md
+
+# Local execution plans / scratch tests not intended for the public repo
+/docs/superpowers/plans/2026-06-06-tonebarrier-public-repo-cleanup.md
+/tests/
+/docs/superpowers/specs/2026-06-03-tonebarrier-deck-design.md

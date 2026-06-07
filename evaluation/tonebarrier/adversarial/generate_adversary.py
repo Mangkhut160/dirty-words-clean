@@ -5,15 +5,16 @@
 生成 7 个类别的对抗样本 + 正常对照组，验证 DFA 层漏检时 LLM 层能否补救。
 纯 Python 标准库实现，零外部依赖。
 
-用法：python3 adversarial/generate_adversary.py
-输出：adversarial/adversary_cases.json (全量) + adversarial/adversary_regression.json (回归子集)
+用法：python3 evaluation/tonebarrier/adversarial/generate_adversary.py
+输出：evaluation/tonebarrier/adversarial/adversary_cases.json (全量) + adversary_regression.json (回归子集)
 """
 import json
 import os
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.dirname(SCRIPT_DIR)
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 DICT_PATH = os.path.join(SKILL_DIR, "references", "profanity_dict.txt")
 HOMOPHONE_PATH = os.path.join(SKILL_DIR, "references", "homophone_guide.md")
 

@@ -1,4 +1,4 @@
-# Mental Barrier — Production Simulation Service
+# ToneBarrier — Production Simulation Service
 
 > **[中文](README_CN.md)** | English
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Production simulation of the [tonebarrier SKILL](../tonebarrier/), removing Claude Code framework overhead and calling the LLM API directly.
+Production simulation of the [ToneBarrier Skill](../skills/tonebarrier/), removing Claude Code framework overhead and calling the LLM API directly.
 
 ## Key Metrics (182 cases, full coverage)
 
@@ -67,7 +67,7 @@ POST /api/filter {text, mode}
          │
          ▼
 ┌──────────────────────┐
-│  DFA Exact Match      │  ← tonebarrier/scripts/dfa_filter.py
+│  DFA Exact Match      │  ← skills/tonebarrier/scripts/dfa_filter.py
 │  (~50ms)             │
 └──────────┬───────────┘
            │

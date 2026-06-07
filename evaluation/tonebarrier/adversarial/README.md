@@ -8,14 +8,14 @@
 
 ### 1. 生成对抗样本
 ```bash
-python3 adversarial/generate_adversary.py
+python3 evaluation/tonebarrier/adversarial/generate_adversary.py
 ```
 输出: `adversary_cases.json` (~180 条)
 
 ### 2. 运行 DFA 层评测
 ```bash
-python3 adversarial/run_adversary.py        # DFA执行 → 生成 run_results.json
-python3 adversarial/run_adversary.py --report  # 打印分类汇总表
+python3 evaluation/tonebarrier/adversarial/run_adversary.py        # DFA执行 → 生成 run_results.json
+python3 evaluation/tonebarrier/adversarial/run_adversary.py --report  # 打印分类汇总表
 ```
 输出: `run_results.json` + 分类汇总表
 
@@ -23,20 +23,20 @@ python3 adversarial/run_adversary.py --report  # 打印分类汇总表
 
 ### 3. 生成 LLM Judge 评测 prompt
 ```bash
-python3 adversarial/judge_adversary.py
+python3 evaluation/tonebarrier/adversarial/judge_adversary.py
 ```
 输出: `judge_prompts.json`
 
 ### 4. 运行 LLM 评测
 对每条 prompt 运行 /tonebarrier，将输出填入 results.json，然后：
 ```bash
-python3 adversarial/judge_adversary.py --import results.json
+python3 evaluation/tonebarrier/adversarial/judge_adversary.py --import results.json
 ```
 输出: `judge_results.json` + 四维打分汇总
 
 ### 5. 回归测试
 ```bash
-python3 tests/test_pipeline.py  # 第3层自动包含对抗回归
+python3 evaluation/tonebarrier/tests/test_pipeline.py  # 第3层自动包含对抗回归
 ```
 
 ## 对抗变体类型

@@ -62,8 +62,8 @@ const I18N = {
         'time-locale': 'en-US',
     },
     zh: {
-        'title': '精神内耗终结者 — 生产环境模拟',
-        'h1': '精神内耗终结者',
+        'title': 'ToneBarrier — 生产环境模拟',
+        'h1': 'ToneBarrier',
         'stat-calls': '0 次调用',
         'stat-tokens': '平均 0 tokens',
         'stat-latency': '平均 0ms',

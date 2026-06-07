@@ -1,34 +1,34 @@
-# 精神内耗终结者 — Benchmark 评估框架
+# ToneBarrier — Benchmark 评估框架
 
 ## 快速开始
 
 ### 1. 运行 DFA 评估（全自动）
 ```bash
-cd .claude/skills/tonebarrier
-python3 benchmark/dfa_eval.py
+cd <repo-root>
+python3 evaluation/tonebarrier/benchmark/dfa_eval.py
 ```
-输出：`benchmark/dfa_results.json`
+输出：`evaluation/tonebarrier/benchmark/dfa_results.json`
 
 ### 2. 运行 SKILL 端到端评测
 
 ```bash
 # 生成评测 prompt
-python3 benchmark/skill_eval.py prompts
+python3 evaluation/tonebarrier/benchmark/skill_eval.py prompts
 
 # 对每条 prompt 运行 /tonebarrier，记录输出到 results.json
 # 格式: [{"id": "xxx", "skill_output": "<SKILL输出>"}, ...]
 
 # 校验结果
-python3 benchmark/skill_eval.py validate results.json
+python3 evaluation/tonebarrier/benchmark/skill_eval.py validate results.json
 ```
-输出：`benchmark/skill_results.json`
+输出：`evaluation/tonebarrier/benchmark/skill_results.json`
 
 ### 3. 生成综合报告
 
 ```bash
-python3 benchmark/report.py
+python3 evaluation/tonebarrier/benchmark/report.py
 ```
-输出：`benchmark/BENCHMARK_REPORT.md`
+输出：`evaluation/tonebarrier/benchmark/BENCHMARK_REPORT.md`
 
 ## 数据来源
 

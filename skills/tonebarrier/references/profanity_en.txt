@@ -1,4 +1,4 @@
-# English Profanity Dictionary for Mental Barrier
+# English Profanity Dictionary for ToneBarrier
 # 英文脏话词典 — 用于 DFA 精确匹配层
 # Source: surge-ai/profanity + dsojevic/profanity-list + manual curation
 # Lines starting with # are comments (ignored by DFA loader)

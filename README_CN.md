@@ -1,8 +1,8 @@
-# dirty-words-clean — 客服情绪过滤引擎
+# ToneBarrier — 客服情绪过滤引擎
 
 > **[English](README_EN.md)** | 中文
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tonebarrier/tests/test_pipeline.py)
+[![Tests](https://img.shields.io/badge/tests-81%2F81%20passed-brightgreen)](evaluation/tonebarrier/tests/test_pipeline.py)
 [![Accuracy](https://img.shields.io/badge/业务准确率-92.9%25-blue)](tonebarrier-server/batch_results_182.json)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 
@@ -47,12 +47,13 @@
 ## 项目结构
 
 ```
-dirty-words-clean/
-├── tonebarrier/              # 核心 SKILL（可独立使用）
+ToneBarrier/
+├── skills/tonebarrier/       # 轻量 Claude Code Skill（可直接安装）
 │   ├── SKILL.md                 # 主指令文件（241行）
 │   ├── scripts/                 # DFA + Validator 脚本
-│   ├── references/              # 脏话词典 + 谐音对照表
-│   ├── tests/                   # 单元测试（66/66 通过）
+│   └── references/              # 脏话词典 + 谐音对照表
+├── evaluation/tonebarrier/   # 评测体系
+│   ├── tests/                   # 自动化回归测试（81/81 通过）
 │   ├── adversarial/             # 对抗评测（182 用例）
 │   └── benchmark/               # 基准报告
 ├── tonebarrier-server/       # 生产环境模拟（Web UI）
@@ -71,7 +72,9 @@ dirty-words-clean/
 ### 方式一：Claude Code SKILL
 
 ```bash
-cp -r tonebarrier ~/.claude/skills/
+git clone https://github.com/Mangkhut160/dirty-words-clean.git
+mkdir -p ~/.claude/skills
+cp -r dirty-words-clean/skills/tonebarrier ~/.claude/skills/tonebarrier
 
 # 使用：
 /tonebarrier 你们tmd这个破产品用了三天就坏了赶紧退款
@@ -95,7 +98,7 @@ python3 server.py
 
 ### 测试规模
 
-- 66 单元测试（DFA + Validator + 对抗回归）
+- 81 条自动化回归检查（DFA + Validator + 对抗回归）
 - 182 对抗用例（8 类变体：谐音/leet/空格绕过/中英混杂/拼音混杂/讽刺/英文俚语/正常文本）
 - 全量 API 调用测试（182 条，DeepSeek V4 Flash，总成本 ¥0.10）
 

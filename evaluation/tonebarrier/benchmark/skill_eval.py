@@ -7,7 +7,8 @@ import sys
 from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 VALIDATOR_PATH = os.path.join(SKILL_DIR, "scripts", "validator.py")
 EVAL_CASES_PATH = os.path.join(SCRIPT_DIR, "eval_cases.json")
 RESULTS_OUTPUT_PATH = os.path.join(SCRIPT_DIR, "skill_results.json")

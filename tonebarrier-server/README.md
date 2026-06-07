@@ -9,7 +9,7 @@ license: mit
 app_port: 7860
 ---
 
-# 精神内耗终结者 — 生产环境模拟服务
+# ToneBarrier — 生产环境模拟服务
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688)](https://fastapi.tiangolo.com)
@@ -23,7 +23,7 @@ app_port: 7860
 
 ## 概述
 
-本服务是 [tonebarrier SKILL](./../.claude/skills/tonebarrier/) 的生产环境模拟，去掉 Claude Code 框架开销，直接通过 API 调用实现完整的情绪过滤管道。用于验证真实 token 消耗、延迟和成本。
+本服务是 [ToneBarrier Skill](../skills/tonebarrier/) 的生产环境模拟，去掉 Claude Code 框架开销，直接通过 API 调用实现完整的情绪过滤管道。用于验证真实 token 消耗、延迟和成本。
 
 ### 核心指标（182 条全量测试）
 
@@ -128,7 +128,7 @@ POST /api/filter {text, mode}
          │
          ▼
 ┌─────────────────┐
-│  DFA 精确匹配    │  ← 复用 tonebarrier/scripts/dfa_filter.py
+│  DFA 精确匹配    │  ← 复用 skills/tonebarrier/scripts/dfa_filter.py
 │  (~50ms, 0 token)│
 └────────┬────────┘
          │
@@ -142,7 +142,7 @@ POST /api/filter {text, mode}
    └───┘ │  └────────┬─────────┘
          │           │
          │  ┌────────┴────────┐
-         │  │  Validator       │  ← 复用 tonebarrier/scripts/validator.py
+         │  │  Validator       │  ← 复用 skills/tonebarrier/scripts/validator.py
          │  │  (级别3-4, ~70ms)│
          │  └────────┬────────┘
          │           │
@@ -221,7 +221,7 @@ git add -A && git commit -m "update" && git push
 
 ## Overview
 
-This service is a production environment simulation of the [tonebarrier SKILL](./../.claude/skills/tonebarrier/), removing Claude Code framework overhead and calling the LLM API directly. It validates real-world token consumption, latency, and cost.
+This service is a production environment simulation of the [ToneBarrier Skill](../skills/tonebarrier/), removing Claude Code framework overhead and calling the LLM API directly. It validates real-world token consumption, latency, and cost.
 
 > **Live Demo**: https://huggingface.co/spaces/pzr114514/skills-demo (bilingual EN/CN UI)
 
@@ -328,7 +328,7 @@ POST /api/filter {text, mode}
          │
          ▼
 ┌─────────────────┐
-│  DFA Matching    │  ← Reuses tonebarrier/scripts/dfa_filter.py
+│  DFA Matching    │  ← Reuses skills/tonebarrier/scripts/dfa_filter.py
 │  (~50ms, 0 token)│
 └────────┬────────┘
          │
@@ -342,7 +342,7 @@ POST /api/filter {text, mode}
    └───┘ │  └────────┬─────────┘
          │           │
          │  ┌────────┴────────┐
-         │  │  Validator       │  ← Reuses tonebarrier/scripts/validator.py
+         │  │  Validator       │  ← Reuses skills/tonebarrier/scripts/validator.py
          │  │  (Level 3-4 only)│
          │  └────────┬────────┘
          │           │

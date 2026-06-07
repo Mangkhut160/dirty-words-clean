@@ -6,7 +6,8 @@ import os
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 REF_DIR = os.path.join(SKILL_DIR, "references")
 DICT_PATH = os.path.join(REF_DIR, "profanity_dict.txt")
 
