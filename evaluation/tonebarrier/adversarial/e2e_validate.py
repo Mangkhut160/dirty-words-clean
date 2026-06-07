@@ -24,7 +24,8 @@ import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 ADVERSARY_CASES = os.path.join(SCRIPT_DIR, "adversary_cases.json")
 VALIDATOR = os.path.join(SKILL_DIR, "scripts", "validator.py")
 DFA_FILTER = os.path.join(SKILL_DIR, "scripts", "dfa_filter.py")

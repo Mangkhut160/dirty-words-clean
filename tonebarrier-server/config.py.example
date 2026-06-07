@@ -4,7 +4,7 @@ def get_env(key, default=""):
     return os.environ.get(key, default)
 
 # LLM 配置 — 通过环境变量设置，不要在此文件中硬编码 API key
-# 支持 DeepSeek / MiniMax / 任何 OpenAI 兼容 API
+# 支持 DeepSeek 或任何 OpenAI 兼容 API
 LLM_API_KEY = get_env("LLM_API_KEY", "")
 LLM_BASE_URL = get_env("LLM_BASE_URL", "https://api.deepseek.com/v1")
 LLM_MODEL = get_env("LLM_MODEL", "deepseek-v4-flash")
@@ -14,7 +14,7 @@ SERVER_HOST = "0.0.0.0"
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "history.db")
 
-SKILL_DIR = os.path.join(os.path.dirname(__file__), "..", "tonebarrier")
+SKILL_DIR = os.path.join(os.path.dirname(__file__), "..", "skills", "tonebarrier")
 DFA_SCRIPT = os.path.join(SKILL_DIR, "scripts", "dfa_filter.py")
 VALIDATOR_SCRIPT = os.path.join(SKILL_DIR, "scripts", "validator.py")
 HOMOPHONE_GUIDE = os.path.join(SKILL_DIR, "references", "homophone_guide.md")

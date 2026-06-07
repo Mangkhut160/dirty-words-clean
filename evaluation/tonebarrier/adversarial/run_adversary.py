@@ -6,7 +6,8 @@ import sys
 from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 DFA_FILTER = os.path.join(SKILL_DIR, "scripts", "dfa_filter.py")
 CASES_PATH = os.path.join(SCRIPT_DIR, "adversary_cases.json")
 RESULTS_PATH = os.path.join(SCRIPT_DIR, "run_results.json")

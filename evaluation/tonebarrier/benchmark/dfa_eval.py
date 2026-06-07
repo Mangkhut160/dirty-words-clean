@@ -4,8 +4,10 @@ import os
 import sys
 from collections import Counter
 
-SKILL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-PROJECT_ROOT = os.path.join(SKILL_DIR, "..", "..", "..")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
+PROJECT_ROOT = REPO_ROOT
 sys.path.insert(0, os.path.join(SKILL_DIR, "scripts"))
 import dfa_filter
 

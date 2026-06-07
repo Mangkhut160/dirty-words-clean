@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-精神内耗终结者 — 自动化回归测试运行器。
+ToneBarrier — 自动化回归测试运行器。
 加载 test_cases.json，对每条用例调用 dfa_filter.py 和 validator.py 并验证预期结果。
 
-Automated regression test runner for the Mental Barrier skill.
+Automated regression test runner for the ToneBarrier skill.
 Loads test_cases.json, calls dfa_filter.py and validator.py per case, and verifies expected results.
 
 第1层（DFA）：精确匹配回归 — 23 条，检查命中/漏报/误报。
@@ -24,7 +24,8 @@ import os
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 TEST_CASES = os.path.join(SCRIPT_DIR, "test_cases.json")
 DFA_FILTER = os.path.join(SKILL_DIR, "scripts", "dfa_filter.py")
 VALIDATOR = os.path.join(SKILL_DIR, "scripts", "validator.py")
@@ -487,14 +488,14 @@ def run_tests():
     # Layer 3: DFA adversarial behavior verification.
     # 检查 DFA 对对抗变体的预期命中/未命中行为。
     # Checks DFA expected hit/miss behavior against adversarial variants.
-    # 注意：完整 LLM 端到端验证需通过 adversarial/e2e_validate.py 完成。
-    # Note: Full LLM end-to-end verification must be done via adversarial/e2e_validate.py.
+    # 注意：完整 LLM 端到端验证需通过 evaluation/tonebarrier/adversarial/e2e_validate.py 完成。
+    # Note: Full LLM end-to-end verification must be done via evaluation/tonebarrier/adversarial/e2e_validate.py.
     print("\n" + "=" * 70)
     print("  第3层：DFA 对抗行为验证（DFA 对变体的预期命中/未命中检查）")
-    print("  注意：完整 LLM 端到端验证需通过 adversarial/e2e_validate.py 完成")
+    print("  注意：完整 LLM 端到端验证需通过 evaluation/tonebarrier/adversarial/e2e_validate.py 完成")
     print("=" * 70)
 
-    ADVERSARIAL_REGRESSION = os.path.join(SKILL_DIR, "adversarial", "adversary_regression.json")
+    ADVERSARIAL_REGRESSION = os.path.join(REPO_ROOT, "evaluation", "tonebarrier", "adversarial", "adversary_regression.json")
 
     if os.path.exists(ADVERSARIAL_REGRESSION):
         with open(ADVERSARIAL_REGRESSION, encoding="utf-8") as f:
@@ -572,11 +573,11 @@ def run_tests():
     print()
     print("  重要提示：以上测试仅覆盖 DFA 层和验证器层。")
     print("  LLM 端到端评测不包括在本脚本中。请手动运行：")
-    print("    python3 adversarial/batch_run_llm.py --model deepseek")
-    print("    python3 adversarial/e2e_validate.py adversarial/llm_real_outputs_deepseek.json")
+    print("    python3 evaluation/tonebarrier/adversarial/batch_run_llm.py --model deepseek")
+    print("    python3 evaluation/tonebarrier/adversarial/e2e_validate.py evaluation/tonebarrier/adversarial/llm_real_outputs_deepseek.json")
     print()
     print("  更详细的对抗评测见：")
-    print("    python3 benchmark/report.py  （生成含 E2E 数据的完整报告）")
+    print("    python3 evaluation/tonebarrier/benchmark/report.py  （生成含 E2E 数据的完整报告）")
 
     print("=" * 70)
 

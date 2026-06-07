@@ -47,7 +47,7 @@ def render_dfa_section(dfa):
     if dfa is None:
         return (
             "## DFA 层评测\n\n"
-            "> **状态：待评测** — 尚未运行 DFA 评估，请执行 `python3 benchmark/dfa_eval.py`。\n\n"
+            "> **状态：待评测** — 尚未运行 DFA 评估，请执行 `python3 evaluation/tonebarrier/benchmark/dfa_eval.py`。\n\n"
         )
 
     lines = ["## DFA 层评测\n"]
@@ -143,9 +143,9 @@ def render_llm_section(skill):
             "## LLM 层评测\n\n"
             "> **状态：待评测** — 尚未运行 SKILL 端到端评测，请执行：\n"
             "> ```bash\n"
-            "> python3 benchmark/skill_eval.py prompts\n"
+            "> python3 evaluation/tonebarrier/benchmark/skill_eval.py prompts\n"
             "> # 对每条 prompt 运行 /tonebarrier，记录输出到 results.json\n"
-            "> python3 benchmark/skill_eval.py validate results.json\n"
+            "> python3 evaluation/tonebarrier/benchmark/skill_eval.py validate results.json\n"
             "> ```\n\n"
         )
 
@@ -225,8 +225,8 @@ def render_e2e_section(e2e):
             "## 真实 LLM 端到端对抗评测\n\n"
             "> **状态：待评测** — 尚未运行端到端评测，请执行：\n"
             "> ```bash\n"
-            "> python3 adversarial/batch_run_llm.py --model deepseek\n"
-            "> python3 adversarial/e2e_validate.py adversarial/llm_real_outputs_deepseek.json\n"
+            "> python3 evaluation/tonebarrier/adversarial/batch_run_llm.py --model deepseek\n"
+            "> python3 evaluation/tonebarrier/adversarial/e2e_validate.py evaluation/tonebarrier/adversarial/llm_real_outputs_deepseek.json\n"
             "> ```\n\n"
         )
 
@@ -433,7 +433,7 @@ def generate_report():
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     sections = [
-        "# 精神内耗终结者 — Benchmark 评估报告",
+        "# ToneBarrier — Benchmark 评估报告",
         "",
         f"> 报告生成时间：{now}",
         "",

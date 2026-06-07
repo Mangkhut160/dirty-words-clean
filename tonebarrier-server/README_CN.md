@@ -1,4 +1,4 @@
-# 精神内耗终结者 — 生产环境模拟服务
+# ToneBarrier — 生产环境模拟服务
 
 > **[English](README_EN.md)** | 中文
 
@@ -10,7 +10,7 @@
 
 ## 概述
 
-本服务是 [tonebarrier SKILL](../tonebarrier/) 的生产环境模拟，去掉 Claude Code 框架开销，直接通过 API 调用实现完整的情绪过滤管道。
+本服务是 [ToneBarrier Skill](../skills/tonebarrier/) 的生产环境模拟，去掉 Claude Code 框架开销，直接通过 API 调用实现完整的情绪过滤管道。
 
 ## 核心指标（182 条全量测试）
 
@@ -67,7 +67,7 @@ POST /api/filter {text, mode}
          │
          ▼
 ┌─────────────────┐
-│  DFA 精确匹配    │  ← tonebarrier/scripts/dfa_filter.py
+│  DFA 精确匹配    │  ← skills/tonebarrier/scripts/dfa_filter.py
 │  (~50ms)        │
 └────────┬────────┘
          │

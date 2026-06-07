@@ -1,8 +1,8 @@
-# Mental Barrier — Emotion Filtering Engine
+# ToneBarrier — Customer Emotion Filtering Engine
 
 > **[中文](README_CN.md)** | English
 
-[![Tests](https://img.shields.io/badge/DFA_tests-123%2F123%20passed-brightgreen)](tests/test_pipeline.py)
+[![Tests](https://img.shields.io/badge/tests-81%2F81%20passed-brightgreen)](../../evaluation/tonebarrier/tests/test_pipeline.py)
 
 ---
 
@@ -25,12 +25,12 @@ A Claude Code SKILL for customer complaint emotion de-escalation and text saniti
 ```bash
 # Option 1: Clone and copy
 git clone https://github.com/Mangkhut160/dirty-words-clean.git
-cp -r dirty-words-clean/tonebarrier your-project/.claude/skills/tonebarrier
+cp -r dirty-words-clean/skills/tonebarrier your-project/.claude/skills/tonebarrier
 
 # Option 2: Direct download
 mkdir -p .claude/skills && cd .claude/skills
 git clone https://github.com/Mangkhut160/dirty-words-clean.git --depth 1
-mv dirty-words-clean/tonebarrier . && rm -rf dirty-words-clean
+cp -r dirty-words-clean/skills/tonebarrier . && rm -rf dirty-words-clean
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ The customer is dissatisfied with the app quality and requesting an immediate fi
 
 ## Production Simulation
 
-Real performance without Claude Code framework (see [tonebarrier-server/](../tonebarrier-server/)):
+Real performance without Claude Code framework (see [tonebarrier-server/](../../tonebarrier-server/)):
 
 | Metric | Production Sim | Claude Code | Improvement |
 |--------|---------------|-------------|-------------|
@@ -98,7 +98,7 @@ Output: [Emotion Tag] + Sanitized Text
 ## File Structure
 
 ```
-tonebarrier/
+skills/tonebarrier/
 ├── SKILL.md                 # Main instruction file (241 lines, 8 few-shot)
 ├── scripts/
 │   ├── dfa_filter.py        # DFA engine (fullwidth + leet + repeat compress)
@@ -107,25 +107,23 @@ tonebarrier/
 │   ├── profanity_dict.txt   # 429 CN profanity words
 │   ├── profanity_en.txt     # 1,071 EN profanity words (Level 3/4 graded)
 │   └── homophone_guide.md   # Homophone reference
-├── tests/
-│   ├── test_cases.json      # 23 test cases
-│   └── test_pipeline.py     # Auto tests
-├── adversarial/             # Adversarial eval (182 cases)
-└── benchmark/               # Benchmark reports
+└── README.md                # Skill usage guide
 ```
+
+Evaluation and regression tests live in `evaluation/tonebarrier/`.
 
 ## Version Comparison
 
 | | tonebarrier (Skill) | tonebarrier-server (Server) |
 |---|---|---|
 | Runtime | Inside Claude Code | Standalone FastAPI service |
-| LLM | Claude itself | MiniMax M2.7 (API key required) |
+| LLM | Claude itself | DeepSeek (API key required) |
 | Best for | Development / experience / light use | Production / batch testing / cost validation |
 | Dependencies | Zero (Python stdlib only) | pip install + API key |
 | Cost | Included in Claude subscription | ¥0.00055/call |
 | Live demo | — | [HF Spaces](https://huggingface.co/spaces/pzr114514/skills-demo) |
 
-> **Recommendation**: For Claude Code experience, just use the `tonebarrier/` directory — zero config, works out of the box.
+> **Recommendation**: For Claude Code experience, just use the `skills/tonebarrier/` directory — zero config, works out of the box.
 
 ## License
 

@@ -4,8 +4,8 @@
 支持多模型切换。
 
 用法:
-  python3 batch_run_llm.py --model minimax    # MiniMax M2.7
-  python3 batch_run_llm.py --model deepseek   # DeepSeek V4
+  python3 batch_run_llm.py --model deepseek   # DeepSeek
+  python3 batch_run_llm.py --model deepseek   # DeepSeek V4 Flash
   python3 batch_run_llm.py                    # 默认 deepseek
 """
 import json, os, sys, time
@@ -23,7 +23,8 @@ if os.path.exists(env_path):
                 k, v = k.strip(), v.strip()
                 if k not in os.environ and v not in ("YOUR_API_KEY_HERE", ""):
                     os.environ[k] = v
-SKILL_DIR = os.path.join(SCRIPT_DIR, "..")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+SKILL_DIR = os.path.join(REPO_ROOT, "skills", "tonebarrier")
 CASES_PATH = os.path.join(SCRIPT_DIR, "adversary_cases.json")
 SKILL_PATH = os.path.join(SKILL_DIR, "SKILL.md")
 
@@ -33,15 +34,10 @@ for i, arg in enumerate(sys.argv):
         model = sys.argv[i + 1]
 
 configs = {
-    "minimax": {
-        "api_key": os.environ.get("MINIMAX_API_KEY", ""),
-        "base_url": "https://api.minimaxi.com/anthropic",
-        "model": "MiniMax-M2.7",
-    },
     "deepseek": {
         "api_key": os.environ.get("ANTHROPIC_AUTH_TOKEN", ""),
         "base_url": "https://api.deepseek.com/anthropic",
-        "model": "deepseek-v4-pro[1m]",
+        "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
     },
     "liangrekui": {
         "api_key": os.environ.get("LIANGREKUI_API_KEY", ""),
@@ -128,4 +124,4 @@ for batch_start in range(0, total, batch_size):
         time.sleep(2)
 
 print(f"\n完成。{len(results)} 条 → {OUTPUT_PATH}")
-print(f"验证: python3 adversarial/e2e_validate.py {OUTPUT_PATH}")
+print(f"验证: python3 evaluation/tonebarrier/adversarial/e2e_validate.py {OUTPUT_PATH}")

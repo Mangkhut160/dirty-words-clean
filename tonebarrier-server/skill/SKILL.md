@@ -10,7 +10,7 @@ user-invocable: true
 allowed-tools: Bash, Read
 ---
 
-# 精神内耗终结者 — 情绪过滤引擎
+# ToneBarrier — 客服情绪过滤引擎
 
 ## 你的身份
 

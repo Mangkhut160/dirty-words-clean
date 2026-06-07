@@ -1,8 +1,8 @@
-# dirty-words-clean — Customer Emotion Filtering Engine
+# ToneBarrier — Customer Emotion Filtering Engine
 
 > 中文 **[中文](README_CN.md)** | English
 
-[![Tests](https://img.shields.io/badge/tests-66%2F66%20passed-brightgreen)](tonebarrier/tests/test_pipeline.py)
+[![Tests](https://img.shields.io/badge/tests-81%2F81%20passed-brightgreen)](evaluation/tonebarrier/tests/test_pipeline.py)
 [![Accuracy](https://img.shields.io/badge/business%20accuracy-92.9%25-blue)](tonebarrier-server/batch_results_182.json)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 
@@ -47,12 +47,12 @@ Two-layer design: DFA handles exact matching (high precision, low recall), LLM h
 ## Project Structure
 
 ```
-dirty-words-clean/
-├── tonebarrier/              # Core SKILL (standalone)
+ToneBarrier/
+├── skills/tonebarrier/       # Lightweight Claude Code Skill (installable)
 │   ├── SKILL.md                 # Main instruction file (241 lines)
 │   ├── scripts/                 # DFA + Validator scripts
 │   ├── references/              # Profanity dictionaries + homophone table
-│   ├── tests/                   # Unit tests (66/66 passed)
+│   ├── tests/                   # Unit tests (81/81 passed)
 │   ├── adversarial/             # Adversarial evaluation (182 cases)
 │   └── benchmark/               # Benchmark reports
 ├── tonebarrier-server/       # Production simulation (Web UI)
@@ -71,7 +71,9 @@ dirty-words-clean/
 ### Option 1: Claude Code SKILL
 
 ```bash
-cp -r tonebarrier ~/.claude/skills/
+git clone https://github.com/Mangkhut160/dirty-words-clean.git
+mkdir -p ~/.claude/skills
+cp -r dirty-words-clean/skills/tonebarrier ~/.claude/skills/tonebarrier
 
 # Usage:
 /tonebarrier This fucking app is garbage fix this shit now
@@ -95,7 +97,7 @@ python3 server.py
 
 ### Test Scale
 
-- 66 unit tests (DFA + Validator + adversarial regression)
+- 81 automated regression checks (DFA + Validator + adversarial regression)
 - 182 adversarial cases (8 categories: homophones, leet, space bypass, CN-EN mix, pinyin mix, sarcasm, EN slang, normal)
 - Full API call test (182 cases, DeepSeek V4 Flash, total cost ¥0.10)
 

@@ -1,4 +1,4 @@
-# 精神内耗终结者 — Benchmark 评估报告
+# ToneBarrier — Benchmark 评估报告
 
 > 报告生成时间：2026-05-27 06:32:00 UTC
 
